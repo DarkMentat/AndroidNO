@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Народний Оглядач</string>
+    <string name="no_items">Немає жодної статті. Підключіться до інтернету, щоб завантажити останні статті.</string>
+</resources>
