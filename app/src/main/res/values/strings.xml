@@ -5,4 +5,5 @@
     <string name="no_items">There is no items. Connect to the internet to get last articles.</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
+    <string name="title_activity_detail">DetailActivity</string>
 </resources>

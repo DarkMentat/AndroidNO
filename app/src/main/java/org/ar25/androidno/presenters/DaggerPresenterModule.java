@@ -27,4 +27,13 @@ public class DaggerPresenterModule {
 
     return presenter;
   }
+
+  @Provides @Singleton
+  DetailPresenter provideDetailPresenter() {
+    DetailPresenter presenter = new DetailPresenter();
+
+    mApplication.getNOAppComponent().inject(presenter);
+
+    return presenter;
+  }
 }

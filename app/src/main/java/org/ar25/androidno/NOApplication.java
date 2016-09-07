@@ -7,7 +7,9 @@ import org.ar25.androidno.api.DaggerRetrofitModule;
 import org.ar25.androidno.db.DaggerDbModule;
 import org.ar25.androidno.db.LocalStorage;
 import org.ar25.androidno.presenters.DaggerPresenterModule;
+import org.ar25.androidno.presenters.DetailPresenter;
 import org.ar25.androidno.presenters.MainPresenter;
+import org.ar25.androidno.ui.DetailActivity;
 import org.ar25.androidno.ui.MainActivity;
 
 import javax.inject.Singleton;
@@ -20,7 +22,9 @@ public class NOApplication extends Application {
   @Singleton @Component(modules={DaggerDbModule.class, DaggerPresenterModule.class, DaggerRetrofitModule.class })
   public interface NOAppComponent {
     void inject(MainPresenter presenter);
+    void inject(DetailPresenter presenter);
     void inject(MainActivity activity);
+    void inject(DetailActivity activity);
   }
 
   public static NOAppComponent getNOAppComponent(Activity activity){
