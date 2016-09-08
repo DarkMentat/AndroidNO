@@ -11,6 +11,9 @@ import javax.inject.Inject;
 
 import rx.Observable;
 
+import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_ID;
+import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_TABLE;
+
 public class LocalStorage {
 
   @Inject StorIOSQLite mStorIOSQLite;
@@ -26,6 +29,13 @@ public class LocalStorage {
         .prepare()
         .executeAsBlocking();
   }
+  public void savePost(Post post){
+    mStorIOSQLite
+        .put()
+        .object(post)
+        .prepare()
+        .executeAsBlocking();
+  }
 
   public List<Post> getPosts(){
     return mStorIOSQLite
@@ -33,7 +43,7 @@ public class LocalStorage {
         .listOfObjects(Post.class)
         .withQuery(
             Query.builder()
-                .table(DbOpenHelper.DB_POSTS_TABLE)
+                .table(DB_POSTS_TABLE)
                 .build()
         ).prepare()
         .executeAsBlocking();
@@ -44,7 +54,21 @@ public class LocalStorage {
         .listOfObjects(Post.class)
         .withQuery(
             Query.builder()
-                .table(DbOpenHelper.DB_POSTS_TABLE)
+                .table(DB_POSTS_TABLE)
+                .build()
+        ).prepare()
+        .asRxObservable();
+  }
+
+  public Observable<Post> getPostObservable(long id){
+    return mStorIOSQLite
+        .get()
+        .object(Post.class)
+        .withQuery(
+            Query.builder()
+                .table(DB_POSTS_TABLE)
+                .where(DB_POSTS_ID + "= ?")
+                .whereArgs(id)
                 .build()
         ).prepare()
         .asRxObservable();

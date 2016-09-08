@@ -41,6 +41,26 @@ public class LocalStorageTest {
             .prepare()
             .executeAsBlocking());
   }
+  @Test public void savePostTest() throws Exception {
+    NOApplication app = (NOApplication) RuntimeEnvironment.application;
+    DaggerDbModule daggerDbModule = new DaggerDbModule(app);
+
+    LocalStorage localStorage = new LocalStorage(
+        daggerDbModule.provideStorioSQLite(daggerDbModule.provideSQLiteOpenHelper()));
+
+    Post fakePost = new FakeNOPostsApi().getFakeFullPost();
+
+    localStorage.savePost(fakePost);
+
+    assertEquals(fakePost,
+        localStorage.mStorIOSQLite
+            .get()
+            .object(Post.class)
+            .withQuery(
+                Query.builder().table(DbOpenHelper.DB_POSTS_TABLE).where("id = 4").build())
+            .prepare()
+            .executeAsBlocking());
+  }
 
   @Test public void getPostsTest() throws Exception {
 
@@ -71,6 +91,21 @@ public class LocalStorageTest {
 
     localStorage.getPostsObservable().subscribe(
         posts -> assertEquals(fakePosts, posts)
+    );
+  }
+
+  @Test public void getPostObservableTest() throws Exception {
+    NOApplication app = (NOApplication) RuntimeEnvironment.application;
+    DaggerDbModule daggerDbModule = new DaggerDbModule(app);
+
+    LocalStorage localStorage = new LocalStorage(
+        daggerDbModule.provideStorioSQLite(daggerDbModule.provideSQLiteOpenHelper()));
+
+    ArrayList<Post> fakePosts = new FakeNOPostsApi().getFakePosts();
+    localStorage.savePosts(fakePosts);
+
+    localStorage.getPostObservable(0).subscribe(
+        post -> assertEquals(fakePosts.get(0), post)
     );
   }
 }

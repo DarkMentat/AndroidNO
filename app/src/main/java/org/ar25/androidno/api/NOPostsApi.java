@@ -13,4 +13,7 @@ public interface NOPostsApi {
 
   @GET("/svity?timestamp=0&created=All&sort_by=created&page=0%2C0")
   Observable<List<Post>> getLastPosts();
+
+  @GET("print/{id}")
+  Observable<Post> getPost(@Path("id") long id);
 }

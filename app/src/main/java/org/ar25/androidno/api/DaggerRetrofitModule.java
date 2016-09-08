@@ -15,7 +15,7 @@ public class DaggerRetrofitModule {
   public Retrofit provideRetrofit () {
     return new Retrofit.Builder()
                   .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                  .addConverterFactory(new HtmlPostsConverterFactory())
+                  .addConverterFactory(new HtmlPostConverterFactory())
                   .baseUrl("http://ar25.org/")
                   .build();
   }

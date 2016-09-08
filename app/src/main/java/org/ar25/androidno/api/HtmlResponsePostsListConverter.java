@@ -15,7 +15,7 @@ import retrofit2.Converter;
 
 import static org.ar25.androidno.entities.Post.newPost;
 
-public class HtmlResponsePostsConverter implements Converter<ResponseBody, List<Post>> {
+public class HtmlResponsePostsListConverter implements Converter<ResponseBody, List<Post>> {
   @Override public List<Post> convert(ResponseBody value) throws IOException {
 
     List<Post> data = new ArrayList<>();
