@@ -16,9 +16,12 @@ import org.ar25.androidno.entities.Post;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.ar25.androidno.ui.DetailActivity.EXTRA_POST_ID;
+
 public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecyclerViewAdapter.PostViewHolder>{
   public static class PostViewHolder extends RecyclerView.ViewHolder {
 
+    View mCard;
     TextView mPublishDate;
     TextView mHeader;
     ImageView mImage;
@@ -30,6 +33,8 @@ public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecycler
       mPublishDate = (TextView)itemView.findViewById(R.id.publish_date);
       mImage = ((ImageView) itemView.findViewById(R.id.image));
       mTeaser = (TextView)itemView.findViewById(R.id.teaser);
+
+      mCard = itemView.findViewById(R.id.card);
     }
   }
 
@@ -72,6 +77,10 @@ public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecycler
     holder.mHeader.setText(post.getHeader());
     holder.mPublishDate.setText(post.getPublishDate());
     holder.mTeaser.setText(post.getTeaser());
+
+    holder.mCard.setOnClickListener(v ->
+        DetailActivity_.intent(mContext).extra(EXTRA_POST_ID, post.getId()).start()
+    );
 
     Picasso.with(mContext).load(post.getImageUrl()).into(holder.mImage);
   }
