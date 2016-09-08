@@ -1,17 +1,20 @@
 package org.ar25.androidno.ui;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.OptionsItem;
+import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
 import org.ar25.androidno.NOApplication;
 import org.ar25.androidno.R;
@@ -22,7 +25,7 @@ import org.ar25.androidno.util.Optional;
 
 import javax.inject.Inject;
 
-@EActivity(R.layout.activity_detail)
+@EActivity(R.layout.activity_detail) @OptionsMenu(R.menu.menu_main)
 public class DetailActivity extends AppCompatActivity implements DetailView {
 
   public static final String EXTRA_POST_ID = "EXTRA_POST_ID";
@@ -45,16 +48,21 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
 
   @AfterViews void bindActionBar() {
     setSupportActionBar(mToolbar);
+    ActionBar actionBar = getSupportActionBar();
+
+    if(actionBar != null){
+      actionBar.setHomeButtonEnabled(true);
+      actionBar.setDisplayHomeAsUpEnabled(true);
+    }
   }
 
-  @Override protected void onStart() {
-    super.onStart();
+  @AfterViews void afterCreate() {
     mDetailPresenter.setView(this);
 
     mDetailPresenter.fetchPost(postId);
   }
-  @Override protected void onStop() {
-    super.onStop();
+  @Override protected void onDestroy() {
+    super.onDestroy();
     mDetailPresenter.unsetView();
   }
 
@@ -70,5 +78,12 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
 
       Picasso.with(this).load(p.getImageUrl()).into(mImage);
     });
+  }
+
+  @OptionsItem(android.R.id.home) void onActionHome(){
+    finish();
+  }
+  @OptionsItem(R.id.action_settings) void onActionSettings(){
+    Toast.makeText(DetailActivity.this, "Settings", Toast.LENGTH_SHORT).show();
   }
 }

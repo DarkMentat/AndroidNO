@@ -2,6 +2,7 @@ package org.ar25.androidno.ui;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,8 +77,7 @@ public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecycler
     Post post = mItems.get(position);
     holder.mHeader.setText(post.getHeader());
     holder.mPublishDate.setText(post.getPublishDate());
-    holder.mTeaser.setText(post.getTeaser());
-
+    holder.mTeaser.setText(Html.fromHtml(post.getTeaser()));
     holder.mCard.setOnClickListener(v ->
         DetailActivity_.intent(mContext).extra(EXTRA_POST_ID, post.getId()).start()
     );

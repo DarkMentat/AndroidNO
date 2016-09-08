@@ -55,17 +55,24 @@ public class MainActivity extends AppCompatActivity implements MainView {
     mPosts.setAdapter(mPostsAdapter);
 
     mSwipeRefreshLayout.setOnRefreshListener(() -> mMainPresenter.fetchPosts());
-    mPostsPlaceHolder.setOnClickListener((view) -> mMainPresenter.fetchPosts());
+    mPostsPlaceHolder.setOnClickListener((view) -> {
+      mMainPresenter.fetchPosts();
+      mSwipeRefreshLayout.post(
+          () -> mSwipeRefreshLayout.setRefreshing(true)
+      );
+    });
   }
 
-  @Override protected void onStart() {
-    super.onStart();
+  @AfterViews void afterCreate() {
     mMainPresenter.setView(this);
 
     mMainPresenter.fetchPosts();
+    mSwipeRefreshLayout.post(
+        () -> mSwipeRefreshLayout.setRefreshing(true)
+    );
   }
-  @Override protected void onStop() {
-    super.onStop();
+  @Override protected void onDestroy() {
+    super.onDestroy();
     mMainPresenter.unsetView();
   }
 

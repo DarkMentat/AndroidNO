@@ -7,6 +7,7 @@ import org.ar25.androidno.db.LocalStorage;
 import org.ar25.androidno.util.Optional;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.inject.Inject;
 
@@ -43,6 +44,7 @@ public class MainPresenter {
     mNOPostsApi.getLastPosts()
         .retry(3)
         .doOnNext(posts -> mLocalStorage.savePosts(posts))
+        .doOnNext(posts -> Collections.sort(posts, (o1, o2) -> o1.getId().compareTo(o2.getId())))
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(
