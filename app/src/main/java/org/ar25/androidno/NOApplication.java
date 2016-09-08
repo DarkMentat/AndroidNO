@@ -25,6 +25,7 @@ public class NOApplication extends Application {
     void inject(DetailPresenter presenter);
     void inject(MainActivity activity);
     void inject(DetailActivity activity);
+    void inject(LocalStorage localStorage);
   }
 
   public static NOAppComponent getNOAppComponent(Activity activity){

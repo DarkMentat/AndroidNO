@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import com.pushtorefresh.storio.sqlite.impl.DefaultStorIOSQLite;
 
+import org.ar25.androidno.NOApplication;
 import org.ar25.androidno.entities.Post;
 import org.ar25.androidno.entities.PostSQLiteTypeMapping;
 
@@ -37,7 +38,7 @@ public class DaggerDbModule {
   }
 
   @Provides @Singleton
-  public LocalStorage provideLocalStorage(StorIOSQLite storIOSQLite) {
-    return new LocalStorage(storIOSQLite);
+  public LocalStorage provideLocalStorage() {
+    return new LocalStorage((NOApplication) mApplication);
   }
 }
