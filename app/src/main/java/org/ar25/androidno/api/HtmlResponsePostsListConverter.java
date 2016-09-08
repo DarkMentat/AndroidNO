@@ -27,7 +27,14 @@ public class HtmlResponsePostsListConverter implements Converter<ResponseBody, L
       Long id = Long.valueOf(element.attr("data-entity_id"));
       String header = element.child(0).select("div .title").get(0).child(0).text();
       String publishDate = element.child(0).select("div .field-item").get(0).text();
-      String imageUrl = element.child(0).select("div .field-item").get(1).child(0).child(0).absUrl("src").split("\\?")[0];
+      String imageUrl;
+
+      if(element.child(0).select("div .field-item").get(1).child(0).children().size() > 0){
+        imageUrl = element.child(0).select("div .field-item").get(1).child(0).child(0).absUrl("src").split("\\?")[0];
+      }else{
+        imageUrl = "http://ar25.org/sites/all/storage/default_images/styles/teaser280/sonce.jpg";
+      }
+
       String teaser = element.child(0).select("div .field-item").get(3).text();
 
       data.add(newPost(id, header, publishDate, imageUrl, teaser));
