@@ -21,6 +21,7 @@ import javax.inject.Inject;
 import rx.Observable;
 
 import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_ID;
+import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_PUBLISH_DATE;
 import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_TABLE;
 
 public class LocalStorage {
@@ -72,6 +73,7 @@ public class LocalStorage {
         .withQuery(
             Query.builder()
                 .table(DB_POSTS_TABLE)
+                .orderBy(DB_POSTS_PUBLISH_DATE + " DESC")
                 .build()
         ).prepare()
         .asRxObservable();
@@ -114,6 +116,6 @@ public class LocalStorage {
     } finally {
       db.endTransaction();
     }
-    lowLevel.notifyAboutChanges(Changes.newInstance("tweets"));
+    lowLevel.notifyAboutChanges(Changes.newInstance(DB_POSTS_TABLE));
   }
 }
