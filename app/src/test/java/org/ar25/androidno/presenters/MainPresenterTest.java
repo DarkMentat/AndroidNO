@@ -29,10 +29,9 @@ public class MainPresenterTest {
   public final RxSchedulersOverrideRule mOverrideSchedulersRule = new RxSchedulersOverrideRule();
 
   @Test public void fetchingPosts() throws Exception {
-    MainPresenter presenter = new MainPresenter(){{
-      mNOPostsApi = new FakeNOPostsApi();
-      mLocalStorage = mock(LocalStorage.class);
-    }};
+    MainPresenter presenter = new MainPresenter();
+    presenter.mNOPostsApi = new FakeNOPostsApi();
+    presenter.mLocalStorage = mock(LocalStorage.class);
 
     ArrayList<Post> fakePosts = ((FakeNOPostsApi) presenter.mNOPostsApi).getFakePosts();
     ArrayList<Post> oldFakePosts = new ArrayList<>(fakePosts);

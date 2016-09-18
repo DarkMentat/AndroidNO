@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/swipe_refresh"
+    android:id="@+id/swipeRefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -20,14 +20,14 @@
             android:visibility="gone"
             android:padding="@dimen/activity_horizontal_margin"
             android:clipToPadding="false"
-            android:id="@+id/recycler_view"
+            android:id="@+id/postsList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
         <TextView
             android:visibility="visible"
             android:padding="@dimen/activity_horizontal_margin"
-            android:id="@+id/no_items"
+            android:id="@+id/postsNoItemsPlaceHolder"
             android:text="@string/no_items"
             android:gravity="center"
             android:layout_width="match_parent"

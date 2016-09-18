@@ -4,7 +4,7 @@ package org.ar25.androidno.entities;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType;
 
-import org.ar25.androidno.util.Optional;
+import org.jetbrains.annotations.Nullable;
 
 import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_HEADER;
 import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_ID;
@@ -70,8 +70,8 @@ public class Post {
   public String getTeaser() {
     return mTeaser;
   }
-  public Optional<String> getText() {
-    return Optional.ofNullable(mText);
+  @Nullable public String getText() {
+    return mText;
   }
 
 

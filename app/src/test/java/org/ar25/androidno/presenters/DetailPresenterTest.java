@@ -5,7 +5,6 @@ import org.ar25.androidno.RxSchedulersOverrideRule;
 import org.ar25.androidno.api.FakeNOPostsApi;
 import org.ar25.androidno.db.LocalStorage;
 import org.ar25.androidno.entities.Post;
-import org.ar25.androidno.util.Optional;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -48,8 +47,8 @@ public class DetailPresenterTest {
     InOrder inOrder = inOrder(view, presenter.mLocalStorage);
 
     inOrder.verify(presenter.mLocalStorage).getPostObservable(4L);
-    inOrder.verify(view).onGetPost(Optional.of(fakePosts.get(4)));
-    inOrder.verify(view).onGetPost(Optional.of(((FakeNOPostsApi) presenter.mNOPostsApi).getFakeFullPost()));
+    inOrder.verify(view).onGetPost(fakePosts.get(4));
+    inOrder.verify(view).onGetPost(((FakeNOPostsApi) presenter.mNOPostsApi).getFakeFullPost());
 
     verify(presenter.mLocalStorage).savePost(((FakeNOPostsApi) presenter.mNOPostsApi).getFakeFullPost());
 
