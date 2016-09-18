@@ -21,7 +21,18 @@ public class HtmlResponsePostConverter implements Converter<ResponseBody, Post> 
     String header = element.select("h1.title").first().text();
     String publishDate = element.select("div .date-time").first().text().split(" - ")[0];
     String imageUrl = element.select("div .field.field-name-field-img-cover.field-type-image.field-label-hidden")
-        .first().child(0).child(0).child(0).absUrl("src").split("\\?")[0];
+        .first().child(0).child(0).absUrl("src");
+
+    if(imageUrl.equals("")){
+      imageUrl = element.select("div .field.field-name-field-img-cover.field-type-image.field-label-hidden")
+          .first().child(0).child(0).child(0).absUrl("src");
+    }
+
+    if(imageUrl.equals("")){
+      imageUrl = element.select("div .field.field-name-field-img-cover.field-type-image.field-label-hidden")
+          .first().child(0).child(0).child(0).child(0).absUrl("src");
+    }
+
     String teaser = element.select("div .teaser").first().child(0).outerHtml();
     String text = element.select("div .field.field-name-body.field-type-text-with-summary.field-label-hidden")
         .first().child(0).child(0).html();
