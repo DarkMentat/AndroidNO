@@ -18,16 +18,17 @@ import org.ar25.androidno.presenters.DetailView
 import javax.inject.Inject
 
 
-open class DetailActivity : AppCompatActivity(), DetailView {
+class DetailActivity : AppCompatActivity(), DetailView {
 
     companion object {
         const val EXTRA_POST_ID = "EXTRA_POST_ID"
     }
 
-
-    var postId: Long = -1
-
     @Inject lateinit var detailPresenter: DetailPresenter
+
+
+    val postId: Long by lazy { intent.extras.getLong(EXTRA_POST_ID) }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -37,8 +38,6 @@ open class DetailActivity : AppCompatActivity(), DetailView {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_detail)
-
-        postId = intent.extras.getLong(EXTRA_POST_ID)
 
         NOApplication.getNOAppComponent(this).inject(this)
 
@@ -58,12 +57,12 @@ open class DetailActivity : AppCompatActivity(), DetailView {
         detailPresenter.fetchPost(postId)
     }
 
-
     override fun onDestroy() {
         super.onDestroy()
 
         detailPresenter.view = null
     }
+
 
     @Suppress("DEPRECATION")
     override fun onGetPost(post: Post?) {
@@ -82,6 +81,13 @@ open class DetailActivity : AppCompatActivity(), DetailView {
                 Picasso.with(this@DetailActivity).load(post.imageUrl).into(image)
             }
         })
+    }
+
+    override fun setLoading() {
+
+    }
+    override fun setLoaded() {
+
     }
 
 

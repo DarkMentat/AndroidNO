@@ -4,4 +4,7 @@ import org.ar25.androidno.entities.Post
 
 interface DetailView {
     fun onGetPost(post: Post?)
+
+    fun setLoading(): Unit
+    fun setLoaded(): Unit
 }

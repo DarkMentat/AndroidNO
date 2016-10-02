@@ -79,6 +79,19 @@ public class LocalStorage {
         .asRxObservable();
   }
 
+  public Post getPost(long id){
+    return mStorIOSQLite
+            .get()
+            .object(Post.class)
+            .withQuery(
+                    Query.builder()
+                            .table(DB_POSTS_TABLE)
+                            .where(DB_POSTS_ID + "= ?")
+                            .whereArgs(id)
+                            .build()
+            ).prepare()
+            .executeAsBlocking();
+  }
   public Observable<Post> getPostObservable(long id){
     return mStorIOSQLite
         .get()

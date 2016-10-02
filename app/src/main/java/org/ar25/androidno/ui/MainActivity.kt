@@ -19,11 +19,13 @@ import org.ar25.androidno.presenters.MainView
 import javax.inject.Inject
 
 
-open class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : AppCompatActivity(), MainView {
+
+    @Inject lateinit var mainPresenter: MainPresenter
+
 
     val postsAdapter = PostsRecyclerViewAdapter(this)
 
-    @Inject lateinit var mainPresenter: MainPresenter
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -37,10 +39,16 @@ open class MainActivity : AppCompatActivity(), MainView {
         NOApplication.getNOAppComponent(this).inject(this)
 
         bindActionBar()
-        setupRecyclerView()
         bindPresenter()
+
+        setupRecyclerView()
     }
 
+    fun bindPresenter() {
+        mainPresenter.view = this
+
+        mainPresenter.fetchPosts()
+    }
     fun bindActionBar() {
         setSupportActionBar(toolbar)
     }
@@ -50,14 +58,8 @@ open class MainActivity : AppCompatActivity(), MainView {
         postsList.adapter = postsAdapter
 
         swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts() }
-        postsNoItemsPlaceHolder.setOnClickListener { fetchPosts() }
+        postsNoItemsPlaceHolder.setOnClickListener { mainPresenter.fetchPosts() }
     }
-    fun bindPresenter() {
-        mainPresenter.view = this
-
-        fetchPosts()
-    }
-
 
     override fun onDestroy() {
         super.onDestroy()
@@ -66,8 +68,6 @@ open class MainActivity : AppCompatActivity(), MainView {
 
 
     override fun onGetPosts(posts: List<Post>) {
-        postsFetched()
-
         if (posts.isEmpty())
             return
 
@@ -77,12 +77,10 @@ open class MainActivity : AppCompatActivity(), MainView {
         postsNoItemsPlaceHolder.visibility = GONE
     }
 
-
-    fun fetchPosts(){
-        mainPresenter.fetchPosts()
+    override fun setLoading() {
         swipeRefresh.post { swipeRefresh.isRefreshing = true }
     }
-    fun postsFetched(){
+    override fun setLoaded() {
         swipeRefresh.isRefreshing = false
     }
 
