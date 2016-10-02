@@ -14,6 +14,7 @@ import org.ar25.androidno.NOApplication;
 import org.ar25.androidno.entities.Post;
 import org.ar25.androidno.entities.PostStorIOSQLitePutResolver;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -25,6 +26,8 @@ import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_PUBLISH_DATE;
 import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_TABLE;
 
 public class LocalStorage {
+
+  private static final int POSTS_PER_PAGE = 5;
 
   @Inject StorIOSQLite mStorIOSQLite;
   @Inject SQLiteOpenHelper mSQLiteOpenHelper;
@@ -55,13 +58,18 @@ public class LocalStorage {
         .executeAsBlocking();
   }
 
-  public List<Post> getPosts(){
+  public List<Post> getPosts(int offset){
+    if(offset <= 0 )
+      return Collections.emptyList();
+
     return mStorIOSQLite
         .get()
         .listOfObjects(Post.class)
         .withQuery(
             Query.builder()
                 .table(DB_POSTS_TABLE)
+                .orderBy(DB_POSTS_PUBLISH_DATE + " DESC")
+                .limit((offset - 1) * POSTS_PER_PAGE, POSTS_PER_PAGE)
                 .build()
         ).prepare()
         .executeAsBlocking();

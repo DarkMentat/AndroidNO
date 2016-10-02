@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View.GONE
@@ -26,6 +27,17 @@ class MainActivity : AppCompatActivity(), MainView {
 
     val postsAdapter = PostsRecyclerViewAdapter(this)
 
+    var scrollListenerAlreadyAdded = false
+    var currentPage = 1
+
+    val onMoreItems: RecyclerView.OnScrollListener by lazy {
+        object : OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
+            override fun onLoadMore() {
+                mainPresenter.fetchPosts(++currentPage)
+            }
+        }
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -39,15 +51,15 @@ class MainActivity : AppCompatActivity(), MainView {
         NOApplication.getNOAppComponent(this).inject(this)
 
         bindActionBar()
-        bindPresenter()
-
         setupRecyclerView()
+
+        bindPresenter()
     }
 
     fun bindPresenter() {
         mainPresenter.view = this
 
-        mainPresenter.fetchPosts()
+        mainPresenter.fetchPosts(currentPage)
     }
     fun bindActionBar() {
         setSupportActionBar(toolbar)
@@ -57,8 +69,8 @@ class MainActivity : AppCompatActivity(), MainView {
         postsList.itemAnimator = DefaultItemAnimator()
         postsList.adapter = postsAdapter
 
-        swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts() }
-        postsNoItemsPlaceHolder.setOnClickListener { mainPresenter.fetchPosts() }
+        swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts(1) }
+        postsNoItemsPlaceHolder.setOnClickListener { mainPresenter.fetchPosts(1) }
     }
 
     override fun onDestroy() {
@@ -71,7 +83,7 @@ class MainActivity : AppCompatActivity(), MainView {
         if (posts.isEmpty())
             return
 
-        postsAdapter.setItems(posts)
+        postsAdapter.updateItems(posts)
 
         postsList.visibility = VISIBLE
         postsNoItemsPlaceHolder.visibility = GONE
@@ -82,6 +94,11 @@ class MainActivity : AppCompatActivity(), MainView {
     }
     override fun setLoaded() {
         swipeRefresh.isRefreshing = false
+
+        if(!scrollListenerAlreadyAdded) {
+            postsList.addOnScrollListener(onMoreItems)
+            scrollListenerAlreadyAdded = true
+        }
     }
 
 
