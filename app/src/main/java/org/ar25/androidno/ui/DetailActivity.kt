@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Toast
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
@@ -84,10 +86,12 @@ class DetailActivity : AppCompatActivity(), DetailView {
     }
 
     override fun setLoading() {
-
+        text.visibility = GONE
+        loadingIndicator.visibility = VISIBLE
     }
     override fun setLoaded() {
-
+        text.visibility = VISIBLE
+        loadingIndicator.visibility = GONE
     }
 
 
