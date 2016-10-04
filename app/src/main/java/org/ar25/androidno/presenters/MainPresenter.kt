@@ -5,7 +5,6 @@ import org.ar25.androidno.db.LocalStorage
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 
@@ -24,22 +23,11 @@ class MainPresenter {
         if(page == 1)
             mainView.setLoading()
 
-//       Test data
-//        Observable.just(localStorage.getPosts(page))
-//                    .delay(5, TimeUnit.SECONDS)
-//                    .subscribeOn(Schedulers.io())
-//                    .observeOn(AndroidSchedulers.mainThread())
-//                    .subscribe(
-//                        { posts -> mainView.onGetPosts(posts); mainView.setLoaded() },
-//                        { error -> mainView.setLoaded() }
-//                    )
-
-
         mainView.onGetPosts(localStorage.getPosts(page))
 
         noPostsApi
-                .lastPosts
-                .retry(3)
+                .getLastPosts("0%2C" + page)
+                .startWith(if(page == 1) noPostsApi.getLastPosts("0%2C0") else Observable.empty())
                 .subscribeOn(Schedulers.io())
                 .doOnNext { localStorage.savePosts(it) }
                 .flatMap { Observable.just(localStorage.getPosts(page)) }

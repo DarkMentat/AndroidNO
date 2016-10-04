@@ -27,7 +27,7 @@ import static org.ar25.androidno.db.DbOpenHelper.DB_POSTS_TABLE;
 
 public class LocalStorage {
 
-  private static final int POSTS_PER_PAGE = 5;
+  public static final int POSTS_PER_PAGE = 20;
 
   @Inject StorIOSQLite mStorIOSQLite;
   @Inject SQLiteOpenHelper mSQLiteOpenHelper;
@@ -68,7 +68,7 @@ public class LocalStorage {
         .withQuery(
             Query.builder()
                 .table(DB_POSTS_TABLE)
-                .orderBy(DB_POSTS_PUBLISH_DATE + " DESC")
+                .orderBy("substr("+ DB_POSTS_PUBLISH_DATE +", 7, 10) DESC, substr("+ DB_POSTS_PUBLISH_DATE +", 4, 5) DESC, substr("+ DB_POSTS_PUBLISH_DATE +", 1, 2) DESC, "+ DB_POSTS_ID)
                 .limit((offset - 1) * POSTS_PER_PAGE, POSTS_PER_PAGE)
                 .build()
         ).prepare()

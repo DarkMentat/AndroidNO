@@ -94,6 +94,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'org.jsoup:jsoup:1.9.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
 
     //Android support
     compile 'com.android.support:appcompat-v7:24.2.1'
