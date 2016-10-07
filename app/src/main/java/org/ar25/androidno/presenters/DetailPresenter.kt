@@ -29,7 +29,7 @@ open class DetailPresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { post -> detailView.onGetPost(post); detailView.setLoaded() },
-                        { error -> detailView.setLoaded() }
+                        { error -> detailView.onGetError(error); detailView.setLoaded() }
                 )
     }
 }

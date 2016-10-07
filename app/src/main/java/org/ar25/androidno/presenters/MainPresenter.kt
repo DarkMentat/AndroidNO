@@ -34,7 +34,7 @@ class MainPresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { posts -> mainView.onGetPosts(posts); mainView.setLoaded() },
-                        { error -> mainView.setLoaded() }
+                        { error -> mainView.onGetError(error); mainView.setLoaded() }
                 )
     }
 }

@@ -1,6 +1,7 @@
 package org.ar25.androidno.ui
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
@@ -87,6 +88,10 @@ class MainActivity : AppCompatActivity(), MainView {
 
         postsList.visibility = VISIBLE
         postsNoItemsPlaceHolder.visibility = GONE
+    }
+
+    override fun onGetError(error: Throwable) {
+        Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
     }
 
     override fun setLoading() {

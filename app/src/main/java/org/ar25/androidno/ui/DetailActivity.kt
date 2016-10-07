@@ -84,6 +84,9 @@ class DetailActivity : AppCompatActivity(), DetailView {
             }
         })
     }
+    override fun onGetError(error: Throwable) {
+        Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+    }
 
     override fun setLoading() {
         text.visibility = GONE
