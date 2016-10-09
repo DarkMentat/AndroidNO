@@ -1,12 +1,14 @@
 package org.ar25.androidno.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
+import android.view.MotionEvent.ACTION_MOVE
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.webkit.WebSettings.LayoutAlgorithm.SINGLE_COLUMN
 import android.widget.Toast
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
@@ -17,6 +19,7 @@ import org.ar25.androidno.R
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.DetailView
+import java.util.regex.Pattern
 import javax.inject.Inject
 
 
@@ -30,7 +33,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
 
     val postId: Long by lazy { intent.extras.getLong(EXTRA_POST_ID) }
-
+    var currentPost: Post? = null
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -66,17 +69,29 @@ class DetailActivity : AppCompatActivity(), DetailView {
     }
 
 
+
+
     @Suppress("DEPRECATION")
     override fun onGetPost(post: Post?) {
 
         if(post == null)
             return
 
+        if (currentPost == post)
+            return
+
+        currentPost = post
+
         publishDate.text = post.publishDate
         header.text = post.header
-        teaser.text = Html.fromHtml(post.teaser)
 
-        post.text?.let { text.text = Html.fromHtml(it) }
+        val postBody = post.teaser + post.text
+
+        text.setOnTouchListener { view, event -> event.action == ACTION_MOVE }
+        text.settings.layoutAlgorithm = SINGLE_COLUMN
+        text.setBackgroundColor(Color.TRANSPARENT)
+
+        text.loadData(prepareHtmlForWebView(postBody), "text/html; charset=utf-8", "utf-8")
 
         Picasso.with(this).load(post.imageUrl).fetch(object: Callback.EmptyCallback(){
             override fun onSuccess() {
@@ -107,5 +122,14 @@ class DetailActivity : AppCompatActivity(), DetailView {
         }
 
         return true
+    }
+
+    fun prepareHtmlForWebView(html: String): String {
+
+        val p = Pattern.compile("style=\"width: \\d+px; height: \\d+px;\"")
+        val m = p.matcher(html)
+
+        return "<style type='text/css'>img{max-width:100%; height:auto;}div,p,span,a{max-width:100%;}</style><body style='margin:0;padding:0;'>${m.replaceAll("")}</body>"
+
     }
 }

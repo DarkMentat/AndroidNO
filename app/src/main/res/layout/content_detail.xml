@@ -37,14 +37,11 @@
         android:scaleType="centerCrop"
         android:contentDescription="@string/posts_image"/>
 
-    <TextView
-        android:id="@+id/teaser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
+    <WebView
         android:id="@+id/text"
         android:visibility="gone"
+        android:background="@android:color/transparent"
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
