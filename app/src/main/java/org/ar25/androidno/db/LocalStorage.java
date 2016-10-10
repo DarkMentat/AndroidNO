@@ -68,7 +68,7 @@ public class LocalStorage {
         .withQuery(
             Query.builder()
                 .table(DB_POSTS_TABLE)
-                .orderBy("substr("+ DB_POSTS_PUBLISH_DATE +", 7, 10) DESC, substr("+ DB_POSTS_PUBLISH_DATE +", 4, 5) DESC, substr("+ DB_POSTS_PUBLISH_DATE +", 1, 2) DESC, "+ DB_POSTS_ID)
+                .orderBy("substr("+ DB_POSTS_PUBLISH_DATE +", 7, 10) DESC, substr("+ DB_POSTS_PUBLISH_DATE +", 4, 5) DESC, substr("+ DB_POSTS_PUBLISH_DATE +", 1, 2) DESC, "+ DB_POSTS_ID +" DESC")
                 .limit((offset - 1) * POSTS_PER_PAGE, POSTS_PER_PAGE)
                 .build()
         ).prepare()
