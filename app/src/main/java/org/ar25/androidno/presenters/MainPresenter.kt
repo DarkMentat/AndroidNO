@@ -20,20 +20,19 @@ class MainPresenter {
         val mainView: MainView = view ?: return
 
 
-        if(page == 1)
+        if(page == 0)
             mainView.setLoading()
 
-        mainView.onGetPosts(localStorage.getPosts(page))
+        mainView.onGetPosts(localStorage.getPosts(page), page)
 
         noPostsApi
                 .getLastPosts("0%2C" + page)
-                .startWith(if(page == 1) noPostsApi.getLastPosts("0%2C0") else Observable.empty())
                 .subscribeOn(Schedulers.io())
                 .doOnNext { localStorage.savePosts(it) }
-                .flatMap { Observable.just(localStorage.getPosts(page)) }
+                .switchMap { Observable.just(localStorage.getPosts(page)) }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        { posts -> mainView.onGetPosts(posts); mainView.setLoaded() },
+                        { posts -> mainView.onGetPosts(posts, page); mainView.setLoaded() },
                         { error -> mainView.onGetError(error); mainView.setLoaded() }
                 )
     }

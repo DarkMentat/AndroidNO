@@ -46,7 +46,7 @@ class PostsRecyclerViewAdapter(
         }
     }
 
-    val sortedList = SortedList<Post>(Post::class.java, object: SortedList.Callback<Post>() {
+    private val sortedList = SortedList<Post>(Post::class.java, object: SortedList.Callback<Post>() {
 
         override fun onMoved(fromPosition: Int, toPosition: Int) = notifyItemMoved(fromPosition, toPosition)
         override fun onRemoved(position: Int, count: Int) = notifyItemRangeRemoved(position, count)

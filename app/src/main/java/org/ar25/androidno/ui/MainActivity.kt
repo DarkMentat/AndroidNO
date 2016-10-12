@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity(), MainView {
     val postsAdapter = PostsRecyclerViewAdapter(this)
 
     var scrollListenerAlreadyAdded = false
-    var currentPage = 1
+    var currentPage = 0
 
     val onMoreItems: RecyclerView.OnScrollListener by lazy {
         object : OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
             override fun onLoadMore() {
-                mainPresenter.fetchPosts(++currentPage)
+                mainPresenter.fetchPosts(currentPage)
             }
         }
     }
@@ -69,8 +69,8 @@ class MainActivity : AppCompatActivity(), MainView {
         postsList.itemAnimator = DefaultItemAnimator()
         postsList.adapter = postsAdapter
 
-        swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts(1) }
-        postsNoItemsPlaceHolder.setOnClickListener { mainPresenter.fetchPosts(1) }
+        swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts(0) }
+        postsNoItemsPlaceHolder.setOnClickListener { mainPresenter.fetchPosts(0) }
     }
 
     override fun onDestroy() {
@@ -79,11 +79,14 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
 
-    override fun onGetPosts(posts: List<Post>) {
+    override fun onGetPosts(posts: List<Post>, page: Int) {
         if (posts.isEmpty())
             return
 
         postsAdapter.updateItems(posts)
+
+        if(page > currentPage)
+            currentPage = page
 
         postsList.visibility = VISIBLE
         postsNoItemsPlaceHolder.visibility = GONE
