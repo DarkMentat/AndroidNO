@@ -1,6 +1,7 @@
 package org.ar25.androidno.presenters
 
 import org.ar25.androidno.api.NOPostsApi
+import org.ar25.androidno.api.getLastPosts
 import org.ar25.androidno.db.LocalStorage
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
@@ -26,7 +27,7 @@ class MainPresenter {
         mainView.onGetPosts(localStorage.getPosts(page), page)
 
         noPostsApi
-                .getLastPosts("0%2C" + page)
+                .getLastPosts(page)
                 .subscribeOn(Schedulers.io())
                 .doOnNext { localStorage.savePosts(it) }
                 .switchMap { Observable.just(localStorage.getPosts(page)) }

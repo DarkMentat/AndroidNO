@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
         setContentView(R.layout.activity_main)
 
-        NOApplication.getNOAppComponent(this).inject(this)
+        NOApplication.noAppComponent.inject(this)
 
         bindActionBar()
         setupRecyclerView()

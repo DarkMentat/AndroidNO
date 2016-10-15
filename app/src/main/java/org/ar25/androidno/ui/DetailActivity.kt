@@ -44,7 +44,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         setContentView(R.layout.activity_detail)
 
-        NOApplication.getNOAppComponent(this).inject(this)
+        NOApplication.noAppComponent.inject(this)
 
         bindActionBar()
         bindPresenter()
