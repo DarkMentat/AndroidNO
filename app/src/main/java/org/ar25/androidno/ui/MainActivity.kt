@@ -1,6 +1,7 @@
 package org.ar25.androidno.ui
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
@@ -26,15 +27,12 @@ class MainActivity : AppCompatActivity(), MainView {
 
 
     val postsAdapter = PostsRecyclerViewAdapter(this)
-
-    var scrollListenerAlreadyAdded = false
     var currentPage = 0
 
     val onMoreItems: RecyclerView.OnScrollListener by lazy {
-        object : OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
-            override fun onLoadMore() {
-                mainPresenter.fetchPosts(currentPage + 1)
-            }
+        OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
+            mainPresenter.fetchPosts(currentPage + 1)
+            postsAdapter.enableLoadingIndicator()
         }
     }
 
@@ -68,6 +66,7 @@ class MainActivity : AppCompatActivity(), MainView {
         postsList.layoutManager = LinearLayoutManager(this)
         postsList.itemAnimator = DefaultItemAnimator()
         postsList.adapter = postsAdapter
+        postsList.addOnScrollListener(onMoreItems)
 
         swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts(0) }
         postsNoItemsPlaceHolder.setOnClickListener { mainPresenter.fetchPosts(0) }
@@ -93,23 +92,16 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     override fun onGetError(error: Throwable) {
-        postsAdapter.enableLoadMoreButton { mainPresenter.fetchPosts(currentPage + 1) }
-
-        Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+        Snackbar.make(swipeRefresh, "Some error happens\n${error.message}", Snackbar.LENGTH_LONG).show()
     }
 
     override fun setLoading() {
         swipeRefresh.post { swipeRefresh.isRefreshing = true }
-
-        postsAdapter.enableLoadingIndicator()
     }
     override fun setLoaded() {
-        swipeRefresh.isRefreshing = false
+        postsAdapter.enableLoadMoreButton { mainPresenter.fetchPosts(currentPage + 1) }
 
-        if(!scrollListenerAlreadyAdded) {
-            postsList.addOnScrollListener(onMoreItems)
-            scrollListenerAlreadyAdded = true
-        }
+        swipeRefresh.isRefreshing = false
     }
 
 

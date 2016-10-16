@@ -23,7 +23,8 @@ import org.ar25.androidno.ui.PostsRecyclerViewAdapter.PostViewHolder.PostContent
 
 class PostsRecyclerViewAdapter(
         private val context: Context
-                                        ) : RecyclerView.Adapter<PostsRecyclerViewAdapter.PostViewHolder>() {
+
+    ) : RecyclerView.Adapter<PostsRecyclerViewAdapter.PostViewHolder>() {
 
     companion object {
         const val VIEW_TYPE_LOADING = 0
@@ -31,9 +32,13 @@ class PostsRecyclerViewAdapter(
     }
 
     sealed class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        class LoadingViewHolder(itemView: View) : PostViewHolder(itemView) {
+        class LoadingViewHolder(itemView: View, onCreate: (vh: LoadingViewHolder) -> Unit) : PostViewHolder(itemView) {
             val mProgressBarIndicator = itemView.findViewById(R.id.loadingIndicator) as ProgressBar
             val mLoadMoreButton = itemView.findViewById(R.id.loadMoreButton) as Button
+
+            init {
+                onCreate(this)
+            }
         }
         class PostContentViewHolder(itemView: View) : PostViewHolder(itemView) {
             val mCard: View
@@ -100,7 +105,7 @@ class PostsRecyclerViewAdapter(
                 { LayoutInflater.from(parent.context).inflate(it, parent, false) }
 
         when(viewType){
-            VIEW_TYPE_LOADING -> return LoadingViewHolder(inflate(R.layout.item_post_loading))
+            VIEW_TYPE_LOADING -> return LoadingViewHolder(inflate(R.layout.item_post_loading), onCreateLoadingViewHolder)
             VIEW_TYPE_CONTENT -> return PostContentViewHolder(inflate(R.layout.item_post))
             else -> throw IllegalArgumentException("invalid view type")
         }
@@ -134,11 +139,32 @@ class PostsRecyclerViewAdapter(
         return sortedList.size() + 1
     }
 
+
+    var onCreateLoadingViewHolder: (vh: LoadingViewHolder) -> Unit = {}
+
     fun enableLoadingIndicator(){
+
+        if(loadingViewHolder == null){
+            onCreateLoadingViewHolder = {
+                loadingViewHolder = it
+                enableLoadingIndicator()
+            }
+            return
+        }
+
         loadingViewHolder?.mProgressBarIndicator?.visibility = VISIBLE
         loadingViewHolder?.mLoadMoreButton?.visibility = GONE
     }
     fun enableLoadMoreButton(onClick: () -> Unit ){
+
+        if(loadingViewHolder == null){
+            onCreateLoadingViewHolder = {
+                loadingViewHolder = it
+                enableLoadMoreButton(onClick)
+            }
+            return
+        }
+
         loadingViewHolder?.mProgressBarIndicator?.visibility = GONE
         loadingViewHolder?.mLoadMoreButton?.visibility = VISIBLE
 

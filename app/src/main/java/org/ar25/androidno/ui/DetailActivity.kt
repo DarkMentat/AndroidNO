@@ -2,6 +2,7 @@ package org.ar25.androidno.ui
 
 import android.graphics.Color
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -14,6 +15,7 @@ import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
+import kotlinx.android.synthetic.main.content_main.*
 import org.ar25.androidno.NOApplication
 import org.ar25.androidno.R
 import org.ar25.androidno.entities.Post
@@ -100,7 +102,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
         })
     }
     override fun onGetError(error: Throwable) {
-        Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+        Snackbar.make(swipeRefresh, "Some error happens", Snackbar.LENGTH_LONG).show()
     }
 
     override fun setLoading() {
