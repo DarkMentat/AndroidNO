@@ -91,7 +91,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         text.setOnTouchListener { view, event -> event.action == ACTION_MOVE }
         text.settings.layoutAlgorithm = SINGLE_COLUMN
-        text.setBackgroundColor(Color.TRANSPARENT)
+        text.setBackgroundColor(Color.argb(1, 0, 0, 0))
 
         text.loadData(prepareHtmlForWebView(postBody), "text/html; charset=utf-8", "utf-8")
 
