@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Народний Оглядач</string>
     <string name="no_items">Немає жодної статті. Підключіться до інтернету, щоб завантажити останні статті.</string>
+    <string name="load_more_posts">Завантажити більше</string>
 </resources>

@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity(), MainView {
     val onMoreItems: RecyclerView.OnScrollListener by lazy {
         object : OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
             override fun onLoadMore() {
-                mainPresenter.fetchPosts(currentPage)
+                mainPresenter.fetchPosts(currentPage + 1)
             }
         }
     }
@@ -93,11 +93,15 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     override fun onGetError(error: Throwable) {
+        postsAdapter.enableLoadMoreButton { mainPresenter.fetchPosts(currentPage + 1) }
+
         Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
     }
 
     override fun setLoading() {
         swipeRefresh.post { swipeRefresh.isRefreshing = true }
+
+        postsAdapter.enableLoadingIndicator()
     }
     override fun setLoaded() {
         swipeRefresh.isRefreshing = false

@@ -7,8 +7,12 @@ import android.support.v7.widget.RecyclerView
 import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.squareup.picasso.Picasso
 import org.ar25.androidno.R
@@ -27,7 +31,10 @@ class PostsRecyclerViewAdapter(
     }
 
     sealed class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        class LoadingViewHolder(itemView: View) : PostViewHolder(itemView)
+        class LoadingViewHolder(itemView: View) : PostViewHolder(itemView) {
+            val mProgressBarIndicator = itemView.findViewById(R.id.loadingIndicator) as ProgressBar
+            val mLoadMoreButton = itemView.findViewById(R.id.loadMoreButton) as Button
+        }
         class PostContentViewHolder(itemView: View) : PostViewHolder(itemView) {
             val mCard: View
             val mPublishDate: TextView
@@ -46,6 +53,7 @@ class PostsRecyclerViewAdapter(
         }
     }
 
+    private var loadingViewHolder: LoadingViewHolder? = null
     private val sortedList = SortedList<Post>(Post::class.java, object: SortedList.Callback<Post>() {
 
         override fun onMoved(fromPosition: Int, toPosition: Int) = notifyItemMoved(fromPosition, toPosition)
@@ -113,6 +121,10 @@ class PostsRecyclerViewAdapter(
 
             Picasso.with(context).load(post.imageUrl).into(holder.mImage)
         }
+
+        if(holder is LoadingViewHolder) {
+            loadingViewHolder = holder
+        }
     }
 
     override fun getItemViewType(position: Int) : Int {
@@ -120,5 +132,19 @@ class PostsRecyclerViewAdapter(
     }
     override fun getItemCount(): Int {
         return sortedList.size() + 1
+    }
+
+    fun enableLoadingIndicator(){
+        loadingViewHolder?.mProgressBarIndicator?.visibility = VISIBLE
+        loadingViewHolder?.mLoadMoreButton?.visibility = GONE
+    }
+    fun enableLoadMoreButton(onClick: () -> Unit ){
+        loadingViewHolder?.mProgressBarIndicator?.visibility = GONE
+        loadingViewHolder?.mLoadMoreButton?.visibility = VISIBLE
+
+        loadingViewHolder?.mLoadMoreButton?.setOnClickListener {
+            onClick()
+            enableLoadingIndicator()
+        }
     }
 }
