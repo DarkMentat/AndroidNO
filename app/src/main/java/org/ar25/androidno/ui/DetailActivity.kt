@@ -11,7 +11,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.webkit.WebSettings.LayoutAlgorithm.SINGLE_COLUMN
 import android.widget.Toast
-import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
@@ -21,6 +20,7 @@ import org.ar25.androidno.R
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.DetailView
+import org.ar25.androidno.util.fetch
 import java.util.regex.Pattern
 import javax.inject.Inject
 
@@ -95,11 +95,9 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         text.loadData(prepareHtmlForWebView(postBody), "text/html; charset=utf-8", "utf-8")
 
-        Picasso.with(this).load(post.imageUrl).fetch(object: Callback.EmptyCallback(){
-            override fun onSuccess() {
-                Picasso.with(this@DetailActivity).load(post.imageUrl).into(image)
-            }
-        })
+        Picasso.with(this).load(post.imageUrl).fetch {
+            Picasso.with(this@DetailActivity).load(post.imageUrl).into(image)
+        }
     }
     override fun onGetError(error: Throwable) {
         Snackbar.make(swipeRefresh, "Some error happens", Snackbar.LENGTH_LONG).show()
