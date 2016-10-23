@@ -34,7 +34,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/image_height"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:contentDescription="@string/posts_image"
@@ -45,10 +45,11 @@
         android:textSize="@dimen/text_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit. Pellentesque sed augue id est tempus finibus sed vel elit. Praesent viverra facilisis mauris at feugiat. Curabitur et turpis mattis, convallis enim ac, euismod orci. Donec porttitor ipsum a laoreet molestie."/>
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit."/>
 
     <WebView
         android:id="@+id/postText"
+        android:visibility="gone"
         android:alpha="0.0"
         android:background="@android:color/transparent"
         android:scrollbars="none"

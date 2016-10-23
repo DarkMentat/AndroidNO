@@ -105,6 +105,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         unloadedText.animateToTransparent {
             unloadedText.visibility = GONE
+            postText.visibility = VISIBLE
 
             postText.animateToVisible()
         }
@@ -144,7 +145,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
     fun View.animateToTransparent(afterAnimation: () -> Unit = {}){
         this.alpha = 1.0f
 
-        this.animate().alpha(0.0f).setDuration(500L).setListener(
+        this.animate().alpha(0.0f).setDuration(300L).setListener(
                 object: Animator.AnimatorListener{
                     override fun onAnimationRepeat(animation: Animator) {}
                     override fun onAnimationStart(animation: Animator) {}
@@ -156,7 +157,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
     fun View.animateToVisible(afterAnimation: () -> Unit = {}){
         this.alpha = 0.0f
 
-        this.animate().alpha(1.0f).setDuration(500L).setListener(
+        this.animate().alpha(1.0f).setDuration(300L).setListener(
                 object: Animator.AnimatorListener{
                     override fun onAnimationRepeat(animation: Animator) {}
                     override fun onAnimationStart(animation: Animator) {}
