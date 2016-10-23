@@ -1,5 +1,6 @@
 package org.ar25.androidno.ui
 
+import android.animation.Animator
 import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -7,8 +8,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent.ACTION_MOVE
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.webkit.WebSettings.LOAD_NO_CACHE
 import android.webkit.WebSettings.LayoutAlgorithm.SINGLE_COLUMN
 import android.widget.Toast
 import com.squareup.picasso.Picasso
@@ -50,6 +53,11 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         bindActionBar()
         bindPresenter()
+
+        postText.setOnTouchListener { view, event -> event.action == ACTION_MOVE }
+        postText.setBackgroundColor(Color.argb(1, 0, 0, 0))
+        postText.settings.layoutAlgorithm = SINGLE_COLUMN
+        postText.settings.cacheMode = LOAD_NO_CACHE
     }
 
     fun bindActionBar() {
@@ -76,10 +84,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
     @Suppress("DEPRECATION")
     override fun onGetPost(post: Post?) {
 
-        if(post == null)
-            return
-
-        if (currentPost == post)
+        if(post == null || currentPost == post)
             return
 
         currentPost = post
@@ -87,16 +92,21 @@ class DetailActivity : AppCompatActivity(), DetailView {
         publishDate.text = post.publishDate
         header.text = post.header
 
-        val postBody = post.teaser + post.text
-
-        text.setOnTouchListener { view, event -> event.action == ACTION_MOVE }
-        text.settings.layoutAlgorithm = SINGLE_COLUMN
-        text.setBackgroundColor(Color.argb(1, 0, 0, 0))
-
-        text.loadData(prepareHtmlForWebView(postBody), "text/html; charset=utf-8", "utf-8")
-
         Picasso.with(this).load(post.imageUrl).fetch {
             Picasso.with(this@DetailActivity).load(post.imageUrl).into(image)
+        }
+
+        if(post.text == null){
+            unloadedText.text = post.teaser
+            return
+        }
+
+        postText.loadData(prepareHtmlForWebView(post.teaser + post.text), "text/html; charset=utf-8", "utf-8")
+
+        unloadedText.animateToTransparent {
+            unloadedText.visibility = GONE
+
+            postText.animateToVisible()
         }
     }
     override fun onGetError(error: Throwable) {
@@ -104,11 +114,9 @@ class DetailActivity : AppCompatActivity(), DetailView {
     }
 
     override fun setLoading() {
-        text.visibility = GONE
         loadingIndicator.visibility = VISIBLE
     }
     override fun setLoaded() {
-        text.visibility = VISIBLE
         loadingIndicator.visibility = GONE
     }
 
@@ -131,5 +139,30 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         return "<style type='text/css'>img{max-width:100%; height:auto;}div,p,span,a{max-width:100%;}</style><body style='margin:0;padding:0;'>${m.replaceAll("")}</body>"
 
+    }
+
+    fun View.animateToTransparent(afterAnimation: () -> Unit = {}){
+        this.alpha = 1.0f
+
+        this.animate().alpha(0.0f).setDuration(500L).setListener(
+                object: Animator.AnimatorListener{
+                    override fun onAnimationRepeat(animation: Animator) {}
+                    override fun onAnimationStart(animation: Animator) {}
+                    override fun onAnimationCancel(animation: Animator) {}
+
+                    override fun onAnimationEnd(animation: Animator) = afterAnimation()
+        })
+    }
+    fun View.animateToVisible(afterAnimation: () -> Unit = {}){
+        this.alpha = 0.0f
+
+        this.animate().alpha(1.0f).setDuration(500L).setListener(
+                object: Animator.AnimatorListener{
+                    override fun onAnimationRepeat(animation: Animator) {}
+                    override fun onAnimationStart(animation: Animator) {}
+                    override fun onAnimationCancel(animation: Animator) {}
+
+                    override fun onAnimationEnd(animation: Animator) = afterAnimation()
+        })
     }
 }

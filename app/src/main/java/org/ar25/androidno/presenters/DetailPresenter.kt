@@ -17,8 +17,12 @@ open class DetailPresenter {
 
         val detailView : DetailView = view ?: return
 
-        detailView.setLoading()
-        detailView.onGetPost(localStorage.getPost(id))
+        localStorage.getPost(id).let {
+            detailView.onGetPost(it)
+
+            if(it?.text == null)
+                detailView.setLoading()
+        }
 
         noPostsApi
                 .getPost(id)

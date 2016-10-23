@@ -23,7 +23,7 @@
 
     <TextView
         android:id="@+id/header"
-        android:textSize="22sp"
+        android:textSize="@dimen/text_header"
         android:textColor="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,9 +40,16 @@
         android:contentDescription="@string/posts_image"
         tools:src="@drawable/logo"/>
 
+    <TextView
+        android:id="@+id/unloadedText"
+        android:textSize="@dimen/text_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit. Pellentesque sed augue id est tempus finibus sed vel elit. Praesent viverra facilisis mauris at feugiat. Curabitur et turpis mattis, convallis enim ac, euismod orci. Donec porttitor ipsum a laoreet molestie."/>
+
     <WebView
-        android:id="@+id/text"
-        android:visibility="gone"
+        android:id="@+id/postText"
+        android:alpha="0.0"
         android:background="@android:color/transparent"
         android:scrollbars="none"
         android:layout_width="match_parent"
@@ -50,11 +57,11 @@
 
     <FrameLayout
         android:id="@+id/loadingIndicator"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ProgressBar
-            android:visibility="visible"
             android:layout_gravity="center"
             android:paddingTop="@dimen/activity_vertical_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
