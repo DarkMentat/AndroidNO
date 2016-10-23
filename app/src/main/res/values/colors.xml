@@ -10,5 +10,6 @@
 
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
+    <color name="text_color">#222222</color>
 
 </resources>

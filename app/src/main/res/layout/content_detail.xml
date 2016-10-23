@@ -40,21 +40,15 @@
         android:contentDescription="@string/posts_image"
         tools:src="@drawable/logo"/>
 
-    <TextView
-        android:id="@+id/unloadedText"
-        android:textSize="@dimen/text_size"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit."/>
-
-    <WebView
+    <org.sufficientlysecure.htmltextview.HtmlTextView
         android:id="@+id/postText"
-        android:visibility="gone"
-        android:alpha="0.0"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/text_color"
         android:background="@android:color/transparent"
         android:scrollbars="none"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit."/>
 
     <FrameLayout
         android:id="@+id/loadingIndicator"

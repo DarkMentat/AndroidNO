@@ -42,6 +42,7 @@
         <TextView
             android:id="@+id/teaser"
             android:textSize="@dimen/text_size"
+            android:textColor="@color/text_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit."/>

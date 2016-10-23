@@ -7,7 +7,7 @@ import android.view.View
 fun View.animateToTransparent(afterAnimation: () -> Unit = {}){
     this.alpha = 1.0f
 
-    this.animate().alpha(0.0f).setDuration(300L).setListener(
+    this.animate().alpha(0.0f).setDuration(200L).setListener(
             object: Animator.AnimatorListener{
                 override fun onAnimationRepeat(animation: Animator) {}
                 override fun onAnimationStart(animation: Animator) {}
@@ -20,7 +20,7 @@ fun View.animateToTransparent(afterAnimation: () -> Unit = {}){
 fun View.animateToVisible(afterAnimation: () -> Unit = {}){
     this.alpha = 0.0f
 
-    this.animate().alpha(1.0f).setDuration(300L).setListener(
+    this.animate().alpha(1.0f).setDuration(200L).setListener(
             object: Animator.AnimatorListener{
                 override fun onAnimationRepeat(animation: Animator) {}
                 override fun onAnimationStart(animation: Animator) {}

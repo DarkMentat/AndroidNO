@@ -1,16 +1,12 @@
 package org.ar25.androidno.ui
 
-import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.MotionEvent.ACTION_MOVE
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.webkit.WebSettings.LOAD_NO_CACHE
-import android.webkit.WebSettings.LayoutAlgorithm.SINGLE_COLUMN
 import android.widget.Toast
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -24,7 +20,6 @@ import org.ar25.androidno.presenters.DetailView
 import org.ar25.androidno.util.animateToTransparent
 import org.ar25.androidno.util.animateToVisible
 import org.ar25.androidno.util.fetch
-import java.util.regex.Pattern
 import javax.inject.Inject
 
 
@@ -53,11 +48,6 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         bindActionBar()
         bindPresenter()
-
-        postText.setOnTouchListener { view, event -> event.action == ACTION_MOVE }
-        postText.setBackgroundColor(Color.argb(1, 0, 0, 0))
-        postText.settings.layoutAlgorithm = SINGLE_COLUMN
-        postText.settings.cacheMode = LOAD_NO_CACHE
     }
 
     fun bindActionBar() {
@@ -87,8 +77,6 @@ class DetailActivity : AppCompatActivity(), DetailView {
         if(post == null || currentPost == post)
             return
 
-        currentPost = post
-
         publishDate.text = post.publishDate
         header.text = post.header
 
@@ -96,19 +84,18 @@ class DetailActivity : AppCompatActivity(), DetailView {
             Picasso.with(this@DetailActivity).load(post.imageUrl).into(image)
         }
 
-        if(post.text == null){
-            unloadedText.text = post.teaser
-            return
+        val text = post.teaser + if(post.text != null) post.text else ""
+
+        if(currentPost == null || currentPost?.text != null) {
+            postText.setHtml(text)
+        } else {
+            postText.animateToTransparent {
+                postText.setHtml(text)
+                postText.animateToVisible()
+            }
         }
 
-        postText.loadData(prepareHtmlForWebView(post.teaser + post.text), "text/html; charset=utf-8", "utf-8")
-
-        unloadedText.animateToTransparent {
-            unloadedText.visibility = GONE
-            postText.visibility = VISIBLE
-
-            postText.animateToVisible()
-        }
+        currentPost = post
     }
     override fun onGetError(error: Throwable) {
         Snackbar.make(swipeRefresh, "Some error happens", Snackbar.LENGTH_LONG).show()
@@ -131,14 +118,5 @@ class DetailActivity : AppCompatActivity(), DetailView {
         }
 
         return true
-    }
-
-    fun prepareHtmlForWebView(html: String): String {
-
-        val p = Pattern.compile("style=\"width: \\d+px; height: \\d+px;\"")
-        val m = p.matcher(html)
-
-        return "<style type='text/css'>img{max-width:100%; height:auto;}div,p,span,a{max-width:100%;}</style><body style='margin:0;padding:0;'>${m.replaceAll("")}</body>"
-
     }
 }
