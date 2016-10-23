@@ -1,6 +1,5 @@
 package org.ar25.androidno.ui
 
-import android.animation.Animator
 import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -8,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent.ACTION_MOVE
-import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.webkit.WebSettings.LOAD_NO_CACHE
@@ -23,6 +21,8 @@ import org.ar25.androidno.R
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.DetailView
+import org.ar25.androidno.util.animateToTransparent
+import org.ar25.androidno.util.animateToVisible
 import org.ar25.androidno.util.fetch
 import java.util.regex.Pattern
 import javax.inject.Inject
@@ -140,30 +140,5 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         return "<style type='text/css'>img{max-width:100%; height:auto;}div,p,span,a{max-width:100%;}</style><body style='margin:0;padding:0;'>${m.replaceAll("")}</body>"
 
-    }
-
-    fun View.animateToTransparent(afterAnimation: () -> Unit = {}){
-        this.alpha = 1.0f
-
-        this.animate().alpha(0.0f).setDuration(300L).setListener(
-                object: Animator.AnimatorListener{
-                    override fun onAnimationRepeat(animation: Animator) {}
-                    override fun onAnimationStart(animation: Animator) {}
-                    override fun onAnimationCancel(animation: Animator) {}
-
-                    override fun onAnimationEnd(animation: Animator) = afterAnimation()
-        })
-    }
-    fun View.animateToVisible(afterAnimation: () -> Unit = {}){
-        this.alpha = 0.0f
-
-        this.animate().alpha(1.0f).setDuration(300L).setListener(
-                object: Animator.AnimatorListener{
-                    override fun onAnimationRepeat(animation: Animator) {}
-                    override fun onAnimationStart(animation: Animator) {}
-                    override fun onAnimationCancel(animation: Animator) {}
-
-                    override fun onAnimationEnd(animation: Animator) = afterAnimation()
-        })
     }
 }
