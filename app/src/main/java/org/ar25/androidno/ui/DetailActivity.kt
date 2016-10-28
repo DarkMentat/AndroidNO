@@ -11,7 +11,6 @@ import android.widget.Toast
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
-import kotlinx.android.synthetic.main.content_main.*
 import org.ar25.androidno.NOApplication
 import org.ar25.androidno.R
 import org.ar25.androidno.entities.Post
@@ -98,7 +97,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
         currentPost = post
     }
     override fun onGetError(error: Throwable) {
-        Snackbar.make(swipeRefresh, "Some error happens", Snackbar.LENGTH_LONG).show()
+        Snackbar.make(parentScrollView, "Some error happens", Snackbar.LENGTH_LONG).show()
     }
 
     override fun setLoading() {
