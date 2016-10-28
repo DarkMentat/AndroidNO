@@ -11,7 +11,7 @@ import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_PUBLISH_DATE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TABLE
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.entities.PostStorIOSQLitePutResolver
-import rx.Observable
+import org.ar25.androidno.util.someObject
 import javax.inject.Inject
 
 class LocalStorage {
@@ -32,17 +32,23 @@ class LocalStorage {
     }
 
     fun savePost(post: Post) {
-        mStorIOSQLite.put().`object`(post).withPutResolver(object : PostStorIOSQLitePutResolver() {
-            override fun mapToContentValues(`object`: Post): ContentValues {
-                val values = super.mapToContentValues(`object`)
+        mStorIOSQLite
+                .put()
+                .someObject(post)
+                .withPutResolver(
+                        object : PostStorIOSQLitePutResolver() {
+                            override fun mapToContentValues(`object`: Post): ContentValues {
+                                val values = super.mapToContentValues(`object`)
 
-                if (values.getAsString("image_url") == "") {
-                    values.remove("image_url")
-                }
+                                if (values.getAsString("image_url") == "") {
+                                    values.remove("image_url")
+                                }
 
-                return values
-            }
-        }).prepare().executeAsBlocking()
+                                return values
+                            }
+                        })
+                .prepare()
+                .executeAsBlocking()
     }
 
     fun getPosts(offset: Int): List<Post> {
@@ -65,19 +71,6 @@ class LocalStorage {
                 .executeAsBlocking()
     }
 
-    fun getPostsObservable(): Observable<List<Post>>{
-        return mStorIOSQLite
-                .get()
-                .listOfObjects(Post::class.java)
-                .withQuery(
-                    Query.builder()
-                            .table(DB_POSTS_TABLE)
-                            .orderBy(DB_POSTS_PUBLISH_DATE + " DESC")
-                            .build())
-                .prepare()
-                .asRxObservable()
-    }
-
     fun getPost(id: Long): Post? {
         return mStorIOSQLite
                 .get()
@@ -91,20 +84,6 @@ class LocalStorage {
                 .executeAsBlocking()
     }
 
-    fun getPostObservable(id: Long): Observable<Post> {
-        return mStorIOSQLite
-                .get()
-                .`object`(Post::class.java)
-                .withQuery(
-                        Query.builder()
-                                .table(DB_POSTS_TABLE)
-                                .where(DB_POSTS_ID + "= ?")
-                                .whereArgs(id)
-                                .build())
-                .prepare()
-                .asRxObservable()
-    }
-
 
     private fun insertManyPostPreviews(lowLevel: StorIOSQLite.LowLevel, helper: SQLiteOpenHelper, posts: List<Post>) {
         val db = helper.writableDatabase
@@ -116,7 +95,7 @@ class LocalStorage {
 
             for (post in posts) {
                 statement.clearBindings()
-                statement.bindLong(1, post.id!!)
+                statement.bindLong(1, post.id)
                 statement.bindString(2, post.header)
                 statement.bindString(3, post.imageUrl)
                 statement.bindString(4, post.publishDate)
@@ -130,6 +109,4 @@ class LocalStorage {
         }
         lowLevel.notifyAboutChanges(Changes.newInstance(DB_POSTS_TABLE))
     }
-
-
 }
