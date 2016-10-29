@@ -4,6 +4,12 @@ package org.ar25.androidno.entities
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TABLE
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_ID
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_HEADER
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_PUBLISH_DATE
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_IMAGE_URL
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TEASER
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TEXT
 
 
 @StorIOSQLiteType(table = DB_POSTS_TABLE)
