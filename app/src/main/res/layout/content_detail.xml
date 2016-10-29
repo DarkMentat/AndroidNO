@@ -40,15 +40,21 @@
         android:contentDescription="@string/posts_image"
         tools:src="@drawable/logo"/>
 
-    <org.sufficientlysecure.htmltextview.HtmlTextView
-        android:id="@+id/postText"
-        android:textSize="@dimen/text_size"
-        android:textColor="@color/text_color"
-        android:background="@android:color/transparent"
-        android:scrollbars="none"
+    <LinearLayout
+        android:id="@+id/postMainContent"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit."/>
+        android:layout_height="wrap_content">
+
+        <org.sufficientlysecure.htmltextview.HtmlTextView
+            android:id="@+id/teaserText"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit."/>
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/loadingIndicator"

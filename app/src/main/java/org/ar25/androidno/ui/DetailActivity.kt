@@ -3,10 +3,13 @@ package org.ar25.androidno.ui
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Toast
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -16,9 +19,8 @@ import org.ar25.androidno.R
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.DetailView
-import org.ar25.androidno.util.animateToTransparent
-import org.ar25.androidno.util.animateToVisible
-import org.ar25.androidno.util.fetch
+import org.ar25.androidno.util.*
+import org.sufficientlysecure.htmltextview.HtmlTextView
 import javax.inject.Inject
 
 
@@ -83,14 +85,14 @@ class DetailActivity : AppCompatActivity(), DetailView {
             Picasso.with(this@DetailActivity).load(post.imageUrl).into(image)
         }
 
-        val text = post.teaser + if(post.text != null) post.text else ""
-
         if(currentPost == null || currentPost?.text != null) {
-            postText.setHtml(text)
+            teaserText.setHtml(post.teaser)
+            fillContent(post.text)
         } else {
-            postText.animateToTransparent {
-                postText.setHtml(text)
-                postText.animateToVisible()
+            postMainContent.animateToTransparent {
+                teaserText.setHtml(post.teaser)
+                fillContent(post.text)
+                postMainContent.animateToVisible()
             }
         }
 
@@ -117,5 +119,53 @@ class DetailActivity : AppCompatActivity(), DetailView {
         }
 
         return true
+    }
+
+    fun fillContent(html: String?){
+        if(html == null) return
+
+        val tokens = parseHtmlTextToTokens(html)
+
+        for (token in tokens){
+            when (token) {
+                is PostToken.HtmlTextToken -> {
+                    val view = HtmlTextView(this)
+
+                    val layoutParams = LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT)
+
+                    layoutParams.topMargin = 48
+
+                    view.layoutParams = layoutParams
+
+                    view.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.text_size))
+                    view.setTextColor(getColor(R.color.text_color))
+
+                    view.setHtml(token.text)
+
+                    postMainContent.addView(view)
+                }
+
+                is PostToken.ImageToken -> {
+                    val view = ImageView(this)
+
+                    val layoutParams = LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT)
+
+                    layoutParams.topMargin = 48
+
+                    view.layoutParams = layoutParams
+
+                    view.scaleType = ImageView.ScaleType.CENTER_INSIDE
+                    view.adjustViewBounds = true
+
+                    postMainContent.addView(view)
+
+                    Picasso.with(this).load(token.imageUrl).placeholder(R.drawable.transparent_placeholder).fit().centerInside().into(view)
+                }
+            }
+        }
     }
 }
