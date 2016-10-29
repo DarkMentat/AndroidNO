@@ -14,7 +14,7 @@ import org.robolectric.annotation.Config;
 
 import okhttp3.ResponseBody;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 
 @RunWith(RobolectricGradleTestRunner.class)
@@ -34,7 +34,7 @@ public class HtmlResponsePostConverterTest {
         34517L,
         "Чому щасливі люди більш успішні",
         "07.09.2016",
-        "http://ar25.org/sites/default/files/styles/large/public/node/2016/09/34517/16060707.jpg",
+        "http://ar25.org/sites/default/files/styles/large/public/node/2016/09/34517/16060707.jpg?itok=DuyStieC",
         "<p> Чим більш щасливим стає ваш мозок, тим більше ви стаєте креативним, продуктивним, і відкритим до нових ідей. Щастя сприяє успішності і в бізнесі.</p>",
         "<p> Сучасна наука більш ефективно оцінює позитивний вплив щастя на ваші розум і тіло, тому підприємства все більше цікавляться тим, як досягти його і поліпшити свої результати.</p>\n" +
             "<p> В епоху, коли творчість та інновації необхідні для конкурентної переваги, вам потрібно місце роботи, яке заохочує ідеї і високий рівень продуктивності. </p>\n" +

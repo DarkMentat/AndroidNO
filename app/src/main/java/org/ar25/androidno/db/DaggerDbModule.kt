@@ -2,17 +2,13 @@ package org.ar25.androidno.db
 
 import android.app.Application
 import android.database.sqlite.SQLiteOpenHelper
-
 import com.pushtorefresh.storio.sqlite.StorIOSQLite
 import com.pushtorefresh.storio.sqlite.impl.DefaultStorIOSQLite
-
-import org.ar25.androidno.entities.Post
-import org.ar25.androidno.entities.PostSQLiteTypeMapping
-
-import javax.inject.Singleton
-
 import dagger.Module
 import dagger.Provides
+import org.ar25.androidno.entities.Post
+import org.ar25.androidno.entities.PostSQLiteTypeMapping
+import javax.inject.Singleton
 
 @Module
 class DaggerDbModule(private val mApplication: Application) {
@@ -33,6 +29,6 @@ class DaggerDbModule(private val mApplication: Application) {
 
     @Provides @Singleton
     fun provideLocalStorage(): LocalStorage {
-        return LocalStorage()
+        return LocalStorageImpl()
     }
 }
