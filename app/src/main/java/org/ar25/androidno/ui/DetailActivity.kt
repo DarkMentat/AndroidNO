@@ -2,6 +2,7 @@ package org.ar25.androidno.ui
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.TypedValue
 import android.view.Menu
@@ -140,7 +141,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                     view.layoutParams = layoutParams
 
                     view.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.text_size))
-                    view.setTextColor(getColor(R.color.text_color))
+                    view.setTextColor(ContextCompat.getColor(this, R.color.text_color))
 
                     view.setHtml(token.text)
 
