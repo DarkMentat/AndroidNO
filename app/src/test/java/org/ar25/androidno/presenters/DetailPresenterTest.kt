@@ -3,7 +3,7 @@ package org.ar25.androidno.presenters
 import org.ar25.androidno.RxSchedulersOverrideRule
 import org.ar25.androidno.api.NOPostsApi
 import org.ar25.androidno.db.LocalStorage
-import org.ar25.androidno.entities.Post.newPost
+import org.ar25.androidno.entities.Post
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -42,8 +42,8 @@ class DetailPresenterTest {
 
         val postId = 1239L
         
-        val localPost = newPost(postId, "", "", "", "")
-        val apiPost = newPost(postId, "", "", "", "", "")
+        val localPost = Post(postId, "", "", "", "")
+        val apiPost = Post(postId, "", "", "", "", "")
         
         whenever(local.getPost(postId)).thenReturn(localPost).thenReturn(apiPost)
         whenever(api.getPost(postId)).thenReturn(Observable.just(apiPost))
@@ -70,7 +70,7 @@ class DetailPresenterTest {
 
         val postId = 1239L
 
-        val apiPost = newPost(postId, "", "", "", "", "")
+        val apiPost = Post(postId, "", "", "", "", "")
 
         whenever(local.getPost(postId)).thenReturn(null).thenReturn(apiPost)
         whenever(api.getPost(postId)).thenReturn(Observable.just(apiPost))
@@ -97,8 +97,8 @@ class DetailPresenterTest {
 
         val postId = 1239L
 
-        val localPost = newPost(postId, "", "", "", "", "")
-        val apiPost = newPost(postId, "", "", "", "", "")
+        val localPost = Post(postId, "", "", "", "", "")
+        val apiPost = Post(postId, "", "", "", "", "")
 
         whenever(local.getPost(postId)).thenReturn(localPost).thenReturn(apiPost)
         whenever(api.getPost(postId)).thenReturn(Observable.just(apiPost))
@@ -124,7 +124,7 @@ class DetailPresenterTest {
 
         val postId = 1239L
 
-        val localPost = newPost(postId, "", "", "", "")
+        val localPost = Post(postId, "", "", "", "")
         val error = RuntimeException("Test error")
 
         whenever(local.getPost(postId)).thenReturn(localPost)

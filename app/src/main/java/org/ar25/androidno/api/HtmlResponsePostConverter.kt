@@ -1,14 +1,10 @@
 package org.ar25.androidno.api
 
+import okhttp3.ResponseBody
 import org.ar25.androidno.entities.Post
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import org.jsoup.nodes.Element
-
-import java.io.IOException
-
-import okhttp3.ResponseBody
 import retrofit2.Converter
+import java.io.IOException
 
 class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
 
@@ -34,6 +30,6 @@ class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
         val teaser = element.select("div .teaser").first().child(0).outerHtml()
         val text = element.select("div .field.field-name-body.field-type-text-with-summary.field-label-hidden").first().child(0).child(0).html()
 
-        return Post.newPost(id, header, publishDate, imageUrl, teaser, text)
+        return Post(id, header, publishDate, imageUrl, teaser, text)
     }
 }

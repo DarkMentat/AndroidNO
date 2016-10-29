@@ -25,35 +25,35 @@ class MainPresenterTest {
     val presenter = MainPresenter()
 
     val localPostsPage0 = listOf(
-            Post.newPost(0,"header0","0","0","00","000"),
-            Post.newPost(1,"header1","1","1","11","111"),
-            Post.newPost(2,"header2","2","2","22"),
-            Post.newPost(3,"header3","3","3","33"),
-            Post.newPost(4,"header4","4","4","44")
+            Post(0,"header0","0","0","00","000"),
+            Post(1,"header1","1","1","11","111"),
+            Post(2,"header2","2","2","22"),
+            Post(3,"header3","3","3","33"),
+            Post(4,"header4","4","4","44")
     )
 
     val apiPostsPage0 = listOf(
-            Post.newPost(0,"header0","0","0","0"),
-            Post.newPost(1,"header1","1","1","1"),
-            Post.newPost(2,"header2","2","2","2"),
-            Post.newPost(3,"header3","3","3","3"),
-            Post.newPost(4,"header4","4","4","4")
+            Post(0,"header0","0","0","0"),
+            Post(1,"header1","1","1","1"),
+            Post(2,"header2","2","2","2"),
+            Post(3,"header3","3","3","3"),
+            Post(4,"header4","4","4","4")
     )
 
     val localPostsPage1 = listOf(
-            Post.newPost(5,"header5","5","5","55"),
-            Post.newPost(6,"header6","6","6","66","666"),
-            Post.newPost(7,"header7","7","7","77","777"),
-            Post.newPost(8,"header8","8","8","88"),
-            Post.newPost(9,"header9","9","9","99")
+            Post(5,"header5","5","5","55"),
+            Post(6,"header6","6","6","66","666"),
+            Post(7,"header7","7","7","77","777"),
+            Post(8,"header8","8","8","88"),
+            Post(9,"header9","9","9","99")
     )
 
     val apiPostsPage1 = listOf(
-            Post.newPost(5,"header5","5","5","5"),
-            Post.newPost(6,"header6","6","6","6"),
-            Post.newPost(7,"header7","7","7","7"),
-            Post.newPost(8,"header8","8","8","8"),
-            Post.newPost(9,"header9","9","9","9")
+            Post(5,"header5","5","5","5"),
+            Post(6,"header6","6","6","6"),
+            Post(7,"header7","7","7","7"),
+            Post(8,"header8","8","8","8"),
+            Post(9,"header9","9","9","9")
     )
 
 
