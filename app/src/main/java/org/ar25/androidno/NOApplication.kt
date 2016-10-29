@@ -4,7 +4,7 @@ import android.app.Application
 import dagger.Component
 import org.ar25.androidno.api.DaggerRetrofitModule
 import org.ar25.androidno.db.DaggerDbModule
-import org.ar25.androidno.db.LocalStorage
+import org.ar25.androidno.db.LocalStorageImpl
 import org.ar25.androidno.presenters.DaggerPresenterModule
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.MainPresenter
@@ -26,7 +26,7 @@ class NOApplication : Application() {
         fun inject(presenter: DetailPresenter)
         fun inject(activity: MainActivity)
         fun inject(activity: DetailActivity)
-        fun inject(localStorage: LocalStorage)
+        fun inject(localStorage: LocalStorageImpl)
     }
 
     override fun onCreate() {
