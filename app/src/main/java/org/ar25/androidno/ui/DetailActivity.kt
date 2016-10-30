@@ -68,9 +68,6 @@ class DetailActivity : AppCompatActivity(), DetailView {
     }
 
 
-
-
-    @Suppress("DEPRECATION")
     override fun onGetPost(post: Post?) {
 
         if(post == null || currentPost == post)

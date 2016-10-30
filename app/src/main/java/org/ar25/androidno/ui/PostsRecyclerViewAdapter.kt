@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.util.SortedList
 import android.support.v7.widget.RecyclerView
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -19,6 +18,7 @@ import org.ar25.androidno.R
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.ui.PostsRecyclerViewAdapter.PostViewHolder.LoadingViewHolder
 import org.ar25.androidno.ui.PostsRecyclerViewAdapter.PostViewHolder.PostContentViewHolder
+import org.sufficientlysecure.htmltextview.HtmlTextView
 
 
 class PostsRecyclerViewAdapter(
@@ -41,20 +41,11 @@ class PostsRecyclerViewAdapter(
             }
         }
         class PostContentViewHolder(itemView: View) : PostViewHolder(itemView) {
-            val mCard: View
-            val mPublishDate: TextView
-            val mHeader: TextView
-            val mImage: ImageView
-            val mTeaser: TextView
-
-            init {
-                mHeader = itemView.findViewById(R.id.header) as TextView
-                mPublishDate = itemView.findViewById(R.id.publishDate) as TextView
-                mImage = itemView.findViewById(R.id.image) as ImageView
-                mTeaser = itemView.findViewById(R.id.teaser) as TextView
-
-                mCard = itemView.findViewById(R.id.card)
-            }
+            val mCard = itemView.findViewById(R.id.card) as ViewGroup
+            val mPublishDate = itemView.findViewById(R.id.publishDate) as TextView
+            val mHeader = itemView.findViewById(R.id.header) as TextView
+            val mImage = itemView.findViewById(R.id.image) as ImageView
+            val mTeaser = itemView.findViewById(R.id.teaser) as HtmlTextView
         }
     }
 
@@ -111,14 +102,13 @@ class PostsRecyclerViewAdapter(
         }
     }
 
-    @Suppress("DEPRECATION")
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         if(holder is PostContentViewHolder) {
             val post = sortedList[position]
 
             holder.mHeader.text = post.header
             holder.mPublishDate.text = post.publishDate
-            holder.mTeaser.text = Html.fromHtml(post.teaser)
+            holder.mTeaser.setHtml(post.teaser)
             holder.mCard.setOnClickListener {
                 context.startActivity(Intent(context, DetailActivity::class.java)
                         .putExtra(DetailActivity.EXTRA_POST_ID, post.id))

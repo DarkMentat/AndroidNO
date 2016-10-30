@@ -39,7 +39,7 @@
             android:contentDescription="@string/post_image"
             tools:src="@drawable/logo"/>
         
-        <TextView
+        <org.sufficientlysecure.htmltextview.HtmlTextView
             android:id="@+id/teaser"
             android:textSize="@dimen/text_size"
             android:textColor="@color/text_color"
