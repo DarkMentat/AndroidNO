@@ -23,6 +23,8 @@ fun parseHtmlTextToTokens(html: String): List<PostToken>{
 
             for(node in tag.children()) {
 
+                node.setBaseUri("http://www.ar25.org")
+
                 when {
                     node.tag().name == "img" -> tokens.add(PostToken.ImageToken(node.absUrl("src"), node.attr("title")))
                     !node.text().trim().isEmpty() -> currentHtmlTextTokenBody += node.toString()
