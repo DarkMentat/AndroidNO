@@ -1,5 +1,6 @@
 package org.ar25.androidno.ui
 
+import android.content.Intent.ACTION_VIEW
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -31,7 +32,20 @@ class DetailActivity : AppCompatActivity(), DetailView {
     @Inject lateinit var detailPresenter: DetailPresenter
 
 
-    val postId: Long by lazy { intent.extras.getLong(EXTRA_POST_ID) }
+    val postId: Long by lazy {
+
+        if (intent.action == ACTION_VIEW) {
+            if (intent.data.pathSegments.size > 1) {
+                try {
+                    return@lazy intent.data.pathSegments[1].toLong()
+                } catch (e: NumberFormatException){
+                    return@lazy -1L
+                }
+            }
+        }
+
+        return@lazy intent.extras.getLong(EXTRA_POST_ID, -1L)
+    }
     var currentPost: Post? = null
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -73,6 +87,11 @@ class DetailActivity : AppCompatActivity(), DetailView {
         if(post == null || currentPost == post)
             return
 
+        publishDate.visibility = VISIBLE
+        header.visibility = VISIBLE
+        image.visibility = VISIBLE
+        postMainContent.visibility = VISIBLE
+
         publishDate.text = post.publishDate
         header.text = post.header
 
@@ -94,7 +113,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
         currentPost = post
     }
     override fun onGetError(error: Throwable) {
-        Snackbar.make(parentScrollView, "Some error happens", Snackbar.LENGTH_LONG).show()
+        Snackbar.make(parentScrollView, "Some error happens\n${error.message}", Snackbar.LENGTH_LONG).show()
     }
 
     override fun setLoading() {

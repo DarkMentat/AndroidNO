@@ -17,12 +17,14 @@
 
     <TextView
         android:id="@+id/publishDate"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="01.23.21"/>
 
     <TextView
         android:id="@+id/header"
+        android:visibility="gone"
         android:textSize="@dimen/text_header"
         android:textColor="@android:color/black"
         android:layout_width="match_parent"
@@ -31,6 +33,7 @@
 
     <ImageView
         android:id="@+id/image"
+        android:visibility="gone"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:layout_width="match_parent"
@@ -42,6 +45,7 @@
 
     <LinearLayout
         android:id="@+id/postMainContent"
+        android:visibility="gone"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
