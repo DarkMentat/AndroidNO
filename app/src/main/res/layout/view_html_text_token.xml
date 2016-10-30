@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.sufficientlysecure.htmltextview.HtmlTextView
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/htmlTextToken"
+    android:textSize="@dimen/text_size"
+    android:textColor="@color/text_color"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit."/>

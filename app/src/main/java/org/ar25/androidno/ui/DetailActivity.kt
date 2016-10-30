@@ -2,15 +2,12 @@ package org.ar25.androidno.ui
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
-import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.Toast
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -86,13 +83,13 @@ class DetailActivity : AppCompatActivity(), DetailView {
             Picasso.with(this@DetailActivity).load(post.imageUrl).into(image)
         }
 
-        if(currentPost == null || currentPost?.text != null) {
+        if(post.text == null) {
             teaserText.setHtml(post.teaser)
-            fillContent(post.text)
+        } else if(currentPost == null || currentPost?.text != null) {
+            fillContent(post.teaser + post.text)
         } else {
             postMainContent.animateToTransparent {
-                teaserText.setHtml(post.teaser)
-                fillContent(post.text)
+                fillContent(post.teaser + post.text)
                 postMainContent.animateToVisible()
             }
         }
@@ -127,21 +124,12 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         val tokens = parseHtmlTextToTokens(html)
 
+        postMainContent.removeAllViews()
+
         for (token in tokens){
             when (token) {
                 is PostToken.HtmlTextToken -> {
-                    val view = HtmlTextView(this)
-
-                    val layoutParams = LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT)
-
-                    layoutParams.topMargin = 48
-
-                    view.layoutParams = layoutParams
-
-                    view.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.text_size))
-                    view.setTextColor(ContextCompat.getColor(this, R.color.text_color))
+                    val view = layoutInflater.inflate(R.layout.view_html_text_token, postMainContent, false) as HtmlTextView
 
                     view.setHtml(token.text)
 
@@ -149,22 +137,19 @@ class DetailActivity : AppCompatActivity(), DetailView {
                 }
 
                 is PostToken.ImageToken -> {
-                    val view = ImageView(this)
+                    val view = layoutInflater.inflate(R.layout.view_image_token, postMainContent, false) as ImageView
 
-                    val layoutParams = LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT)
-
-                    layoutParams.topMargin = 48
-
-                    view.layoutParams = layoutParams
-
-                    view.scaleType = ImageView.ScaleType.CENTER_INSIDE
                     view.adjustViewBounds = true
 
                     postMainContent.addView(view)
 
-                    Picasso.with(this).load(token.imageUrl).placeholder(R.drawable.transparent_placeholder).fit().centerInside().into(view)
+                    Picasso.with(this)
+                            .load(token.imageUrl)
+                            .placeholder(R.drawable.transparent_placeholder)
+                            .error(R.drawable.transparent_imageerror)
+                            .fit()
+                            .centerInside()
+                            .into(view)
                 }
             }
         }

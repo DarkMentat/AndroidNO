@@ -18,16 +18,22 @@ fun parseHtmlTextToTokens(html: String): List<PostToken>{
 
     for (tag in allTags){
 
-        if(!tag.text().isEmpty()) {
-            currentHtmlTextTokenBody += tag.toString()
-        }
-
-        if(!tag.getElementsByTag("img").isEmpty())
-        {
+        if(!tag.getElementsByTag("img").isEmpty()) {
             addTextToken()
 
-            val img = tag.getElementsByTag("img")[0]
-            tokens.add(PostToken.ImageToken(img.absUrl("src")))
+            for(node in tag.children()) {
+
+                when {
+                    node.tag().name == "img" -> tokens.add(PostToken.ImageToken(node.absUrl("src"), node.attr("title")))
+                    !node.text().trim().isEmpty() -> currentHtmlTextTokenBody += node.toString()
+                }
+            }
+
+            continue
+        }
+
+        if(!tag.text().trim().isEmpty()) {
+            currentHtmlTextTokenBody += tag.toString()
         }
     }
 
@@ -39,6 +45,6 @@ fun parseHtmlTextToTokens(html: String): List<PostToken>{
 sealed class PostToken(){
 
     class HtmlTextToken(val text: String) : PostToken()
-    class ImageToken(val imageUrl: String) : PostToken()
+    class ImageToken(val imageUrl: String, val title: String = "") : PostToken()
 
 }
