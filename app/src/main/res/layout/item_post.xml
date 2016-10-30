@@ -36,7 +36,7 @@
             android:layout_height="@dimen/image_height"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/posts_image"
+            android:contentDescription="@string/post_image"
             tools:src="@drawable/logo"/>
         
         <TextView

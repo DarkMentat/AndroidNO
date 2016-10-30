@@ -16,7 +16,7 @@ class MainPresenter {
     var view: MainView? = null
 
 
-    fun fetchPosts(page: Int) {
+    fun fetchPosts(page: Int, withCached: Boolean = true) {
 
         val mainView: MainView = view ?: return
 
@@ -24,7 +24,8 @@ class MainPresenter {
         if(page == 0)
             mainView.setLoading()
 
-        mainView.onGetPosts(localStorage.getPosts(page), page)
+        if(withCached)
+            mainView.onGetPosts(localStorage.getPosts(page), page)
 
         noPostsApi
                 .getLastPosts(page)

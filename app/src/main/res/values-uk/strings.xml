@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Народний Оглядач</string>
+
+    <string name="action_settings">Налаштування</string>
+    <string name="action_refresh">Оновити</string>
+
+    <string name="post_image">Картинка статті</string>
+
     <string name="no_items">Немає жодної статті. Підключіться до інтернету, щоб завантажити останні статті.</string>
     <string name="load_more_posts">Завантажити більше</string>
 </resources>

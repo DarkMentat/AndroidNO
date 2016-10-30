@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity(), MainView {
         postsList.adapter = postsAdapter
         postsList.addOnScrollListener(onMoreItems)
 
-        swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts(0) }
+        swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts(0, withCached = false) }
         postsNoItemsPlaceHolder.setOnClickListener { mainPresenter.fetchPosts(0) }
     }
 
@@ -89,6 +89,9 @@ class MainActivity : AppCompatActivity(), MainView {
 
         postsList.visibility = VISIBLE
         postsNoItemsPlaceHolder.visibility = GONE
+
+        if(page == 0)
+            postsList.smoothScrollToPosition(0)
     }
 
     override fun onGetError(error: Throwable) {
@@ -109,6 +112,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
         when(item.itemId){
             R.id.action_settings -> Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+            R.id.action_refresh -> mainPresenter.fetchPosts(0, withCached = false)
             else -> return super.onOptionsItemSelected(item)
         }
 

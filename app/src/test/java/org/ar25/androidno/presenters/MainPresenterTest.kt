@@ -91,6 +91,25 @@ class MainPresenterTest {
         inOrder.verify(view).setLoaded()
     }
 
+    @Test fun testFetchPosts_Page0_WithoutCache() {
+        presenter.view = view
+
+        whenever(local.getPosts(0)).thenReturn(apiPostsPage0)
+        whenever(api.getLastPosts(0)).thenReturn(Observable.just(apiPostsPage0))
+
+        val inOrder = inOrder(view, local, api)
+
+        presenter.fetchPosts(0, withCached = false)
+
+        inOrder.verify(view).setLoading()
+
+        inOrder.verify(api).getLastPosts(0)
+        inOrder.verify(local).savePosts(apiPostsPage0)
+        inOrder.verify(view).onGetPosts(apiPostsPage0, 0)
+
+        inOrder.verify(view).setLoaded()
+    }
+
     @Test fun testFetchPosts_Page1() {
         presenter.view = view
 

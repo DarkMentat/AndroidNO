@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">National Observer</string>
-    <string name="action_settings">Settings</string>
-    <string name="posts_image">Post\'s image</string>
-    <string name="post_image">Post image</string>
-    <string name="no_items">There is no items. Connect to the internet to get last articles.</string>
-    <string name="previous">Previous</string>
-    <string name="next">Next</string>
     <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+
+    <string name="post_image">Post image</string>
+
+    <string name="no_items">There is no items. Connect to the internet to get last articles.</string>
     <string name="load_more_posts">Load more posts</string>
 </resources>
