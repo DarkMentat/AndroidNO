@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html lang="uk" dir="ltr"  class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html lang="uk" dir="ltr"  class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html lang="uk" dir="ltr"  class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="uk" dir="ltr"  class="no-js"><!--<![endif]-->
+<head>
+
+  <!--[if IE]><![endif]-->
+<meta charset="utf-8" />
+<link rel="alternate" type="application/rss+xml" title="Коментарі для &quot;Зустріч Ігора Каганця з бійцями Центру спеціальної тактичної підготовки &amp;quot;Білий Вовк&amp;quot; - Частина 1&quot;" href="http://www.ar25.org/crss/node/34749" />
+<link rel="shortcut icon" href="http://files.ar25.org/sites/all/storage/default_images/theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="Цілісна картина багаторічних досліджень цивілізаційних переходів і сучасної геополітичної ситуації, передові форми організації і засоби оздоровлення людини, правильне харчування, магія позитивних подій, фізичне безсмертя та багато іншого - на зустрічі футуролога, письменника, засновника стартапу Intermarium.online, головного редактора журналу Перехід-IV&quot; і сайту &quot;Народний оглядач&quot; Ігора Каганця з бійцями Центру спеціальної тактичної підготовки &quot;Білий Вовк&quot; (Київ) 5 жовтня 2016 року. Частина 1." />
+<meta name="abstract" content="Зустріч Ігора Каганця з бійцями Центру спеціальної тактичної підготовки &quot;Білий Вовк&quot; - Частина 1" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<meta name="rights" content="Народний Оглядач" />
+<link rel="image_src" href="http://files.ar25.org/sites/default/files/node/2016/10/34749/161018igorkaganec.jpg" />
+<link rel="canonical" href="http://www.ar25.org/article/zustrich-igora-kagancya-z-biycyamy-centru-specialnoyi-taktychnoyi-pidgotovky-bilyy-vovk" />
+<link rel="shortlink" href="http://www.ar25.org/node/34749" />
+<meta property="fb:app_id" content="966242223397117" />
+<link rel="alternate" href="http://www.ar25.org/article/zustrich-igora-kagancya-z-biycyamy-centru-specialnoyi-taktychnoyi-pidgotovky-bilyy-vovk" hreflang="uk" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--[if IE 6]><![endif]-->
+
+  <title>Зустріч Ігора Каганця з бійцями Центру спеціальної тактичної підготовки "Білий Вовк" - Частина 1 | Народний Оглядач</title>
+
+  <link type="text/css" rel="stylesheet" href="//files.ar25.org/sites/default/files/advagg_css/css__kIeow7F0MiFmj3gyKn9CYOF3OJYu-EbXj4ztucoiR-k__s7eR7Vh9gxN2OwIhw_Vhk7VmuWn6U6BsMlQHiOK8BHc__JB89PieR_fl_k6Lc3nIY61cqRbr4P5Dnz3OWdRnxAW4.css" media="all" />
+<style type="text/css" media="all">
+/* <![CDATA[ */
+#backtotop{top:50%;left:10px;}
+
+/* ]]> */
+</style>
+<link type="text/css" rel="stylesheet" href="//files.ar25.org/sites/default/files/advagg_css/css__1ZwIv3CAHPOHpmBJcNXVJzdNIaWCrwKeaGMCXZbEC78__YHq40QWZv9w58E2ScQiW6bXj05ADYQTtrXJLyM59oQw__JB89PieR_fl_k6Lc3nIY61cqRbr4P5Dnz3OWdRnxAW4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//files.ar25.org/sites/default/files/advagg_css/css__aXlSmjy5Yc3hSl2hwLo_fD1xFpTcIAohXrwfIF3D3CA__e_ctqz8z0_FAiqxSQ1wb8orbsYb9xnMXrw02O1_YmXU__JB89PieR_fl_k6Lc3nIY61cqRbr4P5Dnz3OWdRnxAW4.css" media="all" />
+  <!--[if lt IE 9]><script src="/sites/all/themes/ninesixtyfive/scripts/html5forIE.js"></script><![endif]-->  <script type="text/javascript" src="//files.ar25.org/sites/default/files/advagg_js/js__6dM07bh3eVENtSlKHYCPandbfVq_GDMirxgZKoCvWHw__67mzU9rV53d-iY1yrq8WqFA93LwWFQffSo-Gm-jjRTc__JB89PieR_fl_k6Lc3nIY61cqRbr4P5Dnz3OWdRnxAW4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.absolute_messages, {"dismiss":{"status":1,"warning":1,"error":0},"dismiss_time":{"status":"3","warning":"7","error":""},"dismiss_all_count":"2"});
+//--><!]]>
+</script>
+<script type="text/javascript" src="//files.ar25.org/sites/default/files/advagg_js/js__A_V_l39dh83gQpwuebnkmG4iCNbsO2EdexU5FYTVsUs__tMEctritnU8PBipq-rGa0dLA4Zx_r7Pzt6cr-snSfwo__JB89PieR_fl_k6Lc3nIY61cqRbr4P5Dnz3OWdRnxAW4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var text_resize_scope = "main .node-full p";
+          var text_resize_minimum = "12";
+          var text_resize_maximum = "25";
+          var text_resize_line_height_allow = 0;
+          var text_resize_line_height_min = "16";
+          var text_resize_line_height_max = "36";
+//--><!]]>
+</script>
+<script type="text/javascript" src="//files.ar25.org/sites/default/files/advagg_js/js__lCc9qBC4SAQnCmaAAkmDvm1cBwYQ4VjLkv6BC3MB9BI__r_J21TQW2aljfV4XW8j3nZeXbqS5fQtsJLk_3MgFQy0__JB89PieR_fl_k6Lc3nIY61cqRbr4P5Dnz3OWdRnxAW4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-38991253-1", {"cookieDomain":"auto"});ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="//files.ar25.org/sites/default/files/advagg_js/js__2Pj1qjk23XFaJD5clcbX0sf3per1jrwOKhDRa5cCEKw__-WJPPolQfKCOe1P1lCQGz7YwN9cqz_nhFFeCcIQIWWY__JB89PieR_fl_k6Lc3nIY61cqRbr4P5Dnz3OWdRnxAW4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"ninesixtyfive","theme_token":"vP2JUpT23R3g6pFF8er0PWsxvgWTtAWNUfgjE-iJRwA","jquery_version":"1.7","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/cache_consistent\/css\/cache_consistent.css":1,"sites\/all\/modules\/contrib\/colorbox_node\/colorbox_node.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/google_cse\/google_cse.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/video_filter\/video_filter.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/back_to_top\/css\/back_to_top.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.css":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages_fixed.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/experimental\/colorbox_form\/css\/colorbox_form.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/experimental\/entity_dialog\/css\/entity_dialog.css":1,"sites\/all\/modules\/custom\/observer_ds_field\/css\/observer_ds_field.css":1,"sites\/all\/modules\/features\/observer_generic_core\/css\/observer_generic_core.css":1,"sites\/all\/modules\/features\/observer_halia_core\/css\/observer_halia_core.css":1,"sites\/all\/modules\/features\/observer_halia_voting_comment\/observer_halia_voting_comment.css":1,"sites\/all\/modules\/features\/observer_messages_mail_lists\/css\/observer_messages_mail_lists.css":1,"sites\/all\/modules\/features\/observer_performance_authcache_debug\/css\/observer_performance_authcache_debug.css":1,"sites\/all\/modules\/custom\/observer_poll\/css\/observer_poll.css":1,"sites\/all\/modules\/features\/observer_publishing_core\/css\/observer_publishing_core.css":1,"sites\/all\/modules\/features\/observer_tags_special_navigation\/css\/observer_tags_special_navigation.css":1,"sites\/all\/modules\/custom\/observer_userpoints\/css\/observer_userpoints.css":1,"sites\/all\/modules\/features\/observer_user_core\/css\/observer_user_core.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/updatescripts\/css\/updatescript.css":1,"sites\/all\/modules\/contrib\/user_relationships\/user_relationships_ui\/user_relationships_ui.css":1,"sites\/all\/modules\/contrib\/word_link\/css\/word_link.css":1,"sites\/all\/modules\/custom\/observer_commerce_marketplace\/observer_commerce_marketplace.css":1,"sites\/all\/modules\/contrib\/print\/print_ui\/css\/print_ui.theme.css":1,"modules\/locale\/locale.css":1,"sites\/all\/modules\/contrib\/text_resize\/text_resize.css":1,"sites\/all\/modules\/contrib\/authcache\/modules\/authcache_debug\/authcache_debug.css":1,"0":1,"sites\/all\/modules\/contrib\/yandex_metrics\/css\/yandex_metrics.css":1,"sites\/all\/modules\/contrib\/fivestar\/css\/fivestar.css":1,"sites\/all\/modules\/features\/observer_halia_voting_comment\/widgets\/halls-micro\/halls-micro.css":1,"sites\/all\/modules\/experimental\/ds_layouts\/layouts\/three_column_double_bricks\/three_column_double_bricks.css":1,"\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.2.0\/css\/font-awesome.min.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-navbar.css":1,"sites\/all\/themes\/ninesixtyfive\/styles\/fotorama.css":1,"sites\/all\/themes\/ninesixtyfive\/styles\/boilerplate.css":1,"sites\/all\/themes\/ninesixtyfive\/styles\/formee-structure.css":1,"sites\/all\/themes\/ninesixtyfive\/styles\/formee-style.css":1,"sites\/all\/modules\/contrib\/prettify\/styles\/drupalorg.css":1},"js":{"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/forcejs\/forcejs.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.effect.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/libraries\/prettify\/prettify.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/contrib\/google_cse\/google_cse.js":1,"sites\/all\/modules\/contrib\/back_to_top\/js\/back_to_top.js":1,"public:\/\/languages\/uk_fcxMKmAd4UnITV_LbsQCmlPdk0jsnmZbtTu_VBEi98k.js":1,"sites\/all\/modules\/contrib\/authcache\/authcache.js":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/experimental\/colorbox_form\/js\/colorbox_form.js":1,"sites\/all\/modules\/features\/observer_halia_core\/js\/observer_halia_core.js":1,"sites\/all\/modules\/contrib\/prettify\/prettify.loader.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/user_relationships\/user_relationships_ui\/user_relationships_ui.js":1,"sites\/all\/libraries\/share42\/share42.js":1,"sites\/all\/modules\/contrib\/text_resize\/text_resize.js":1,"sites\/all\/modules\/contrib\/better_exposed_filters\/better_exposed_filters.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/auto-submit.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/authcache\/modules\/authcache_debug\/authcache_debug.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"sites\/all\/modules\/contrib\/authcache\/modules\/authcache_menu\/authcache_menu.js":1,"misc\/collapse.js":1,"sites\/all\/modules\/contrib\/field_group\/field_group.js":1,"sites\/all\/modules\/contrib\/fivestar\/js\/fivestar.js":1,"sites\/all\/modules\/contrib\/authcache\/modules\/authcache_p13n\/authcache_p13n.js":1,"sites\/all\/modules\/contrib\/authcache\/modules\/authcache_ajax\/authcache_ajax.js":1,"sites\/all\/modules\/contrib\/colorbox_node\/colorbox_node.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/contrib\/superfish\/superfish.js":1,"sites\/all\/themes\/ninesixtyfive\/scripts\/fotorama.js":1,"sites\/all\/themes\/ninesixtyfive\/scripts\/formee.js":1,"sites\/all\/themes\/ninesixtyfive\/scripts\/ninesixtyfive.js":1}},"authcache":{"q":"node\/34749","cp":{"path":"\/","domain":".ar25.org","secure":false},"cl":23.148148148148},"colorbox":{"opacity":"0.85","current":"{current} \u0437 {total}","previous":"\u00ab \u041f\u043e\u043f\u0435\u0440\u0435\u0434\u043d\u044f","next":"\u041d\u0430\u0441\u0442\u0443\u043f\u043d\u0430 \u00bb","close":"\u0417\u0430\u043a\u0440\u0438\u0442\u0438","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"googleCSE":{"cx":"014063251035700212139:znbgt0hneme","language":"uk","resultsWidth":600,"domain":"www.google.com"},"colorbox_form":{"observer_commerce_colorbox_form":{"results":{"name":"Halia results","source_selector":".group-halia-results","destination_selector":".observer-commerce-colorbox-form-links","entity_view_mode":"halia_results","classes":"count halia-results-colorbox-form-link","text_selector":".attachment .view-content .total","description_selector":".view-header","text":"\u041e\u0442\u0440\u0438\u043c\u0430\u043d\u043e"},"acting":{"name":"Halia acting","source_selector":".group-halia-acting","destination_selector":".observer-commerce-colorbox-form-links","classes":"pluseone halia-acting-colorbox-form-link","text":"+"}}},"prettify":{"linenums":true,"match":".content","nocode":"no-code","custom":[],"markup":{"code":true,"pre":true,"precode":false}},"quote_nest":"2","statuses":{"autofocus":false,"noautoclear":false,"maxlength":"360","hideLength":"0","refreshLink":true},"user_relationships_ui":{"loadingimage":"http:\/\/files.ar25.org\/sites\/all\/modules\/contrib\/user_relationships\/user_relationships_ui\/images\/loadingAnimation.gif","savingimage":"http:\/\/files.ar25.org\/sites\/all\/modules\/contrib\/user_relationships\/user_relationships_ui\/images\/savingimage.gif","position":{"position":"absolute","left":"0","top":"0"}},"links_widget_via_post":true,"global_filter_1":["global-filter-1-field-prostir","",true],"video_filter":{"url":{"ckeditor":"\/video_filter\/dashboard\/ckeditor"},"instructions_url":"\/video_filter\/instructions","modulepath":"sites\/all\/modules\/contrib\/video_filter"},"better_exposed_filters":{"views":{"block_groups_new":{"displays":{"block_1":{"filters":[]}}},"block_top_comments":{"displays":{"block_top_comments":{"filters":{"created_top_comments":{"required":false}}}}},"user_comm_count":{"displays":{"user_comm_count_1":{"filters":{"created_user_comm_count":{"required":false}}}}},"toprate":{"displays":{"block_toprate":{"filters":[]}}},"dev":{"displays":{"block":{"filters":[]}}},"page_front":{"displays":{"last_nodes":{"filters":[]}}},"top_views":{"displays":{"block_top_views":{"filters":{"created_top_views":{"required":false}}}}},"last_comm":{"displays":{"block_last_comm_2":{"filters":{"created":{"required":false}}}}}},"datepicker":false,"slider":false,"settings":[]},"urlIsAjaxTrusted":{"\/":true,"\/node\/34749":true},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:74db3f7bb4ea2e5a66c40b15bdc01bc2":{"view_name":"block_top_comments","view_display_id":"block_top_comments","view_args":"83+5+5042+5163+464+5281+1726+4732+487+3250+4130","view_path":"node\/34749","view_base_path":null,"view_dom_id":"74db3f7bb4ea2e5a66c40b15bdc01bc2","pager_element":2},"views_dom_id:d9be3f27c2dc4339a6e1308c3a874d6d":{"view_name":"user_comm_count","view_display_id":"user_comm_count_1","view_args":"83+5+5042+5163+464+5281+1726+4732+487+3250+4130","view_path":"node\/34749","view_base_path":null,"view_dom_id":"d9be3f27c2dc4339a6e1308c3a874d6d","pager_element":3},"views_dom_id:d46212bbd6b5c98cc440015021505831":{"view_name":"page_front","view_display_id":"last_nodes","view_args":"","view_path":"node\/34749","view_base_path":"node","view_dom_id":"d46212bbd6b5c98cc440015021505831","pager_element":6},"views_dom_id:159822d76b3e195d6b80c0c8bbb9fbdc":{"view_name":"top_views","view_display_id":"block_top_views","view_args":"83+5+5042+5163+464+5281+1726+4732+487+3250+4130","view_path":"node\/34749","view_base_path":null,"view_dom_id":"159822d76b3e195d6b80c0c8bbb9fbdc","pager_element":7},"views_dom_id:613d2c3dfaa1d134ef2851b7bd18fe78":{"view_name":"last_comm","view_display_id":"block_last_comm_2","view_args":"83+5+5042+5163+464+5281+1726+4732+487+3250+4130","view_path":"node\/34749","view_base_path":null,"view_dom_id":"613d2c3dfaa1d134ef2851b7bd18fe78","pager_element":8}}},"authcacheDebug":{"url":"\/authcache-debug\/ajax\/req-P3Ld83_HcLKyh6pPp4mwjKq65qCzevt8OA8RGpb8jyE","all":1},"back_to_top":{"back_to_top_button_trigger":"100","back_to_top_button_text":"Back to top","#attached":{"library":[["system","ui"]]}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"superfish":{"1":{"id":"1","sf":{"pathClass":"active-trail","pathLevels":"10","animation":{"opacity":"show","height":"show"},"speed":"\u0027fast\u0027","autoArrows":false,"dropShadows":true,"disableHI":false},"plugins":{"smallscreen":{"mode":"window_width","addSelected":false,"menuClasses":false,"hyperlinkClasses":false,"title":"main"},"supposition":true,"bgiframe":false,"supersubs":{"minWidth":"12","maxWidth":"27","extraWidth":1}}}},"field_group":{"div":"full"},"colorbox_node":{"width":"600px","height":"600px"},"js":{"tokens":[]},"authcacheP13nAjaxAssemblies":{"span.authcache-p13n-asm-field-comment-field-comment-halia-voting":"\/authcache.php?a[field][0]=41596%3Afull%3Auk\u0026a[field][1]=41611%3Afull%3Auk\u0026a[field][2]=41616%3Afull%3Auk\u0026a[field][3]=41657%3Afull%3Auk\u0026a[field][4]=41659%3Afull%3Auk\u0026a[field][5]=41617%3Afull%3Auk\u0026a[field][6]=41696%3Afull%3Auk\u0026a[field][7]=41639%3Afull%3Auk\u0026a[field][8]=41697%3Afull%3Auk\u0026a[field][9]=41690%3Afull%3Auk\u0026a[field][10]=41694%3Afull%3Auk\u0026r=asm\/field\/comment\/field_comment_halia_voting\u0026o[q]="}});
+//--><!]]>
+</script>
+
+</head>
+<body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-34749 node-type-blog i18n-uk with-navigation with-subnav page-zustrich-igora-kagancya-z-biycyamy-centru-specialnoyi-taktychnoyi-pidgotovky-bilyy-vovk section-article" >
+
+    <div id="page" xmlns="http://www.w3.org/1999/html">
+    <div class="head-panel">
+        	<form class="google-cse" action="/node/34749" method="post" id="search-block-form" accept-charset="UTF-8"><div>
+ <input title="Введіть терміни, які ви хочете знайти." placeholder="пошук..." type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+
+<input type="submit" id="edit-submit--2" name="op" value="Пошук" class="form-submit" /><input type="hidden" name="form_id" value="search_block_form" />
+</div></form><ul class="language-switcher-locale-url"><li class="uk first active"><a href="/article/zustrich-igora-kagancya-z-biycyamy-centru-specialnoyi-taktychnoyi-pidgotovky-bilyy-vovk" class="language-link active" xml:lang="uk">Українська</a></li>
+<li class="lt"><a href="/lt/node/34749" class="language-link" xml:lang="lt">Lietuvių</a></li>
+<li class="pl"><a href="/pl/node/34749" class="language-link" xml:lang="pl">Polski</a></li>
+<li class="en"><a href="/en/node/34749" class="language-link" xml:lang="en">English</a></li>
+<li class="fr"><a href="/fr/node/34749" class="language-link" xml:lang="fr">Français</a></li>
+<li class="de"><a href="/de/node/34749" class="language-link" xml:lang="de">Deutsch</a></li>
+<li class="pt"><a href="/pt/node/34749" class="language-link" xml:lang="pt">Portuguese, International</a></li>
+<li class="ru last"><a href="/ru/node/34749" class="language-link" xml:lang="ru">Русский</a></li>
+</ul><ul class="menu clearfix"><li class="first leaf"><a href="/user/login?destination=node/34749">Увійти</a></li>
+<li class="expanded"><a href="/cart" title="Latest carts separated by their types.">Кошики</a><ul class="menu clearfix"><li class="first last leaf"><a href="/cart/contribution" title="Кошик для операцій Інвестування">Інвестування</a></li>
+</ul></li>
+<li class="last expanded"><a href="/halia" id="observer-js-wallet-amount">Мої гали</a><ul class="menu clearfix"><li class="first leaf"><a href="/halia/investment" title="Розділ з результатами інвестування користувачів">Інвестування</a></li>
+<li class="leaf"><a href="/halia/voting" title="Розділ з результатами голосування користувачів за матеріали">Голосування</a></li>
+<li class="leaf"><a href="/halia/charisma" title="Розділ з результатами голосування за матеріали авторів">Харизма</a></li>
+<li class="leaf"><a href="/halia/authority" title="Розділ з результатами інвестування та голосування за матеріали автора">Авторитет</a></li>
+<li class="leaf"><a href="/halia/buying" title="Розділ з результатами купівлі">Купівля</a></li>
+<li class="leaf"><a href="/halia/selling" title="Розділ з результатами продажів">Продаж</a></li>
+<li class="last leaf"><a href="/halia/activity" title="Розділ з результатами усієї діяльності користувачів">Діяльність</a></li>
+</ul></li>
+</ul>                    </div>
+    <header class="header" role="banner">
+        <a href="/" class="logo" title="Головна"></a>
+        <section class="description">
+            <h1 class="site-name">
+                <a href="/" title="Головна"
+                   rel="home">Народний Оглядач</a>
+            </h1>
+
+            <div class="slogan">Портал світоглядних новин SD.ORG.UA</br>Сонячна етномережа AR25.ORG</div>
+            <div class="time">30 Жовтень 2016 р., Неділя, Київський час 23:12                <!--            </div>-->
+                <!--            <div class="stat">-->
+                </br>Статей за останні 24 години - 9            </div>
+        </section>
+
+<section id="block-block-14" class="block block-block block-even">
+
+
+  <div class="content">
+    <p class="first">Розсилка новин<strong>Ранкова пошта</strong></p>
+<a class="observer-lists-subscribe" title="Підписка" href="/lists"></a>
+<p class="last">Підписатися</p>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+<!--        <div class="sd">SD.ORG.UA</div>-->
+            </header>
+    <!-- /#header -->
+
+
+    <!--        -->
+
+    <nav id="main-menu" role="navigation">
+            </nav>
+    <nav>
+
+<section id="block-superfish-1" class="block block-superfish block-odd">
+
+
+  <div class="content">
+    <ul id="superfish-1" class="menu sf-menu sf-menu-main sf-navbar sf-style-none"><li id="menu-6571-1" class="sf-depth-1 menuparent"><a href="/" class="sf-depth-1 menuparent">Головна</a><ul><li id="menu-6624-1" class="sf-depth-2 sf-no-children"><a href="/alternatyvna-polityka" class="sf-depth-2">Альтернативна політика</a></li><li id="menu-6623-1" class="sf-depth-2 sf-no-children"><a href="/etnomerezha-spilna-diya" class="sf-depth-2">Етномережа </a></li><li id="menu-6622-1" class="sf-depth-2 sf-no-children"><a href="/proekt-sensar" class="sf-depth-2">Проект СЕНСАР</a></li><li id="menu-6954-1" class="sf-depth-2 sf-no-children"><a href="/rozvytok-saytu" class="sf-depth-2">Розвиток сайту</a></li><li id="menu-6590-1" class="sf-depth-2 sf-no-children"><a href="/forum" class="sf-depth-2">Форум</a></li><li id="menu-11242-1" class="sf-depth-2 sf-no-children"><a href="/kuplyu" class="sf-depth-2">Куплю</a></li><li id="menu-11243-1" class="sf-depth-2 sf-no-children"><a href="/prodam" class="sf-depth-2">Продам</a></li></ul></li><li id="menu-6627-1" class="sf-depth-1 menuparent"><a href="/novyny" class="sf-depth-1 menuparent">Новини</a><ul><li id="menu-6628-1" class="sf-depth-2 sf-no-children"><a href="/ukrayina" class="sf-depth-2">Україна</a></li><li id="menu-6629-1" class="sf-depth-2 sf-no-children"><a href="/planeta" class="sf-depth-2">Планета</a></li><li id="menu-6630-1" class="sf-depth-2 sf-no-children"><a href="/rosiya" class="sf-depth-2">Росія</a></li><li id="menu-6632-1" class="sf-depth-2 sf-no-children"><a href="/yevropa" class="sf-depth-2">Європа</a></li><li id="menu-6631-1" class="sf-depth-2 sf-no-children"><a href="/ssha" class="sf-depth-2">США</a></li></ul></li><li id="menu-6621-1" class="sf-depth-1 menuparent"><span class="sf-depth-1 menuparent nolink">Тексти</span><ul><li id="menu-6573-1" class="sf-depth-2 sf-no-children"><a href="/svity" class="sf-depth-2">Статті</a></li><li id="menu-6613-1" class="sf-depth-2 sf-no-children"><a href="/elektronni-knygy" class="sf-depth-2">Електронні книги</a></li><li id="menu-6617-1" class="sf-depth-2 sf-no-children"><a href="/drukovani-vydannya" class="sf-depth-2">Друковані видання</a></li><li id="menu-14245-1" class="sf-depth-2 sf-no-children"><a href="/project/dictionary" class="sf-depth-2">Словник</a></li><li id="menu-14910-1" class="sf-depth-2 sf-no-children"><a href="/project/persons" class="sf-depth-2">Персони</a></li></ul></li><li id="menu-7680-1" class="sf-depth-1 menuparent"><a href="/nova-rasa-0" class="sf-depth-1 menuparent">Нова раса</a><ul><li id="menu-7681-1" class="sf-depth-2 sf-no-children"><a href="/metafizyka-0" class="sf-depth-2">Метафізика</a></li><li id="menu-7682-1" class="sf-depth-2 sf-no-children"><a href="/symvolika-0" class="sf-depth-2">Символіка</a></li><li id="menu-7683-1" class="sf-depth-2 sf-no-children"><a href="/svitoglyad" class="sf-depth-2">Світогляд</a></li><li id="menu-7684-1" class="sf-depth-2 sf-no-children"><a href="/mova-0" class="sf-depth-2">Мова</a></li><li id="menu-7685-1" class="sf-depth-2 sf-no-children"><a href="/poselennya" class="sf-depth-2">Поселення</a></li><li id="menu-7686-1" class="sf-depth-2 sf-no-children"><a href="/harchuvannya" class="sf-depth-2">Харчування</a></li><li id="menu-7687-1" class="sf-depth-2 sf-no-children"><a href="/organizaciya" class="sf-depth-2">Організація</a></li><li id="menu-7688-1" class="sf-depth-2 sf-no-children"><a href="/praktyky" class="sf-depth-2">Практики</a></li><li id="menu-7689-1" class="sf-depth-2 sf-no-children"><a href="/tehnologiyi-0" class="sf-depth-2">Технології</a></li></ul></li><li id="menu-6574-1" class="sf-depth-1 menuparent"><a href="/blog-posts" class="sf-depth-1 menuparent">Блоги</a><ul><li id="menu-6575-1" class="sf-depth-2 sf-no-children"><a href="/blog-posts" class="sf-depth-2">Останні записи</a></li><li id="menu-10725-1" class="sf-depth-2 sf-no-children"><a href="/article/stvorennya-statti-prezentaciya.html" class="sf-depth-2">Як писати блог</a></li></ul></li><li id="menu-6577-1" class="sf-depth-1 menuparent"><a href="/group-posts" class="sf-depth-1 menuparent">Групи</a><ul><li id="menu-6579-1" class="sf-depth-2 sf-no-children"><a href="/group-interes" class="sf-depth-2">Групи за інтересами</a></li><li id="menu-6580-1" class="sf-depth-2 sf-no-children"><a href="/group-project" class="sf-depth-2">Проекти</a></li><li id="menu-6578-1" class="sf-depth-2 sf-no-children"><a href="/group-territory" class="sf-depth-2">Територіальні групи</a></li><li id="menu-10572-1" class="sf-depth-2 sf-no-children"><a href="/article/praktychna-samoorganizaciya-tg-sotni-proekty-grupy-za-interesamy.html" class="sf-depth-2">Правила</a></li></ul></li><li id="menu-6582-1" class="sf-depth-1 menuparent"><a href="/vydovyshcha" class="sf-depth-1 menuparent">Видовища</a><ul><li id="menu-6610-1" class="sf-depth-2 sf-no-children"><a href="/hudozhni-filmy" class="sf-depth-2">Художні фільми</a></li><li id="menu-6611-1" class="sf-depth-2 sf-no-children"><a href="/dokumentalni-filmy" class="sf-depth-2">Документальні фільми</a></li><li id="menu-6612-1" class="sf-depth-2 sf-no-children"><a href="/videoklipy" class="sf-depth-2">Відеокліпи</a></li><li id="menu-6614-1" class="sf-depth-2 sf-no-children"><a href="/intermarium-tv" class="sf-depth-2">Intermarium.TV</a></li><li id="menu-13946-1" class="sf-depth-2 sf-no-children"><a href="/radio-intermarium" class="sf-depth-2">Радіо</a></li><li id="menu-6615-1" class="sf-depth-2 sf-no-children"><a href="/muzyka" class="sf-depth-2">Музика</a></li><li id="menu-6616-1" class="sf-depth-2 sf-no-children"><a href="/galereya" class="sf-depth-2">Галерея</a></li><li id="menu-6618-1" class="sf-depth-2 sf-no-children"><a href="/audioknygy" class="sf-depth-2">Аудіокниги</a></li></ul></li><li id="menu-6595-1" class="sf-depth-1 menuparent"><span class="sf-depth-1 menuparent nolink">Про нас</span><ul><li id="menu-10573-1" class="sf-depth-2 sf-no-children"><a href="/article/druzi-stvorimo-v-ukrayini-taku-derzhavu-yaka-nam-podobayetsya-prezentaciya-vud.html" class="sf-depth-2">Мета</a></li><li id="menu-6597-1" class="sf-depth-2 sf-no-children"><a href="/faq.html" class="sf-depth-2">Довідка</a></li><li id="menu-6598-1" class="sf-depth-2 sf-no-children"><a href="/forumy/tehnichni-pytannya" class="sf-depth-2">Пропозиції</a></li><li id="menu-6599-1" class="sf-depth-2 sf-no-children"><a href="/article/zagalni-umovy-ta-polozhennya-dlya-uchasnykiv-veb-saytu-narodnyy-oglyadach.html" class="sf-depth-2">Правила сайту</a></li><li id="menu-7690-1" class="sf-depth-2 sf-no-children"><a href="/article/yak-zareyestruvatysya-na-sayti.html" class="sf-depth-2">Як зареєструватися</a></li><li id="menu-10759-1" class="sf-depth-2 sf-no-children"><a href="/article/staty-investorom-prosto-prezentaciya.html" class="sf-depth-2">Як стати інвестором</a></li></ul></li><li id="menu-6955-1" class="sf-depth-1 menuparent"><a href="/tours" class="sf-depth-1 menuparent">Туризм</a><ul><li id="menu-6959-1" class="sf-depth-2 sf-no-children"><a href="/de-mi-buli" class="sf-depth-2">Де ми були</a></li><li id="menu-6957-1" class="sf-depth-2 sf-no-children"><a href="/doluchaysya-do-nas" class="sf-depth-2">Долучайся до нас!</a></li><li id="menu-6960-1" class="sf-depth-2 sf-no-children"><a href="/mandri" class="sf-depth-2">Мандри</a></li><li id="menu-6958-1" class="sf-depth-2 sf-no-children"><a href="/proponuy-svoie" class="sf-depth-2">Пропонуй своє!</a></li><li id="menu-6961-1" class="sf-depth-2 sf-no-children"><a href="/intermarium-tours" class="sf-depth-2">Intermarium.tours - про нас</a></li></ul></li><li id="menu-8311-1" class="sf-depth-1 menuparent"><a href="/trading" class="sf-depth-1 menuparent">Ярмарок</a><ul><li id="menu-8149-1" class="sf-depth-2 sf-no-children"><a href="/trading/knygy" class="sf-depth-2">Книги</a></li><li id="menu-8150-1" class="sf-depth-2 sf-no-children"><a href="/trading/odyag" class="sf-depth-2">Одяг</a></li><li id="menu-8151-1" class="sf-depth-2 sf-no-children"><a href="/trading/symvolika" class="sf-depth-2">Символіка</a></li><li id="menu-8152-1" class="sf-depth-2 sf-no-children"><a href="/trading/narodniy-oglyadach" class="sf-depth-2">Паперовий НО</a></li><li id="menu-8153-1" class="sf-depth-2 sf-no-children"><a href="/trading/perehid-iv" class="sf-depth-2">Паперовий Перехід-IV</a></li><li id="menu-11256-1" class="sf-depth-2 sf-no-children"><a href="/trading/poslugi" class="sf-depth-2">Послуги</a></li><li id="menu-8154-1" class="sf-depth-2 sf-no-children"><a href="/trading/inshe" class="sf-depth-2">Інше</a></li><li id="menu-10760-1" class="sf-depth-2 sf-no-children"><a href="/article/yarmarok-prydbannya-tovaru-prezentaciya.html" class="sf-depth-2">Як купити товар</a></li><li id="menu-10761-1" class="sf-depth-2 sf-no-children"><a href="/article/yarmarok-otrymannya-roli-prezentaciya.html" class="sf-depth-2">Як стати продавцем</a></li></ul></li></ul>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+    </nav>
+    <!-- /#navigation -->
+    <!--    -->    <!--    <div class="tabs">--><!--</div>-->
+    <!--    -->            <div class="breadcrumb"><a href="/">Головна</a> » <a href="/blog">Блоґи</a> » <a href="/blog/viktor-makarenko">блоґ Віктор Макаренко</a><div class="rss"><a href="http://www.ar25.org/crss/node/34749" class="feed-icon" title="Підписатися на Коментарі для &quot;Зустріч Ігора Каганця з бійцями Центру спеціальної тактичної підготовки &amp;quot;Білий Вовк&amp;quot; - Частина 1&quot;"><img src="http://files.ar25.org/misc/feed.png" width="16" height="16" alt="Підписатися на Коментарі для &quot;Зустріч Ігора Каганця з бійцями Центру спеціальної тактичної підготовки &amp;quot;Білий Вовк&amp;quot; - Частина 1&quot;" /></a></div></div>
+
+    <div id="main" class="main column">
+                    	<div class="text-resize">
+    <a href="javascript:;" class="changer" id="text_resize_decrease"><sup>-</sup>A</a> <a href="javascript:;" class="changer" id="text_resize_reset">A</a> <a href="javascript:;" class="changer" id="text_resize_increase"><sup>+</sup>A</a><div id="text_resize_clear"></div></div>
+
+                        <div class="container">
+            <div class="container2">
+
+
+                <div></div>
+
+                                                                    <ul class="action-links"></ul>
+
+                                                                	<div class="entity-extra-wrapper" data-entity_type="node" data-entity_id="34749"><div  class="three-column-double-bricks node node-blog node-odd published with-comments node-full view-mode-full clearfix">
+
+  <!-- Needed to activate contextual links. -->
+
+    <div class="ds-region ds-header ds-single">
+      <div class="group-page-title field-group-div"><div class="field field-name-field-term-world field-type-taxonomy-term-reference field-label-hidden clearfix"><ul class="links"><li class="taxonomy-term-reference-0"><a href="/etnomerezha-spilna-diya">Етномережа «Спільна Дія»</a></li></ul></div></div><div class="group-page-header field-group-div"><div class="field field-name-field-article-rating"><div class="label-inline">Важливість:&nbsp;</div>4</div><div class="field field-name-field-term-special field-type-taxonomy-term-reference field-label-inline clearfix"><h3 class="field-label">Спецтема: </h3><ul class="links inline"><li class="taxonomy-term-reference-0"><a href="/postindustrialna-civilizaciya">Постіндустріальна цивілізація</a></li></ul></div><div class="field field-name-field-term-cat field-type-taxonomy-term-reference field-label-inline clearfix"><h3 class="field-label">Категорія: </h3><ul class="links inline"><li class="taxonomy-term-reference-0"><a href="/intermarium-tv">Intermarium.TV</a></li></ul></div><div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Зустріч Ігора Каганця з бійцями Центру спеціальної тактичної підготовки &quot;Білий Вовк&quot; - Частина 1</div></div></div><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">18.10.2016 - 22:46</div></div></div></div>    </div>
+
+    <div class="ds-above ds-region-wrapper">
+    <div class="ds-region ds-region-left">
+          </div>
+
+    <div class="ds-region ds-region-middle">
+          </div>
+
+    <div class="ds-region ds-region-right">
+          </div>
+    </div>
+
+    <div class="ds-region ds-above-brick ds-single">
+      <div class="field field-name-observer-ds-field-body-summary field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><div class="observer-ds-field-body-summary-wrapper field-type-text-with-summary"><p>
+	Цілісна картина багаторічних досліджень цивілізаційних переходів і сучасної геополітичної ситуації, передові форми організації і засоби оздоровлення людини, правильне  харчування, магія позитивних подій, фізичне безсмертя та багато іншого - на зустрічі футуролога, письменника, засновника стартапу Intermarium.online, головного редактора журналу Перехід-IV" і сайту "Народний оглядач" Ігора Каганця з бійцями Центру спеціальної тактичної підготовки "Білий Вовк" (Київ) 5 жовтня 2016 року. Частина 1. </p>
+</div>
+</div></div></div><div class="field field-name-field-img-cover"><div class="entity-extra-wrapper" data-entity_type="file" data-entity_id="91054"><div id="file-91054" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/file/161018igorkaganecjpg">161018igorkaganec.jpg</a></h2>
+
+
+  <div class="content">
+    <a href="http://files.ar25.org/sites/default/files/styles/node_colorbox/public/node/2016/10/34749/161018igorkaganec.jpg?itok=OOU7am1L" title="Ігор Каганець на зустрічі з сучасними козаками - добровольцями і волонтерами" class="colorbox" data-colorbox-gallery=""><img src="http://files.ar25.org/sites/default/files/styles/cover/public/node/2016/10/34749/161018igorkaganec.jpg?itok=8iYuPxfp" width="603" height="345" alt="Ігор Каганець на зустрічі з сучасними козаками - добровольцями і волонтерами" title="Ігор Каганець на зустрічі з сучасними козаками - добровольцями і волонтерами" /></a><div class="field field-name-field-file-image-title-text field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Ігор Каганець на зустрічі з сучасними козаками - добровольцями і волонтерами</div></div></div>  </div>
+
+
+</div>
+</div>
+</div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>
+	 </p>
+<div class="media_embed" height="315px" width="560px">
+<iframe allowfullscreen="" frameborder="0" height="315px" src="https://www.youtube.com/embed/MKVsErP2gig" width="560px"></iframe></div>
+<p>
+	<span class="file"><img class="file-icon" alt="Audio icon" title="audio/mpeg" src="/modules/file/icons/audio-x-generic.png" /><a href="http://files.ar25.org/sites/default/files/16-10-05-bilyy_vovk_kaganec_igor_1_0.mp3" type="audio/mpeg; length=28970869">Аудіозапис виступу Ігора Каганця 5 жовтня 2016 р.</a></span></p>
+<p>
+	 </p>
+<div class="media_embed" height="315px" width="560px">
+<iframe allowfullscreen="" frameborder="0" height="315px" src="https://www.youtube.com/embed/DPL03jJJ_zg" width="560px"></iframe></div>
+<div class="file media-element file-wysiwyg" data-fid="91059" data-media-element="1">
+	 </div>
+</div></div></div><div class="field field-name-field-interests field-type-text-long field-label-above"><div class="field-label">Наші інтереси:&nbsp;</div><div class="field-items"><div class="field-item even"><p>
+	Успішний перехід до постіндустріального суспільства забезпечується глибокими знаннями і цілеспрямованою працею. </p>
+</div></div></div><div class="field field-name-field-urls field-type-link-field field-label-above"><div class="field-label">В тему:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="http://www.ar25.org/node/31837" target="_blank">Постіндустріальна цивілізація Міжмор’я, США і Вільна Українська Держава: запрошуємо до стартапу</a></div><div class="field-item odd"><a href="http://www.ar25.org/node/31978" target="_blank">Постіндустріальне суспільство, або Яку державу ми будуємо</a></div><div class="field-item even"><a href="http://www.ar25.org/node/34657" target="_blank">Чому пробуксовує міждержавний проект Міжмор’я</a></div><div class="field-item odd"><a href="http://www.ar25.org/node/34524" target="_blank">Сини блискавки: два найбільші апостоли Ісуса Хреста мали українське прізвище</a></div></div></div><div class="group-halia field-group-div"><div class="group-halia-acting field-group-div"><div class="field field-name-field-product field-type-commerce-product-reference field-label-hidden"><div class="field-items"><div class="field-item even"><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-33653" action="/node/34749" method="post" id="commerce-cart-add-to-cart-form-33653" accept-charset="UTF-8"><div><input type="hidden" name="product_id" value="33653" />
+<input type="hidden" name="form_build_id" value="form-g8nWPmFMS3dlYQeMYnoQ_gXErGbbf2Y0rh9Ya_bO_y0" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_33653" />
+<input type="hidden" name="quantity" value="1" />
+</div></form></div></div></div></div></div>    </div>
+
+    <div class="ds-middle ds-region-wrapper">
+    <div class="ds-region ds-region-left">
+      <div class="field field-name-blog-usernames-blog field-type-extra field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/blog/viktor-makarenko" class="blog-usernames-blog" title="блоґ Віктор Макаренко">блоґ Віктор Макаренко</a></div></div></div>    </div>
+
+    <div class="ds-region ds-region-middle">
+          </div>
+
+    <div class="ds-region ds-region-right">
+      <div class="field field-name-author field-type-ds field-label-inline clearfix"><div class="field-label">Гравець:&nbsp;</div><div class="field-items"><div class="field-item even"><span class="username">Віктор Макаренко</span></div></div></div>    </div>
+    </div>
+
+    <div class="ds-region ds-below-brick ds-single">
+      <div class="field field-name-field-tag field-type-taxonomy-term-reference field-label-inline clearfix"><h3 class="field-label">Теги: </h3><ul class="links inline"><li class="taxonomy-term-reference-0"><a href="/intermarium-institute">Intermarium Institute</a></li><li class="taxonomy-term-reference-1"><a href="/igor-kaganec">Ігор Каганець</a></li><li class="taxonomy-term-reference-2"><a href="/bezsmertya">безсмертя</a></li><li class="taxonomy-term-reference-3"><a href="/geopolityka">геополітика</a></li><li class="taxonomy-term-reference-4"><a href="/demosi">демоси</a></li><li class="taxonomy-term-reference-5"><a href="/zhyve-slovo-1">Живе Слово</a></li><li class="taxonomy-term-reference-6"><a href="/mizhmorya-0">Міжмор&#039;я</a></li><li class="taxonomy-term-reference-7"><a href="/postindustrialne-suspilstvo">постіндустріальне суспільство</a></li></ul></div>    </div>
+
+    <div class="ds-below ds-region-wrapper">
+    <div class="ds-region ds-region-left">
+          </div>
+
+    <div class="ds-region ds-region-middle">
+      <div class="field field-name-observer-ds-field-share42 field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><div class="share42-wrapper"><div data-url="http://www.ar25.org/article/zustrich-igora-kagancya-z-biycyamy-centru-specialnoyi-taktychnoyi-pidgotovky-bilyy-vovk" data-title="Зустріч Ігора Каганця з бійцями Центру спеціальної тактичної підготовки &quot;Білий Вовк&quot; - Частина 1" class="share42init" data-image="http://files.ar25.org/sites/default/files/node/2016/10/34749/161018igorkaganec.jpg"></div>
+</div>
+</div></div></div><ul class="links inline"><li class="comment_forbidden first"></li>
+<li class="print_html last"><a href="/print/34749" title="Display a printer-friendly version of this page." class="print-page" target="_blank" rel="nofollow">Версія для друку</a></li>
+</ul>    </div>
+
+    <div class="ds-region ds-region-right">
+        <div class="statistics-counter statistics-counter" >
+    <label class="statistics-counter-label">Відвідувань:&nbsp;</label>
+    <span class="statistics-counter-value">601</span>
+  </div>
+    </div>
+    </div>
+
+    <div class="ds-region ds-footer ds-single">
+      <div id="comments" class="comment-wrapper comment-wrapper-nid-34749">
+
+          <h2 class="title">Коментарі</h2>
+
+  <a id="comment-41596"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41596"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41596#comment-41596" class="permalink" rel="bookmark">Про націоналізм, Бандеру</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/1001660.jpg?itok=bxh-OXl1" alt="Зображення користувача Андрій Ясун." title="Зображення користувача Андрій Ясун." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Андрій Ясун</span> 19 Жовтень, 2016 - 00:10</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Про націоналізм, Бандеру розмови не було?</p>
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41596:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Si vis pacem, para bellum</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+
+<div class="indented"><a id="comment-41611"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41611"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41611#comment-41611" class="permalink" rel="bookmark">Бандера, Шухевич - Герої</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/sergiy.jpg?itok=yWYYtSoJ&amp;c=fca690c28f3148226ba10bf3df52390c" alt="Зображення користувача Василь Федорiв." title="Зображення користувача Василь Федорiв." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Василь Федорiв</span> 20 Жовтень, 2016 - 12:44</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Бандера, Шухевич - Герої України.</p>
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41611:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Хай Буде!</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+
+<div class="indented"><a id="comment-41616"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41616"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41616#comment-41616" class="permalink" rel="bookmark">Такі &quot;герої&quot; ведуть Україну</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/1001660.jpg?itok=bxh-OXl1" alt="Зображення користувача Андрій Ясун." title="Зображення користувача Андрій Ясун." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Андрій Ясун</span> 20 Жовтень, 2016 - 20:00</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Такі "герої" ведуть Україну не в тому напрямку. Роман Шухевич хотів виправити ситуацію, яку вичворив Бандера, будучи лялькою в руках Сталіна. Та нажаль, метастази самознищення не залишили шансів національному рухові. До сьогодні я не вважаю Україну незалежною державою. Так, я маю свої критерії незалежності. Степан Бандера і ті, хто за нього у ці критерії не входять.</p>
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41616:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Si vis pacem, para bellum</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+
+<div class="indented"><a id="comment-41657"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41657"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41657#comment-41657" class="permalink" rel="bookmark">&quot;....Так, я маю свої критерії</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/sergiy.jpg?itok=yWYYtSoJ&amp;c=fca690c28f3148226ba10bf3df52390c" alt="Зображення користувача Василь Федорiв." title="Зображення користувача Василь Федорiв." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Василь Федорiв</span> 23 Жовтень, 2016 - 14:35</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>"....Так, я маю свої критерії незалежності. Степан Бандера і ті, хто за нього у ці критерії не входять." Постановка питання: Все, або нiчого завжди мала наслiдком - НIЧОГО.</p>
+<p>Бандерiвська звитяжна вiйна, яка точилася з 1942 до 1955 року мала наслiдком надання Українi статусу засновника ООН та проголошення Незалежностi у 1991 роцi.</p>
+<p>Бандера заплатив власним життям, а чим платити Ви? </p>
+<p>Бандера наш Герой - Покрова Наше свято.</p>
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41657:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Хай Буде!</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+
+<div class="indented"><a id="comment-41659"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41659"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41659#comment-41659" class="permalink" rel="bookmark">Якби Бандера заплатив тільки</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/polatrides.jpg?itok=7CoOPz4P&amp;c=294b9a6f2ad4a6ada27f79d28e7ff00d" alt="Зображення користувача Миро Продум." title="Зображення користувача Миро Продум." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Миро Продум</span> 23 Жовтень, 2016 - 21:21</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Якби Бандера заплатив тільки власним життям - це його справа. Але завдяки його гіперактивному ідіотизму було знищено більшість соратників Коновальця, закатовано мільйони українців, Україна втратила історичний шанс здобути незалежність у 1941 році і стати творцем Нової Європи.  </p>
+<p>Якщо Бандера для когось герой - це справа особистого вибору. До речі, є сайт <a href="http://cbandera.blogspot.com/" class="bb-url" rel="nofollow">Степан Бандера - "герой Советского Союза"</a> </p>
+<p>
+</p><div class="bb-quote"><b>Василь Федорiв каже:</b><br /><blockquote class="bb-quote-body">Бандерiвська звитяжна вiйна, яка точилася з 1942 до 1955 року мала наслiдком надання Українi статусу засновника ООН та проголошення Незалежностi у 1991 роцi.<br />
+Бандера заплатив власним життям, а чим платити Ви? <br />
+Бандера наш Герой - Покрова Наше свято.</blockquote>
+</div>
+
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41659:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Освячуйся! Озброюйся! Плодися!</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+</div></div><a id="comment-41617"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41617"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41617#comment-41617" class="permalink" rel="bookmark">У новозаснованій псевдо-ОУН</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/polatrides.jpg?itok=7CoOPz4P&amp;c=294b9a6f2ad4a6ada27f79d28e7ff00d" alt="Зображення користувача Миро Продум." title="Зображення користувача Миро Продум." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Миро Продум</span> 20 Жовтень, 2016 - 20:16</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>У новозаснованій псевдо-ОУН Роман Шухевич очолив напрямок фізичної ліквідації керівництва ОУН. Ця тема ще потребує дослідження. </p>
+<p>
+</p><div class="bb-quote"><b>Василь Федорiв каже:</b><br /><blockquote class="bb-quote-body">Бандера, Шухевич - Герої України.</blockquote>
+</div>
+
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41617:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Освячуйся! Озброюйся! Плодися!</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+
+<div class="indented"><a id="comment-41696"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41696"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41696#comment-41696" class="permalink" rel="bookmark">Хотілося б все-таки, щоб</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/1001660.jpg?itok=bxh-OXl1" alt="Зображення користувача Андрій Ясун." title="Зображення користувача Андрій Ясун." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Андрій Ясун</span> 26 Жовтень, 2016 - 01:05</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Хотілося б все-таки, щоб Шухевич виявився свідомим того, що вони наробили.</p>
+<div class="bb-quote"><b>Миро Продум каже:</b><br /><blockquote class="bb-quote-body">У новозаснованій псевдо-ОУН Роман Шухевич очолив напрямок фізичної ліквідації керівництва ОУН. Ця тема ще потребує дослідження.
+</blockquote>
+</div>
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41696:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Si vis pacem, para bellum</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+</div></div><a id="comment-41639"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41639"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41639#comment-41639" class="permalink" rel="bookmark">Там і так було інформаційне</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/2013-11-02kahanetsihor.jpg?itok=7Qv04fub&amp;c=3cf1426779e57f5626e750269c04bb8e" alt="Зображення користувача Ігор Каганець." title="Зображення користувача Ігор Каганець." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Ігор Каганець</span> 22 Жовтень, 2016 - 15:18</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Там і так було інформаційне перенавантаження. Для розмови про націоналізм потрібна окрема зустріч. </p>
+<p>
+</p><div class="bb-quote"><b>Андрій Ясун каже:</b><br /><blockquote class="bb-quote-body">Про націоналізм, Бандеру розмови не було?</blockquote>
+</div>
+
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41639:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Все, що робиться з власної волі, - добро!</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+
+<div class="indented"><a id="comment-41697"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41697"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41697#comment-41697" class="permalink" rel="bookmark">Напевно люди по завершенню ще</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/1001660.jpg?itok=bxh-OXl1" alt="Зображення користувача Андрій Ясун." title="Зображення користувача Андрій Ясун." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Андрій Ясун</span> 26 Жовтень, 2016 - 01:12</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Напевно люди по завершенню ще щось розпитували? Такі речі відразу неможливо зрозуміти і усвідомити. Що їх найбільше вразило?</p>
+<div class="bb-quote"><b>Ігор Каганець каже:</b><br /><blockquote class="bb-quote-body">Там і так було інформаційне перенавантаження. Для розмови про націоналізм потрібна окрема зустріч.
+</blockquote>
+</div>
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41697:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Si vis pacem, para bellum</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+</div></div><a id="comment-41690"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41690"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41690#comment-41690" class="permalink" rel="bookmark">Цікаво також, як зареагували</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/zirkauvyshyvanci11.11.2012rokuorzheval.jpg?itok=sCT46Fl6&amp;c=294b9a6f2ad4a6ada27f79d28e7ff00d" alt="Зображення користувача Зірка Вітошинська." title="Зображення користувача Зірка Вітошинська." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Зірка Вітошинська</span> 25 Жовтень, 2016 - 18:26</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Цікаво також, як зареагували наші бійці? Чи хтось із них готовий включитися у підняття на рівень "керованих пригод" ?</p>
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41690:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Творимо разом Вільну Українську Республіку Міжмор'я !</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+
+<div class="indented"><a id="comment-41694"></a>
+<div class="entity-extra-wrapper" data-entity_type="comment" data-entity_id="41694"><div class="comment clearfix">
+					<h3 class="title"><a href="/comment/41694#comment-41694" class="permalink" rel="bookmark">Про бажаючих стати</a></h3>
+		        <div class="left">
+              <div class="user-picture">
+    <img src="http://files.ar25.org/sites/default/files/styles/profile/public/avatars/2013-11-02kahanetsihor.jpg?itok=7Qv04fub&amp;c=3cf1426779e57f5626e750269c04bb8e" alt="Зображення користувача Ігор Каганець." title="Зображення користувача Ігор Каганець." />  </div>
+                    </div>
+
+		    <div class="submitted">
+    			<time>Опубліковано <span class="username">Ігор Каганець</span> 25 Жовтень, 2016 - 19:55</time>
+    		</div>
+        	<div class="content">
+        		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Про бажаючих стати характерниками ще не знаю. Але народ задумався - це точно. </p>
+<p>
+</p><div class="bb-quote"><b>Зірка Вітошинська каже:</b><br /><blockquote class="bb-quote-body">Цікаво також, як зареагували наші бійці? Чи хтось із них готовий включитися у підняття на рівень "керованих пригод" ?</blockquote>
+</div>
+
+</div></div></div><span  class="authcache-p13n-asm-field-comment-field-comment-halia-voting" data-p13n-frag="field" data-p13n-param="41694:full:uk"></span>		        			        <div class="user-signature clearfix">
+			        <p>Все, що робиться з власної волі, - добро!</p>
+		        </div><!-- /.user-signature -->
+		        	        </div><!-- /.content -->
+        	          		<ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>        	<!--    -->    </div><!-- /.comment --></div>
+</div></div>
+    </div>
+
+</div>
+
+<!-- Needed to activate display suite support on forms. -->
+</div>
+
+                <div class="hr clearfix">&nbsp;</div>
+            </div>
+            <!-- /.container2 -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#main -->
+
+            <aside id="sidebar-first" class="column sidebar sb1" role="complementary">
+
+<section id="block-block-13" class="block block-block block-even">
+
+        <h2>Дзеркало сайту</h2>
+
+  <div class="content">
+    <div id="site-mirror" class="rtecenter">Розташоване за адресою:<br /><a href="http://mirror.ar25.org/">http://mirror.ar25.org/</a><br /><em>(лише для читання)</em></div>
+  </div><!-- /.content -->
+
+</section><!-- /.block -->
+
+<section id="block-views-a691ffe5ff9b73bdf91ad3661fb21ff0" class="block block-views block-odd">
+
+        <h2>Найбільш коментовані</h2>
+
+  <div class="content">
+    <div class="view view-block-top-comments view-id-block_top_comments view-display-id-block_top_comments view-dom-id-74db3f7bb4ea2e5a66c40b15bdc01bc2">
+
+      <div class="view-filters">
+      <form class="ctools-auto-submit-full-form" action="/" method="get" id="views-exposed-form-block-top-comments-block-top-comments" accept-charset="UTF-8"><div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+          <div id="edit-created-top-comments-wrapper" class="views-exposed-widget views-widget-filter-created_top_comments">
+                        <div class="views-widget">
+          <div id="edit-created-top-comments" class="form-radios"><div class="form-item form-type-radio form-item-created-top-comments">
+ <input type="radio" id="edit-created-top-comments-all" name="created_top_comments" value="All" checked="checked" class="form-radio" />  <label class="option" for="edit-created-top-comments-all">загалом </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-top-comments">
+ <input type="radio" id="edit-created-top-comments-1" name="created_top_comments" value="1" class="form-radio" />  <label class="option" for="edit-created-top-comments-1">за день </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-top-comments">
+ <input type="radio" id="edit-created-top-comments-2" name="created_top_comments" value="2" class="form-radio" />  <label class="option" for="edit-created-top-comments-2">за тиждень </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-top-comments">
+ <input type="radio" id="edit-created-top-comments-3" name="created_top_comments" value="3" class="form-radio" />  <label class="option" for="edit-created-top-comments-3">за місяць </label>
+
+</div>
+</div>        </div>
+              </div>
+                    <div class="views-exposed-widget views-submit-button">
+      <input class="ctools-use-ajax ctools-auto-submit-click js-hide form-submit" type="submit" id="edit-submit-block-top-comments" name="" value="Застосувати" />    </div>
+      </div>
+</div>
+</div></form>    </div>
+
+
+      <div class="view-content">
+        <ul>
+    <li class="first odd">
+
+
+
+      <a href="/article/anatoliy-vysota-gerb-ukrayiny-pyate-rozuminnya.html" title="Автор - Анатолій Висота">Анатолій Висота: ГЕРБ України - п&#039;яте розуміння</a>
+
+
+
+
+      <span class="fa fa-comments-o">162<span>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/praktychna-samoorganizaciya-tg-sotni-proekty-grupy-za-interesamy.html" title="Автор - Ігор Каганець">Практична самоорганізація ТГ: сотні, проекти, групи за інтересами</a>
+
+
+
+
+      <span class="fa fa-comments-o">138<span>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/dopysuvachi-narodnogo-oglyadacha-stayut-azartnymy-gravcyamy-golosuvannya.html" title="Автор - Миро Продум">Дописувачі «Народного Оглядача» стають азартними гравцями (голосування)</a>
+
+
+
+
+      <span class="fa fa-comments-o">126<span>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/oleksiy-tyshchenko-cygun-i-revolver-mayzhe-detektyv.html" title="Автор - Ігор Каганець">Олексій Тищенко, цигун і «Револьвер» (майже детектив)</a>
+
+
+
+
+      <span class="fa fa-comments-o">122<span>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/praktyka-vvedennya-svidomosti-i-tila-u-zhyttya-vichne.html" title="Автор - Наталка Артанія Кобза">Практика введення свідомості і тіла у Життя Вічне</a>
+
+
+
+
+      <span class="fa fa-comments-o">104<span>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/osvyachennya-tryzub-trysuttya-dosvid-ukrayinskogo-konsensusu.html" title="Автор - Ігор Каганець">Освячення–Тризуб–Трисуття: досвід українського консенсусу</a>
+
+
+
+
+      <span class="fa fa-comments-o">79<span>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/zvernennya-do-akcioneriv-startapu-gray-volya-tretiy-getmanat.html" title="Автор - Ігор Каганець">Звернення до акціонерів стартапу Грай-Воля – Третій Гетьманат</a>
+
+
+
+
+      <span class="fa fa-comments-o">72<span>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/geopolitychna-doktryna-tretogo-getmanatu.html" title="Автор - Ігор Каганець">Геополітична доктрина Третього Гетьманату</a>
+
+
+
+
+      <span class="fa fa-comments-o">71<span>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/gotuyemos-do-ariyskogo-novogo-roku-ochyshchuyemo-sayt-vid-troliv.html" title="Автор - Ігор Каганець">Готуємось до Арійського нового року, очищуємо сайт від тролів</a>
+
+
+
+
+      <span class="fa fa-comments-o">64<span>
+
+    </li>
+      <li class="last even">
+
+
+
+      <a href="/article/hto-takyy-tvorec-vsesvitu-iz-zapysu-tb-7.html" title="Автор - Арсен Дубовик">Хто такий Творець Всесвіту (із запису ТБ-7)</a>
+
+
+
+
+      <span class="fa fa-comments-o">60<span>
+
+    </li>
+    </ul>
+    </div>
+
+
+
+
+
+
+</div>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+
+<section id="block-views-d34ab3a63d0994652a17d5725e66da42" class="block block-views block-even">
+
+        <h2>Активні коментатори</h2>
+
+  <div class="content">
+    <div class="view view-user-comm-count view-id-user_comm_count view-display-id-user_comm_count_1 view-dom-id-d9be3f27c2dc4339a6e1308c3a874d6d">
+
+      <div class="view-filters">
+      <form class="ctools-auto-submit-full-form" action="/" method="get" id="views-exposed-form-user-comm-count-user-comm-count-1" accept-charset="UTF-8"><div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+          <div id="edit-created-user-comm-count-wrapper" class="views-exposed-widget views-widget-filter-created_user_comm_count">
+                        <div class="views-widget">
+          <div id="edit-created-user-comm-count" class="form-radios"><div class="form-item form-type-radio form-item-created-user-comm-count">
+ <input type="radio" id="edit-created-user-comm-count-all" name="created_user_comm_count" value="All" checked="checked" class="form-radio" />  <label class="option" for="edit-created-user-comm-count-all">- будь-що - </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-user-comm-count">
+ <input type="radio" id="edit-created-user-comm-count-1" name="created_user_comm_count" value="1" class="form-radio" />  <label class="option" for="edit-created-user-comm-count-1">за день </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-user-comm-count">
+ <input type="radio" id="edit-created-user-comm-count-2" name="created_user_comm_count" value="2" class="form-radio" />  <label class="option" for="edit-created-user-comm-count-2">за тиждень </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-user-comm-count">
+ <input type="radio" id="edit-created-user-comm-count-3" name="created_user_comm_count" value="3" class="form-radio" />  <label class="option" for="edit-created-user-comm-count-3">за місяць </label>
+
+</div>
+</div>        </div>
+              </div>
+                    <div class="views-exposed-widget views-submit-button">
+      <input class="ctools-use-ajax ctools-auto-submit-click js-hide form-submit" type="submit" id="edit-submit-user-comm-count" name="" value="Застосувати" />    </div>
+      </div>
+</div>
+</div></form>    </div>
+
+
+      <div class="view-content">
+        <ul>
+    <li class="first odd">
+
+
+
+      <span class="username">Миро Продум</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">67</span>
+
+    </li>
+      <li class="even">
+
+
+
+      <span class="username">Віктор Макаренко</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">43</span>
+
+    </li>
+      <li class="odd">
+
+
+
+      <span class="username">Арсен Дубовик</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">18</span>
+
+    </li>
+      <li class="even">
+
+
+
+      <span class="username">Еней Харалужний</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">15</span>
+
+    </li>
+      <li class="odd">
+
+
+
+      <span class="username">Ія Подолянка</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">15</span>
+
+    </li>
+      <li class="even">
+
+
+
+      <span class="username">Василь Федорiв</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">14</span>
+
+    </li>
+      <li class="odd">
+
+
+
+      <span class="username">Явсе Світ</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">12</span>
+
+    </li>
+      <li class="even">
+
+
+
+      <span class="username">Арій Хрестовий</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">12</span>
+
+    </li>
+      <li class="odd">
+
+
+
+      <span class="username">Вiктор Нокiд</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">11</span>
+
+    </li>
+      <li class="last even">
+
+
+
+      <span class="username">Аватар Арій</span>
+
+
+
+
+      <span class="fa fa-comments-o" title="Коментарів">11</span>
+
+    </li>
+    </ul>
+    </div>
+
+
+
+
+
+
+</div>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+
+<section id="block-views-toprate-block-toprate" class="block block-views block-odd">
+
+        <h2>Вибір редакції</h2>
+
+  <div class="content">
+    <div class="view view-toprate view-id-toprate view-display-id-block_toprate view-dom-id-3bb8832c0fa7557a579d27c991e2c4c1">
+
+
+
+      <div class="view-content">
+        <ul>
+    <li class="first odd">
+
+
+
+      <a href="/article/yak-zhyve-slovo-zahyshchaye-ukrayinskyh-voyakiv-u-zoni-ato-pro-vognyane-polotno-oberig.html">Як Живе Слово захищає українських вояків у зоні АТО: про Вогняне Полотно Оберіг</a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/nova-strategiya-moskovskoyi-agentury-v-polshchi.html">Нова стратегія московської агентури в Польщі</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/piratska-partiya-islandiyi-otrymala-18-golosiv-na-dostrokovyh-parlamentskyh-vyborah-zmi.html">Піратська партія Ісландії отримала 18% голосів на дострокових парламентських виборах - ЗМІ </a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/yaki-ryzyky-nese-zbilshennya-vdvichi-minimalnoyi-zarplaty.html">Які ризики несе збільшення вдвічі мінімальної зарплати</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/nezrozumila-volyn-chym-ryzykuye-ukrayina-u-vidnosynah-z-polshcheyu.html">Незрозуміла Волинь: чим ризикує Україна у відносинах з Польщею</a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/e-deklaruvannya-zasvidchylo-shcho-deputaty-mozhut-kredytuvaty-mvf-oglyad-socmerezh.html">«Е-декларування засвідчило, що депутати можуть кредитувати МВФ» (огляд соцмереж)</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/publikaciya-dokumentiv-surkova-mozhe-buty-robotoyu-ssha-sbu-moglo-yih-pidpravyty-zahidni">Публікація документів Суркова може бути роботою США, а СБУ могло їх «підправити» – західні коментатори</a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/zakruchuvannya-gayok-u-paralelnyh-prostorah-podiy-abo-svidomist-pravyt-svitom.html">Закручування гайок у паралельних просторах подій, або Свідомість править світом</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/peremagaye-naymensh-tolerantnyy-yak-pracyuye-dyktatura-menshosti.html">Перемагає найменш толерантний: Як працює диктатура меншості</a>
+
+    </li>
+      <li class="last even">
+
+
+
+      <a href="/article/ukrayinskyy-dzen-abo-kozak-van-dam.html">Український Дзен, або Козак Ван Дам</a>
+
+    </li>
+    </ul>
+    </div>
+
+
+
+
+
+
+</div>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+
+<section id="block-views-dev-block" class="block block-views block-even">
+
+        <h2>Розвиток сайту</h2>
+
+  <div class="content">
+    <div class="view view-dev view-id-dev view-display-id-block view-dom-id-9f9c44669e28c9b043c864ec8ba6a435">
+
+
+
+      <div class="view-content">
+        <ul>
+    <li class="first odd">
+
+
+
+      <a href="/article/yak-kolektyvna-molytva-pryskoryla-robotu-saytu-narodnyy-oglyadach.html">Як колективна молитва прискорила роботу сайту Народний Оглядач</a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/novyy-bankivskyy-rahunok-ar25org-vyshchyy-prostir-podiy-onovlena-tehnosfera-magiya-groshey">Новий банківський рахунок AR25.ORG: вищий простір подій, оновлена техносфера, магія грошей</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/vystup-igora-kagancya-na-25-zborah-zasnovnykiv-startapu-intermariumonline.html">Виступ Ігора Каганця на 25 зборах засновників стартапу Intermarium.online</a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/druzi-potribna-energiya-dlya-oplaty-servera-i-rozvytku-nashogo-proektu.html">Друзі, потрібна енергія для розвитку нашого проекту</a>
+
+    </li>
+      <li class="last odd">
+
+
+
+      <a href="/article/25-veresnya-chergovi-25-i-zbory-akcioneriv-startapu-intermariumonline-reyestraciya.html">25 вересня – чергові 25-і збори акціонерів стартапу Intermarium.online - реєстрація</a>
+
+    </li>
+    </ul>
+    </div>
+
+
+
+
+<div class="more-link">
+  <a href="/rozvytok-saytu">
+    ще  </a>
+</div>
+
+
+
+</div>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+
+<section id="block-block-5" class="block block-block block-odd">
+
+        <h2>Підтримати сайт</h2>
+
+  <div class="content">
+    <ul>
+<li><a href="/article/proshu-pidtrymaty-rozrobku-narodnogo-oglyadacha.html" target="_blank">Як підтримати сайт</a></p></li>
+</ul>
+  </div><!-- /.content -->
+
+</section><!-- /.block -->
+        </aside><!-- /#sidebar-first -->
+
+            <aside id="sidebar-second" class="column sidebar sb2" role="complementary">
+
+<section id="block-views-page-front-last-nodes" class="block block-views block-even">
+
+        <h2>Останні публікації</h2>
+
+  <div class="content">
+    <div class="view view-page-front view-id-page_front view-display-id-last_nodes view-dom-id-d46212bbd6b5c98cc440015021505831">
+
+
+
+      <div class="view-content">
+        <ul>
+    <li class="first odd">
+
+      <div class="datetime">
+
+
+      20:27 <b>30 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/yak-zhyve-slovo-zahyshchaye-ukrayinskyh-voyakiv-u-zoni-ato-pro-vognyane-polotno-oberig.html" class="fa-thumb-tack1">Як Живе Слово захищає українських вояків у зоні АТО: про Вогняне Полотно Оберіг</a>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      19:39 <b>21 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/zvukona-vol-zhyvogo-slova-dorogovkaz-do-fizychnogo-bezsmertya.html" class="fa-thumb-tack1">Звукона Воль Живого Слова – дороговказ до фізичного безсмертя</a> <span class="fa fa-comments-o" title="Загалом коментарів">15</span>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      21:21 <b>30 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/postindustrialna-cyvilizaciya-mizhmorya-ssha-i-vilna-ukrayinska-derzhava-zaproshuyemo-do" class="fa-thumb-tack1">Постіндустріальна цивілізація Міжмор’я, США і Вільна Українська Держава: запрошуємо до стартапу</a> <span class="fa fa-comments-o" title="Загалом коментарів">21</span>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      19:58 <b>30 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/nova-strategiya-moskovskoyi-agentury-v-polshchi.html" class="fa-thumb-tack0">Нова стратегія московської агентури в Польщі</a>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      19:34 <b>30 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/piratska-partiya-islandiyi-otrymala-18-golosiv-na-dostrokovyh-parlamentskyh-vyborah-zmi.html" class="fa-thumb-tack0">Піратська партія Ісландії отримала 18% голосів на дострокових парламентських виборах - ЗМІ </a>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      17:34 <b>30 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/yaki-ryzyky-nese-zbilshennya-vdvichi-minimalnoyi-zarplaty.html" class="fa-thumb-tack0">Які ризики несе збільшення вдвічі мінімальної зарплати</a> <span class="fa fa-comments-o" title="Загалом коментарів">1</span>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      19:05 <b>29 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/nezrozumila-volyn-chym-ryzykuye-ukrayina-u-vidnosynah-z-polshcheyu.html" class="fa-thumb-tack0">Незрозуміла Волинь: чим ризикує Україна у відносинах з Польщею</a> <span class="fa fa-comments-o" title="Загалом коментарів">1</span>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      17:18 <b>29 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/e-deklaruvannya-zasvidchylo-shcho-deputaty-mozhut-kredytuvaty-mvf-oglyad-socmerezh.html" class="fa-thumb-tack0">«Е-декларування засвідчило, що депутати можуть кредитувати МВФ» (огляд соцмереж)</a>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      15:48 <b>29 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/publikaciya-dokumentiv-surkova-mozhe-buty-robotoyu-ssha-sbu-moglo-yih-pidpravyty-zahidni" class="fa-thumb-tack0">Публікація документів Суркова може бути роботою США, а СБУ могло їх «підправити» – західні коментатори</a>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      21:45 <b>28 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/zakruchuvannya-gayok-u-paralelnyh-prostorah-podiy-abo-svidomist-pravyt-svitom.html" class="fa-thumb-tack0">Закручування гайок у паралельних просторах подій, або Свідомість править світом</a> <span class="fa fa-comments-o" title="Загалом коментарів">3</span>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      21:41 <b>28 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/peremagaye-naymensh-tolerantnyy-yak-pracyuye-dyktatura-menshosti.html" class="fa-thumb-tack0">Перемагає найменш толерантний: Як працює диктатура меншості</a> <span class="fa fa-comments-o" title="Загалом коментарів">3</span>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      20:18 <b>28 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/ukrayinskyy-dzen-abo-kozak-van-dam.html" class="fa-thumb-tack0">Український Дзен, або Козак Ван Дам</a> <span class="fa fa-comments-o" title="Загалом коментарів">4</span>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      20:12 <b>28 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/v-minosvity-kazhut-shcho-vzyaly-kurs-na-dvomovnu-bilingvalnu-osvitu.html" class="fa-thumb-tack0">В Міносвіти кажуть, що “взяли курс на двомовну, білінгвальну освіту”</a>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      14:25 <b>28 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/ukrzaliznycya-zapuskaye-dvopoverhovyy-potyag-skoda-na-marshrut-harkiv-kyyiv-vinnycya.html" class="fa-thumb-tack0">Укрзалізниця запускає двоповерховий потяг Skoda на маршрут Харків-Київ-Вінниця</a>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      13:05 <b>28 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/serbiya-deportuvala-kilkoh-rosiyan-za-uchast-u-pidgotovci-teraktiv-v-chornogoriyi-zmi.html" class="fa-thumb-tack0">Сербія депортувала кількох росіян за участь у підготовці терактів в Чорногорії - ЗМІ</a>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      12:30 <b>28 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/vidmova-zahodu-vid-rosiyskoyi-nafty-zupynyt-agresyvnu-rosiyu-focus.html" class="fa-thumb-tack0">Відмова Заходу від російської нафти зупинить агресивну Росію – Focus </a>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      07:09 <b>28 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/ani-yayec-ani-moloka-trendy-veganiv.html" class="fa-thumb-tack0">Ані яєць, ані молока: тренди веганів</a> <span class="fa fa-comments-o" title="Загалом коментарів">15</span>
+      </div>
+
+    </li>
+      <li class="even">
+
+      <div class="datetime">
+
+
+      19:35 <b>27 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/yak-kolektyvna-molytva-pryskoryla-robotu-saytu-narodnyy-oglyadach.html" class="fa-thumb-tack0">Як колективна молитва прискорила роботу сайту Народний Оглядач</a> <span class="fa fa-comments-o" title="Загалом коментарів">4</span>
+      </div>
+
+    </li>
+      <li class="odd">
+
+      <div class="datetime">
+
+
+      12:49 <b>27 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/u-peterburzi-fabryku-troliv-zakydaly-kokteylyamy-molotova.html" class="fa-thumb-tack0">У Петербурзі &quot;фабрику тролів&quot; закидали &quot;коктейлями Молотова&quot;</a>
+      </div>
+
+    </li>
+      <li class="last even">
+
+      <div class="datetime">
+
+
+      12:08 <b>27 Жовтень</b>
+      </div>
+
+
+      <div class="text">
+
+
+      <a href="/article/ponad-10-krayin-chleniv-nato-pogodylysya-rozmistyty-viyska-v-shidniy-yevropi.html" class="fa-thumb-tack0">Понад 10 країн-членів НАТО погодилися розмістити війська в Східній Європі</a>
+      </div>
+
+    </li>
+    </ul>
+    </div>
+
+      <div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">Сторінка 1</li>
+<li class="pager-next last"><a href="/article/zustrich-igora-kagancya-z-biycyamy-centru-specialnoyi-taktychnoyi-pidgotovky-bilyy-vovk?page=0%2C0%2C0%2C0%2C0%2C0%2C1">››</a></li>
+</ul></div>
+
+
+
+
+</div>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+
+<section id="block-views-top-views-block-top-views" class="block block-views block-odd">
+
+        <h2>Рейтинг переглядів</h2>
+
+  <div class="content">
+    <div class="view view-top-views view-id-top_views view-display-id-block_top_views view-dom-id-159822d76b3e195d6b80c0c8bbb9fbdc">
+
+      <div class="view-filters">
+      <form class="ctools-auto-submit-full-form" action="/" method="get" id="views-exposed-form-top-views-block-top-views" accept-charset="UTF-8"><div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+          <div id="edit-created-top-views-wrapper" class="views-exposed-widget views-widget-filter-created_top_views">
+                        <div class="views-widget">
+          <div id="edit-created-top-views" class="form-radios"><div class="form-item form-type-radio form-item-created-top-views">
+ <input type="radio" id="edit-created-top-views-all" name="created_top_views" value="All" checked="checked" class="form-radio" />  <label class="option" for="edit-created-top-views-all">- будь-що - </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-top-views">
+ <input type="radio" id="edit-created-top-views-1" name="created_top_views" value="1" class="form-radio" />  <label class="option" for="edit-created-top-views-1">за день </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-top-views">
+ <input type="radio" id="edit-created-top-views-2" name="created_top_views" value="2" class="form-radio" />  <label class="option" for="edit-created-top-views-2">за тиждень </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created-top-views">
+ <input type="radio" id="edit-created-top-views-3" name="created_top_views" value="3" class="form-radio" />  <label class="option" for="edit-created-top-views-3">за місяць </label>
+
+</div>
+</div>        </div>
+              </div>
+                    <div class="views-exposed-widget views-submit-button">
+      <input class="ctools-use-ajax ctools-auto-submit-click js-hide form-submit" type="submit" id="edit-submit-top-views" name="" value="Застосувати" />    </div>
+      </div>
+</div>
+</div></form>    </div>
+
+
+      <div class="view-content">
+        <ul>
+    <li class="first odd">
+
+
+
+      <a href="/article/berkutivci-shcho-katuvaly-kozaka-staly-impotentamy-pryvit-vid-harakternykiv.html">Беркутівці, що катували козака, стали імпотентами - привіт від характерників!</a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/vyshche-kerivnyctvo-ukrayiny-boyitsya-peremogy-ce-padalnyky-shcho-zbagachuyutsya-na-rozpadi">Вище керівництво України боїться перемоги. Це падальники, що збагачуються на розпаді - Арестович</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/pochatkovyy-40-dennyy-kurs-zhyvogo-slova-instrukciya-formy-1-4-cyfrony-zvukony.html">Початковий 40-денний курс Живого Слова (інструкція, форми 1-4, цифрони, звукони)</a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/ponad-500-unikalnyh-filmiv-z-ukrayinskym-ozvuchennyam-na-sayti-gurtom.html">Понад 500 унікальних фільмів з українським озвученням на сайті Гуртом</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/persha-prychyna-bidnosti-ce-neorganizovanist.html">«Перша причина бідності – це неорганізованість», – Митрополит Андрей Шептицький</a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/doky-v-ukrayini-tryvatyme-viyna-i-yak-yiyi-perezhyty.html">Доки в Україні триватиме війна і як її пережити?</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/eksperty-vyznachyly-lidera-nacionalnoyi-revolyuciyi-z-naybilshym-potencialom.html">Експерти визначили лідера національної революції з найбільшим потенціалом </a>
+
+    </li>
+      <li class="even">
+
+
+
+      <a href="/article/geopolitychna-doktryna-tretogo-getmanatu.html">Геополітична доктрина Третього Гетьманату</a>
+
+    </li>
+      <li class="odd">
+
+
+
+      <a href="/article/oleksandr-filatovych-pro-tayemnyci-zhyvogo-slova.html">Олександр Філатович про таємниці Живого Слова</a>
+
+    </li>
+      <li class="last even">
+
+
+
+      <a href="/article/postindustrialna-cyvilizaciya-mizhmorya-ssha-i-vilna-ukrayinska-derzhava-zaproshuyemo-do">Постіндустріальна цивілізація Міжмор’я, США і Вільна Українська Держава: запрошуємо до стартапу</a>
+
+    </li>
+    </ul>
+    </div>
+
+
+
+
+
+
+</div>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+
+<section id="block-views-last-comm-block-last-comm-2" class="block block-views block-even">
+
+        <h2>Останні коментарі </h2>
+
+  <div class="content">
+    <div class="view view-last-comm view-id-last_comm view-display-id-block_last_comm_2 view-dom-id-613d2c3dfaa1d134ef2851b7bd18fe78">
+
+      <div class="view-filters">
+      <form class="ctools-auto-submit-full-form" action="/" method="get" id="views-exposed-form-last-comm-block-last-comm-2" accept-charset="UTF-8"><div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+          <div id="edit-created-wrapper" class="views-exposed-widget views-widget-filter-created">
+                        <div class="views-widget">
+          <div id="edit-created" class="form-radios"><div class="form-item form-type-radio form-item-created">
+ <input type="radio" id="edit-created-all" name="created" value="All" class="form-radio" />  <label class="option" for="edit-created-all">загалом </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created">
+ <input type="radio" id="edit-created-1" name="created" value="1" checked="checked" class="form-radio" />  <label class="option" for="edit-created-1">за день </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created">
+ <input type="radio" id="edit-created-2" name="created" value="2" class="form-radio" />  <label class="option" for="edit-created-2">за тиждень </label>
+
+</div>
+<div class="form-item form-type-radio form-item-created">
+ <input type="radio" id="edit-created-3" name="created" value="3" class="form-radio" />  <label class="option" for="edit-created-3">за місяць </label>
+
+</div>
+</div>        </div>
+              </div>
+                    <div class="views-exposed-widget views-submit-button">
+      <input class="ctools-use-ajax ctools-auto-submit-click js-hide form-submit" type="submit" id="edit-submit-last-comm" name="" value="Застосувати" />    </div>
+      </div>
+</div>
+</div></form>    </div>
+
+
+      <div class="view-content">
+        <ul>
+    <li class="first odd">
+
+      <div class="clearfix">
+
+
+      <a href="/article/postindustrialna-cyvilizaciya-mizhmorya-ssha-i-vilna-ukrayinska-derzhava-zaproshuyemo-do">Постіндустріальна цивілізація Міжмор’я, США і Вільна Українська Держава: запрошуємо до стартапу</a>
+      </div>
+
+
+
+
+      <img src="http://files.ar25.org/sites/default/files/styles/av/public/avatars/glodvasyl-avatar.jpg?itok=O5dJCL90" width="50" height="50" alt="" />
+
+
+      <div>
+
+
+      <div><span class="username">Василь Глод</span> Стаття дуже корисна. Ми живемо в корумпованій державі. Е-декларування показало хто керує нашою...</div>
+<div><span><em class="placeholder">7 годин 39 хв</em> тому</span> <a href="/comment/41770#comment-41770" class="more">переглянути</a> </div>
+      </div>
+
+
+
+
+
+          Голосів:
+
+
+
+      <div class="clearfix">5</div>
+
+    </li>
+      <li class="even">
+
+      <div class="clearfix">
+
+
+      <a href="/article/yak-kolektyvna-molytva-pryskoryla-robotu-saytu-narodnyy-oglyadach.html">Як колективна молитва прискорила роботу сайту Народний Оглядач</a>
+      </div>
+
+
+
+
+      <img src="http://files.ar25.org/sites/default/files/styles/av/public/avatars/123.jpg?itok=G3rsVfwa&amp;c=b67848c72c0a3ada5e51e3a686f1ee8e" width="50" height="50" alt="" />
+
+
+      <div>
+
+
+      <div><span class="username">Ія Подолянка</span> "Сайт є частиною колективної істоти яка називається"Народний Оглядач"-вірні і прекрасні слова!</div>
+<div><span><em class="placeholder">1 година 23 хв</em> тому</span> <a href="/comment/41776#comment-41776" class="more">переглянути</a> </div>
+      </div>
+
+
+
+
+
+          Голосів:
+
+
+
+      <div class="clearfix">0</div>
+
+    </li>
+      <li class="odd">
+
+      <div class="clearfix">
+
+
+      <a href="/article/ukrayinskyy-dzen-abo-kozak-van-dam.html">Український Дзен, або Козак Ван Дам</a>
+      </div>
+
+
+
+
+      <img src="http://files.ar25.org/sites/default/files/styles/av/public/avatars/123.jpg?itok=G3rsVfwa&amp;c=b67848c72c0a3ada5e51e3a686f1ee8e" width="50" height="50" alt="" />
+
+
+      <div>
+
+
+      <div><span class="username">Ія Подолянка</span> То може на НО створити  "дзеньдзелівський" банк?</div>
+<div><span><em class="placeholder">1 година 40 хв</em> тому</span> <a href="/comment/41775#comment-41775" class="more">переглянути</a> </div>
+      </div>
+
+
+
+
+
+          Голосів:
+
+
+
+      <div class="clearfix">0</div>
+
+    </li>
+      <li class="even">
+
+      <div class="clearfix">
+
+
+      <a href="/article/zvukona-vol-zhyvogo-slova-dorogovkaz-do-fizychnogo-bezsmertya.html">Звукона Воль Живого Слова – дороговказ до фізичного безсмертя</a>
+      </div>
+
+
+
+
+      <img src="http://files.ar25.org/sites/default/files/styles/av/public/avatars/1001660.jpg?itok=pNvNWEpj" width="50" height="50" alt="" />
+
+
+      <div>
+
+
+      <div><span class="username">Андрій Ясун</span> Яко музикант скажу так: Одна справа грати музику, а зовсім інша грати просто ноти. Часто Живе Слово...</div>
+<div><span><em class="placeholder">2 години 50 хв</em> тому</span> <a href="/comment/41773#comment-41773" class="more">переглянути</a> </div>
+      </div>
+
+
+
+
+
+          Голосів:
+
+
+
+      <div class="clearfix">0</div>
+
+    </li>
+      <li class="odd">
+
+      <div class="clearfix">
+
+
+      <a href="/article/ukrayinskyy-dzen-abo-kozak-van-dam.html">Український Дзен, або Козак Ван Дам</a>
+      </div>
+
+
+
+
+      <img src="http://files.ar25.org/sites/default/files/styles/av/public/avatars/10011903e.jpg?itok=ZvxnM1hw&amp;c=7c51a0a6294ee2124fadbd62669b45f7" width="50" height="50" alt="" />
+
+
+      <div>
+
+
+      <div><span class="username">Явсе Світ</span> Цитата із статті:
+"Євреї теж понесли свої гроші до “кредитно-позичкової спілки”, а не до банку...</div>
+<div><span><em class="placeholder">11 годин 13 хв</em> тому</span> <a href="/comment/41765#comment-41765" class="more">переглянути</a> </div>
+      </div>
+
+
+
+
+
+          Голосів:
+
+
+
+      <div class="clearfix">0</div>
+
+    </li>
+      <li class="even">
+
+      <div class="clearfix">
+
+
+      <a href="/article/zvukona-vol-zhyvogo-slova-dorogovkaz-do-fizychnogo-bezsmertya.html">Звукона Воль Живого Слова – дороговказ до фізичного безсмертя</a>
+      </div>
+
+
+
+
+      <img src="http://files.ar25.org/sites/default/files/styles/av/public/avatars/polatrides.jpg?itok=Gz72D-OQ&amp;c=294b9a6f2ad4a6ada27f79d28e7ff00d" width="50" height="50" alt="" />
+
+
+      <div>
+
+
+      <div><span class="username">Миро Продум</span> Тексти Живого Слова - це загадки. Найкраще, коли кожен їх розгадує самостійно. Це не лише цікаво, а...</div>
+<div><span><em class="placeholder">11 годин 27 хв</em> тому</span> <a href="/comment/41763#comment-41763" class="more">переглянути</a> </div>
+      </div>
+
+
+
+
+
+          Голосів:
+
+
+
+      <div class="clearfix">0</div>
+
+    </li>
+      <li class="last odd">
+
+      <div class="clearfix">
+
+
+      <a href="/article/zvukona-vol-zhyvogo-slova-dorogovkaz-do-fizychnogo-bezsmertya.html">Звукона Воль Живого Слова – дороговказ до фізичного безсмертя</a>
+      </div>
+
+
+
+
+      <img src="http://files.ar25.org/sites/default/files/styles/av/public/avatars/1001660.jpg?itok=pNvNWEpj" width="50" height="50" alt="" />
+
+
+      <div>
+
+
+      <div><span class="username">Андрій Ясун</span> Було б добре мати такі пояснення до кожної Цифрони, Звукони, Інформосоти і Енергосоти. Зі своєї...</div>
+<div><span><em class="placeholder">1 година 41 хв</em> тому</span> <a href="/comment/41760#comment-41760" class="more">переглянути</a> </div>
+      </div>
+
+
+
+
+
+          Голосів:
+
+
+
+      <div class="clearfix">0</div>
+
+    </li>
+    </ul>
+    </div>
+
+
+
+
+
+
+</div>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+
+<section id="block-block-4" class="block block-block block-odd">
+
+        <h2>Лічильник</h2>
+
+  <div class="content">
+    <div style="text-align: center">
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/stat/sd.org.ua/' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t11.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показане число переглядів за 24 години, відвідувачів за 24 години й за сьогодні' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+</div>  </div><!-- /.content -->
+
+</section><!-- /.block -->
+        </aside><!-- /#sidebar-second -->
+
+    <footer id="footer" class="clearfix" role="contentinfo">
+                <div class="copy">
+            <p>© 1999-2016, НАРОДНИЙ ОГЛЯДАЧ, ПЕРЕХІД-IV. Всі права застережено.
+                <br/>Використання інформації з сайту дозволяється тільки при умові розміщення активного посилання на
+                SD.ORG.UA
+            </p>
+        </div>
+    </footer>
+    <!-- /#footer -->
+</div>
+<!-- /#page -->
+<a id="button-1" class="fixed-button" href="/forum">Форум</a>
+<a id="button-2" class="fixed-button" href="/article/proshu-pidtrymaty-rozrobku-narodnogo-oglyadacha.html">Підтримати сайт</a>
+<a id="button-3" class="fixed-button" href="/faq.html">Довідка</a>
+<!--<a id="button-3" class="fixed-button" href="http://sd.org.ua/">Довідка</a>-->
+  	<div class="ym-counter"><!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter20795473 = new Ya.Metrika({id:20795473,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/20795473" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --></div><div id="user_relationships_popup_form" class="user_relationships_ui_popup_form"></div>
+</body>
+</html>

@@ -15,19 +15,10 @@ class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
         val element = document.select("div .entity-extra-wrapper").first()
 
         val id = java.lang.Long.valueOf(element.attr("data-entity_id"))
-        val header = element.select("h1.title").first().text()
-        val publishDate = element.select("div .date-time").first().text().split(" - ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0]
-        var imageUrl = element.select("div .field.field-name-field-img-cover.field-type-image.field-label-hidden").first().child(0).child(0).absUrl("src")
-
-        if (imageUrl == "") {
-            imageUrl = element.select("div .field.field-name-field-img-cover.field-type-image.field-label-hidden").first().child(0).child(0).child(0).absUrl("src")
-        }
-
-        if (imageUrl == "") {
-            imageUrl = element.select("div .field.field-name-field-img-cover.field-type-image.field-label-hidden").first().child(0).child(0).child(0).child(0).absUrl("src")
-        }
-
-        val teaser = element.select("div .teaser").first().child(0).outerHtml()
+        val header = element.select("div .field.field-name-title-field").first().text()
+        val publishDate = element.select("div .field.field-name-post-date").first().child(0).text().split(" - ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0]
+        val imageUrl = element.select("div .field.field-name-field-img-cover").first().getElementsByTag("img").first().absUrl("src")
+        val teaser = element.select("div .field-type-text-with-summary").first().html()
         val text = element.select("div .field.field-name-body.field-type-text-with-summary.field-label-hidden").first().child(0).child(0).html()
 
         return Post(id, header, publishDate, imageUrl, teaser, text)

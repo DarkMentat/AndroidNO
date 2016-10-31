@@ -17,7 +17,7 @@ interface NOPostsApi {
     @GET("/svity?timestamp=0&created=All&sort_by=created")
     fun getLastPosts(@Query(value = "page", encoded = true) page: String): Observable<List<Post>>
 
-    @GET("print/{id}")
+    @GET("/node/{id}")
     fun getPost(@Path("id") id: Long): Observable<Post>
 }
 
