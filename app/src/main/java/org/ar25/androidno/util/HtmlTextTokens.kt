@@ -7,6 +7,8 @@ fun parseHtmlTextToTokens(html: String): List<PostToken>{
     val tokens = mutableListOf<PostToken>()
     val allTags = Jsoup.parseBodyFragment(html).child(0).child(1).children()
 
+
+
     var currentHtmlTextTokenBody = ""
 
     fun addTextToken(){
@@ -18,13 +20,34 @@ fun parseHtmlTextToTokens(html: String): List<PostToken>{
 
     for (tag in allTags){
 
+        tag.setBaseUri("http://www.ar25.org")
+
+        if(!tag.getElementsByClass("file").isEmpty()){
+            addTextToken()
+
+            for(element in tag.getElementsByAttribute("type")){
+                if(element.attr("type").split("/")[0] == "audio") //todo validate link
+                    tokens.add(PostToken.AudioLinkToken(element.absUrl("href"), element.text()))
+            }
+
+            continue
+        }
+
+        if(!tag.getElementsByTag("iframe").isEmpty()) {
+            addTextToken()
+
+            for(element in tag.getElementsByTag("iframe")){
+                if(!element.attr("src").isEmpty()) //todo validate link
+                    tokens.add(PostToken.YoutubeVideoToken(element.attr("src")))
+            }
+
+            continue
+        }
+
         if(!tag.getElementsByTag("img").isEmpty()) {
             addTextToken()
 
             for(node in tag.children()) {
-
-                node.setBaseUri("http://www.ar25.org")
-
                 when {
                     node.tag().name == "img" -> tokens.add(PostToken.ImageToken(node.absUrl("src"), node.attr("title")))
                     !node.text().trim().isEmpty() -> currentHtmlTextTokenBody += node.toString()
@@ -48,5 +71,7 @@ sealed class PostToken(){
 
     class HtmlTextToken(val text: String) : PostToken()
     class ImageToken(val imageUrl: String, val title: String = "") : PostToken()
+    class YoutubeVideoToken(val youtubeUrl: String) : PostToken()
+    class AudioLinkToken(val audioUrl: String, val title: String) : PostToken()
 
 }

@@ -1,6 +1,8 @@
 package org.ar25.androidno.ui
 
+import android.content.Intent
 import android.content.Intent.ACTION_VIEW
+import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -9,6 +11,7 @@ import android.view.MenuItem
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -166,6 +169,28 @@ class DetailActivity : AppCompatActivity(), DetailView {
                             .fit()
                             .centerInside()
                             .into(view)
+                }
+
+                is PostToken.YoutubeVideoToken -> {
+                    val view = layoutInflater.inflate(R.layout.view_youtube_token, postMainContent, false)
+
+                    view.setOnClickListener {
+                        startActivity(Intent(ACTION_VIEW, Uri.parse(token.youtubeUrl)))
+                    }
+
+                    postMainContent.addView(view)
+                }
+
+                is PostToken.AudioLinkToken -> {
+                    val view = layoutInflater.inflate(R.layout.view_audio_token, postMainContent, false) as TextView
+
+                    view.text = token.title
+
+                    view.setOnClickListener {
+                        startActivity(Intent(ACTION_VIEW, Uri.parse(token.audioUrl)))
+                    }
+
+                    postMainContent.addView(view)
                 }
             }
         }
