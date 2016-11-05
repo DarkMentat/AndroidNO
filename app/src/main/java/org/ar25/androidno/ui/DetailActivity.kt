@@ -18,11 +18,14 @@ import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
 import org.ar25.androidno.NOApplication
 import org.ar25.androidno.R
+import org.ar25.androidno.api.ParseErrorException
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.DetailView
 import org.ar25.androidno.util.*
 import org.sufficientlysecure.htmltextview.HtmlTextView
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 
@@ -116,7 +119,17 @@ class DetailActivity : AppCompatActivity(), DetailView {
         currentPost = post
     }
     override fun onGetError(error: Throwable) {
-        Snackbar.make(parentScrollView, "Some error happens\n${error.message}", Snackbar.LENGTH_LONG).show()
+
+        fun showError(text: String){
+            Snackbar.make(parentScrollView, text, Snackbar.LENGTH_LONG).show()
+        }
+
+        when(error){
+            is SocketTimeoutException -> showError(getString(R.string.timeout_error))
+            is UnknownHostException -> showError(getString(R.string.unknownhost_error))
+            is ParseErrorException ->  showError(getString(R.string.parse_error))
+            else -> showError(getString(R.string.unhandled_error, error.message ?: error.toString()))
+        }
     }
 
     override fun setLoading() {

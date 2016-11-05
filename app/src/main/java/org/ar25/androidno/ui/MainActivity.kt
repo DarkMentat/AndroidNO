@@ -15,9 +15,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.ar25.androidno.NOApplication
 import org.ar25.androidno.R
+import org.ar25.androidno.api.ParseErrorException
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.presenters.MainPresenter
 import org.ar25.androidno.presenters.MainView
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 
@@ -95,7 +98,17 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     override fun onGetError(error: Throwable) {
-        Snackbar.make(swipeRefresh, "Some error happens\n${error.message}", Snackbar.LENGTH_LONG).show()
+
+        fun showError(text: String){
+            Snackbar.make(swipeRefresh, text, Snackbar.LENGTH_LONG).show()
+        }
+
+        when(error){
+            is SocketTimeoutException -> showError(getString(R.string.timeout_error))
+            is UnknownHostException -> showError(getString(R.string.unknownhost_error))
+            is ParseErrorException ->  showError(getString(R.string.parse_error))
+            else -> showError(getString(R.string.unhandled_error, error.message ?: error.toString()))
+        }
     }
 
     override fun setLoading() {

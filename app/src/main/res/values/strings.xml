@@ -10,4 +10,9 @@
     <string name="no_items">There is no items. Connect to the internet to get last articles.</string>
     <string name="load_more_posts">Load more posts</string>
     <string name="open_in_Youtube">open with Youtube</string>
+
+    <string name="timeout_error">Some error happened\nConnection timeout error</string>
+    <string name="unknownhost_error">Some error happened\nCan not connect to host</string>
+    <string name="parse_error">Some error happened\nCan not read response</string>
+    <string name="unhandled_error">Some error happened\n%1$s</string>
 </resources>
