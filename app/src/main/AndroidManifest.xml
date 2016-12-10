@@ -39,6 +39,13 @@
                 <data android:scheme="http"
                       android:host="ar25.org"
                       android:pathPrefix="/node/" />
+
+                <data android:scheme="http"
+                    android:host="www.ar25.org"
+                    android:pathPrefix="/article/" />
+                <data android:scheme="http"
+                    android:host="ar25.org"
+                    android:pathPrefix="/article/" />
             </intent-filter>
 
         </activity>

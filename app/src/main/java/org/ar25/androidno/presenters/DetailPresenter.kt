@@ -13,6 +13,24 @@ open class DetailPresenter {
 
     var view: DetailView? = null
 
+    fun fetchPost(slug: String) {
+
+        val detailView : DetailView = view ?: return
+
+        detailView.setLoading()
+
+        noPostsApi
+                .getPost(slug)
+                .retry(3)
+                .subscribeOn(Schedulers.io())
+                .doOnNext { localStorage.savePost(it)}
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        { post -> detailView.onGetPost(post); detailView.setLoaded() },
+                        { error -> detailView.onGetError(error); detailView.setLoaded() }
+                )
+
+    }
     fun fetchPost(id: Long) {
 
         val detailView : DetailView = view ?: return

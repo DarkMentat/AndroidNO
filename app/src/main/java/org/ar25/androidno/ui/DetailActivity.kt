@@ -79,7 +79,12 @@ class DetailActivity : AppCompatActivity(), DetailView {
     fun bindPresenter() {
         detailPresenter.view = this
 
-        detailPresenter.fetchPost(postId)
+        if(postId > 0) {
+            detailPresenter.fetchPost(postId)
+        } else {
+            if(intent.data.pathSegments.size > 1)
+                detailPresenter.fetchPost(intent.data.pathSegments[1])
+        }
     }
 
     override fun onDestroy() {
@@ -156,7 +161,10 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         val uri = Uri.parse(link.url)
 
-        if (uri.host == "www.ar25.org" || uri.host == "ar25.org") {
+        if( uri.pathSegments.size > 1 &&
+                (uri.host == "www.ar25.org" || uri.host == "ar25.org") &&
+                (uri.pathSegments[0] == "node" || uri.pathSegments[0] == "article")) {
+
             startActivity(Intent(this@DetailActivity, DetailActivity::class.java)
                     .setAction(ACTION_VIEW)
                     .setData(uri))

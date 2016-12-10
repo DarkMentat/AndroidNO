@@ -19,6 +19,9 @@ interface NOPostsApi {
 
     @GET("/node/{id}")
     fun getPost(@Path("id") id: Long): Observable<Post>
+
+    @GET("/article/{slug}")
+    fun getPost(@Path("slug") slug: String): Observable<Post>
 }
 
 
