@@ -13,13 +13,29 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.ar25.androidno"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        resConfigs "en", "ru", "uk"
+    }
+
+    productFlavors {
+        dev {
+            applicationId "org.ar25.androidnodev"
+            minSdkVersion 21
+        }
+
+        live {
+            applicationId "org.ar25.androidno"
+        }
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled true
             shrinkResources true
