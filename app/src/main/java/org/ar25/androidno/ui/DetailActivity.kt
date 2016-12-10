@@ -23,6 +23,7 @@ import org.ar25.androidno.entities.Post
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.DetailView
 import org.ar25.androidno.util.*
+import org.sufficientlysecure.htmltextview.ClickableLocalLinkMovementMethod
 import org.sufficientlysecure.htmltextview.HtmlTextView
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -151,6 +152,19 @@ class DetailActivity : AppCompatActivity(), DetailView {
         return true
     }
 
+    private val linkMovementMethod =  ClickableLocalLinkMovementMethod { view, link ->
+
+        val uri = Uri.parse(link.url)
+
+        if (uri.host == "www.ar25.org" || uri.host == "ar25.org") {
+            startActivity(Intent(this@DetailActivity, DetailActivity::class.java)
+                    .setAction(ACTION_VIEW)
+                    .setData(uri))
+
+        } else {
+            link.onClick(view)
+        }
+    }
     fun fillContent(html: String?){
         if(html == null) return
 
@@ -164,6 +178,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                     val view = layoutInflater.inflate(R.layout.view_html_text_token, postMainContent, false) as HtmlTextView
 
                     view.setHtml(token.text)
+                    view.movementMethod = linkMovementMethod //hack to allow customize behavior on link click
 
                     postMainContent.addView(view)
                 }
