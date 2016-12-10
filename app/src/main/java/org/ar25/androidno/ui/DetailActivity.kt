@@ -198,6 +198,14 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
                     postMainContent.addView(view)
 
+                    if(token.title.isNotEmpty()) {
+
+                        val title = TextView(this)
+                        title.text = token.title
+                        title.setPadding(0, 0, 0, 24)
+                        postMainContent.addView(title)
+                    }
+
                     Picasso.with(this)
                             .load(token.imageUrl)
                             .placeholder(R.drawable.transparent_placeholder)
