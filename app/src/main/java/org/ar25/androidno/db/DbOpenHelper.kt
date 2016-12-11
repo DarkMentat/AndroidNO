@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 
-class DbOpenHelper(context: Context) : SQLiteOpenHelper(context, DbOpenHelper.DB_NAME, null, 1) {
+class DbOpenHelper(val context: Context) : SQLiteOpenHelper(context, DbOpenHelper.DB_NAME, null, db_version) {
 
     companion object {
         const val DB_NAME = "no_local_database"
@@ -16,6 +16,10 @@ class DbOpenHelper(context: Context) : SQLiteOpenHelper(context, DbOpenHelper.DB
         const val DB_POSTS_TEASER = "teaser"
         const val DB_POSTS_IMAGE_URL = "image_url"
         const val DB_POSTS_TEXT = "text"
+        const val DB_POSTS_SOURCE = "source"
+        const val DB_POSTS_SOURCE_LINK = "source_link"
+
+        const val db_version = 1
     }
 
     val createPostsTableQuery =
@@ -25,7 +29,9 @@ class DbOpenHelper(context: Context) : SQLiteOpenHelper(context, DbOpenHelper.DB
              "$DB_POSTS_PUBLISH_DATE TEXT NOT NULL, " +
              "$DB_POSTS_IMAGE_URL TEXT NOT NULL, " +
              "$DB_POSTS_TEASER TEXT NOT NULL, " +
-             "$DB_POSTS_TEXT TEXT NULL " +
+             "$DB_POSTS_TEXT TEXT NULL, " +
+             "$DB_POSTS_SOURCE TEXT NULL, " +
+             "$DB_POSTS_SOURCE_LINK TEXT NULL " +
          ");"
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -33,7 +39,12 @@ class DbOpenHelper(context: Context) : SQLiteOpenHelper(context, DbOpenHelper.DB
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        // no impl
+
+        if(oldVersion != newVersion) {
+
+            db.execSQL("DROP TABLE IF EXISTS $DB_POSTS_TABLE")
+            db.execSQL(createPostsTableQuery)
+        }
     }
 }
 

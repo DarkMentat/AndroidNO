@@ -113,11 +113,23 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
         if(post.text == null) {
             teaserText.setHtml(post.teaser)
+
         } else if(currentPost == null || currentPost?.text != null) {
             fillContent(post.teaser + post.text)
+
+            if(post.source != null) {
+                source.visibility = VISIBLE
+                source.setHtml(getString(R.string.post_source, post.sourceLink, post.source).trim())
+            }
         } else {
             postMainContent.animateToTransparent {
                 fillContent(post.teaser + post.text)
+
+                if(post.source != null) {
+                    source.visibility = VISIBLE
+                    source.setHtml(getString(R.string.post_source, post.sourceLink, post.source).trim())
+                }
+
                 postMainContent.animateToVisible()
             }
         }

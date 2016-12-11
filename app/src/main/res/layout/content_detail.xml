@@ -20,7 +20,8 @@
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="01.23.21"/>
+        tools:text="01.23.21"
+        tools:visibility="visible"/>
 
     <TextView
         android:id="@+id/header"
@@ -29,7 +30,8 @@
         android:textColor="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Some header in top "/>
+        tools:text="Some header in top "
+        tools:visibility="visible"/>
 
     <ImageView
         android:id="@+id/image"
@@ -41,14 +43,16 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:contentDescription="@string/post_image"
-        tools:src="@drawable/logo"/>
+        tools:src="@drawable/logo"
+        tools:visibility="visible"/>
 
     <LinearLayout
         android:id="@+id/postMainContent"
         android:visibility="gone"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:visibility="visible">
 
         <org.sufficientlysecure.htmltextview.HtmlTextView
             android:id="@+id/teaserText"
@@ -59,6 +63,18 @@
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie neque est. Ut aliquet nisl sit amet dictum commodo. Ut feugiat, lectus sed vestibulum eleifend, arcu nisi interdum felis, vitae dapibus ex sem eu urna. Sed ante magna, hendrerit eu ornare eu, porta vitae velit."/>
 
     </LinearLayout>
+
+    <org.sufficientlysecure.htmltextview.HtmlTextView
+        android:id="@+id/source"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Джерело: Народний Оглядач"
+        tools:visibility="visible"/>
 
     <FrameLayout
         android:id="@+id/loadingIndicator"

@@ -20,10 +20,17 @@ class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
             val teaser = element.select("div .field-type-text-with-summary").first().html()
             val text = element.select("div .field.field-name-body.field-type-text-with-summary.field-label-hidden").first().child(0).child(0).html()
 
-            return Post(id, header, publishDate, imageUrl, teaser, text)
+            try {
+                val source = element.select("div .field.field-name-field-link.field-type-link-field.field-label-hidden").first().child(0).child(0).child(0).text()
+                val sourceLink = element.select("div .field.field-name-field-link.field-type-link-field.field-label-hidden").first().child(0).child(0).child(0).attr("href")
+
+                return Post(id, header, publishDate, imageUrl, teaser, text, source, sourceLink)
+            } catch (error: Exception) {
+                return Post(id, header, publishDate, imageUrl, teaser, text)
+            }
 
         } catch (error: Exception){
-            throw ParseErrorException("Can not parse post list response", error)
+            throw ParseErrorException("Can not parse post response", error)
         }
     }
 }
