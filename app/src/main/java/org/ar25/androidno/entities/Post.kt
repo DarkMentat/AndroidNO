@@ -5,6 +5,7 @@ import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_HEADER
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_ID
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_IMAGE_TITLE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_IMAGE_URL
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_PUBLISH_DATE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_SOURCE
@@ -34,6 +35,9 @@ data class Post(
 
         @JvmField @StorIOSQLiteColumn(name = DB_POSTS_TEXT)
         var text: String? = null,
+
+        @JvmField @StorIOSQLiteColumn(name = DB_POSTS_IMAGE_TITLE)
+        var imageTitle: String? = null,
 
         @JvmField @StorIOSQLiteColumn(name = DB_POSTS_SOURCE)
         var source: String? = null,

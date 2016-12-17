@@ -15,8 +15,9 @@ class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
 
             val id = java.lang.Long.valueOf(element.attr("data-entity_id"))
             val header = element.select("div .field.field-name-title-field").first().text()
-            val publishDate = element.select("div .field.field-name-post-date").first().child(0).text().split(" - ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0]
-            val imageUrl = element.select("div .field.field-name-field-img-cover").first().getElementsByTag("img").first().absUrl("src")
+            val publishDate = element.select("div .field.field-name-post-date").first().child(0).text().split(" - ".toRegex())[0]
+            val imageUrl = element.select("div .field.field-name-field-img-cover")?.first()?.getElementsByTag("img")?.first()?.absUrl("src") ?: ""
+            val imageTitle = element.select("div .field.field-name-field-file-image-title-text.field-type-text").first()?.text()
             val teaser = element.select("div .field-type-text-with-summary").first().html()
             val text = element.select("div .field.field-name-body.field-type-text-with-summary.field-label-hidden").first().child(0).child(0).html()
 
@@ -24,7 +25,7 @@ class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
                 val source = element.select("div .field.field-name-field-link.field-type-link-field.field-label-hidden").first().child(0).child(0).child(0).text()
                 val sourceLink = element.select("div .field.field-name-field-link.field-type-link-field.field-label-hidden").first().child(0).child(0).child(0).attr("href")
 
-                return Post(id, header, publishDate, imageUrl, teaser, text, source, sourceLink)
+                return Post(id, header, publishDate, imageUrl, teaser, text, imageTitle, source, sourceLink)
             } catch (error: Exception) {
                 return Post(id, header, publishDate, imageUrl, teaser, text)
             }

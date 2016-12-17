@@ -121,10 +121,19 @@ class DetailActivity : AppCompatActivity(), DetailView {
                 source.visibility = VISIBLE
                 source.setHtml(getString(R.string.post_source, post.sourceLink, post.source).trim())
             }
+
+            if(post.imageTitle != null) {
+                imageTitle.visibility = VISIBLE
+                imageTitle.text = post.imageTitle
+            }
         } else {
             postMainContent.animateToTransparent {
                 fillContent(post.teaser + post.text)
 
+                if(post.imageTitle != null) {
+                    imageTitle.visibility = VISIBLE
+                    imageTitle.text = post.imageTitle
+                }
                 if(post.source != null) {
                     source.visibility = VISIBLE
                     source.setHtml(getString(R.string.post_source, post.sourceLink, post.source).trim())

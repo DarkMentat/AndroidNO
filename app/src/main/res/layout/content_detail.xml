@@ -46,6 +46,15 @@
         tools:src="@drawable/logo"
         tools:visibility="visible"/>
 
+    <TextView
+        android:id="@+id/imageTitle"
+        android:paddingBottom="16dp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:visibility="visible"
+        tools:text="Image description"/>
+
     <LinearLayout
         android:id="@+id/postMainContent"
         android:visibility="gone"

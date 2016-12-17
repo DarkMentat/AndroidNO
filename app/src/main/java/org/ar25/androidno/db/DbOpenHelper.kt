@@ -15,6 +15,7 @@ class DbOpenHelper(val context: Context) : SQLiteOpenHelper(context, DbOpenHelpe
         const val DB_POSTS_PUBLISH_DATE = "publish_date"
         const val DB_POSTS_TEASER = "teaser"
         const val DB_POSTS_IMAGE_URL = "image_url"
+        const val DB_POSTS_IMAGE_TITLE = "image_title"
         const val DB_POSTS_TEXT = "text"
         const val DB_POSTS_SOURCE = "source"
         const val DB_POSTS_SOURCE_LINK = "source_link"
@@ -30,6 +31,7 @@ class DbOpenHelper(val context: Context) : SQLiteOpenHelper(context, DbOpenHelpe
              "$DB_POSTS_IMAGE_URL TEXT NOT NULL, " +
              "$DB_POSTS_TEASER TEXT NOT NULL, " +
              "$DB_POSTS_TEXT TEXT NULL, " +
+             "$DB_POSTS_IMAGE_TITLE TEXT NULL, " +
              "$DB_POSTS_SOURCE TEXT NULL, " +
              "$DB_POSTS_SOURCE_LINK TEXT NULL " +
          ");"
