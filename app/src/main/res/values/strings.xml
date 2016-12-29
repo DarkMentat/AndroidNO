@@ -12,6 +12,7 @@
     <string name="open_in_Youtube">open with Youtube</string>
 
     <string name="post_source"><![CDATA[ <i>Source: <a href="%1$s">%2$s</a></i> ]]></string>
+    <string name="post_gamer">Gamer: %1$s</string>
 
     <string name="timeout_error">Some error happened\nConnection timeout error</string>
     <string name="unknownhost_error">Some error happened\nCan not connect to host</string>

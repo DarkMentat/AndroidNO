@@ -3,6 +3,7 @@ package org.ar25.androidno.entities
 
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_GAMER
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_HEADER
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_ID
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_IMAGE_TITLE
@@ -35,6 +36,9 @@ data class Post(
 
         @JvmField @StorIOSQLiteColumn(name = DB_POSTS_TEXT)
         var text: String? = null,
+
+        @JvmField @StorIOSQLiteColumn(name = DB_POSTS_GAMER)
+        var gamer: String? = null,
 
         @JvmField @StorIOSQLiteColumn(name = DB_POSTS_IMAGE_TITLE)
         var imageTitle: String? = null,

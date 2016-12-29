@@ -14,6 +14,7 @@
     <string name="open_in_Youtube">відкрити в Youtube</string>
 
     <string name="post_source"><![CDATA[ <i>Джерело: <a href="%1$s">%2$s</a></i> ]]></string>
+    <string name="post_gamer">Гравець: %1$s</string>
 
     <string name="timeout_error">Не вдалося під\'єднатись до мережі\nВийшов час з\'єднання</string>
     <string name="unknownhost_error">Не вдалося під\'єднатись до мережі\nНеможливо знайти сервер</string>

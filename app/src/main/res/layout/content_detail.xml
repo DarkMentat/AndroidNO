@@ -85,6 +85,18 @@
         tools:text="Джерело: Народний Оглядач"
         tools:visibility="visible"/>
 
+    <TextView
+        android:id="@+id/gamer"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Гравець: Рагнар Лодброк"
+        tools:visibility="visible"/>
+
     <FrameLayout
         android:id="@+id/loadingIndicator"
         android:visibility="gone"

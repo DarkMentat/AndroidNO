@@ -96,6 +96,24 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
     override fun onGetPost(post: Post?) {
 
+        fun fillContent(post: Post) {
+
+            fillContent(post.teaser + post.text)
+
+            if(post.imageTitle != null) {
+                imageTitle.visibility = VISIBLE
+                imageTitle.text = post.imageTitle
+            }
+            if(post.source != null) {
+                source.visibility = VISIBLE
+                source.setHtml(getString(R.string.post_source, post.sourceLink, post.source).trim())
+            }
+            if(post.gamer != null) {
+                gamer.visibility = VISIBLE
+                gamer.text = getString(R.string.post_gamer, post.gamer).trim()
+            }
+        }
+
         if(post == null || currentPost == post)
             return
 
@@ -115,29 +133,12 @@ class DetailActivity : AppCompatActivity(), DetailView {
             teaserText.setHtml(post.teaser)
 
         } else if(currentPost == null || currentPost?.text != null) {
-            fillContent(post.teaser + post.text)
 
-            if(post.source != null) {
-                source.visibility = VISIBLE
-                source.setHtml(getString(R.string.post_source, post.sourceLink, post.source).trim())
-            }
-
-            if(post.imageTitle != null) {
-                imageTitle.visibility = VISIBLE
-                imageTitle.text = post.imageTitle
-            }
+            fillContent(post)
         } else {
             postMainContent.animateToTransparent {
-                fillContent(post.teaser + post.text)
 
-                if(post.imageTitle != null) {
-                    imageTitle.visibility = VISIBLE
-                    imageTitle.text = post.imageTitle
-                }
-                if(post.source != null) {
-                    source.visibility = VISIBLE
-                    source.setHtml(getString(R.string.post_source, post.sourceLink, post.source).trim())
-                }
+                fillContent(post)
 
                 postMainContent.animateToVisible()
             }

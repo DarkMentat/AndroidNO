@@ -20,14 +20,15 @@ class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
             val imageTitle = element.select("div .field.field-name-field-file-image-title-text.field-type-text").first()?.text()
             val teaser = element.select("div .field-type-text-with-summary").first().html()
             val text = element.select("div .field.field-name-body.field-type-text-with-summary.field-label-hidden").first().child(0).child(0).html()
+            val gamer = element.select("span.username").first().text()
 
             try {
                 val source = element.select("div .field.field-name-field-link.field-type-link-field.field-label-hidden").first().child(0).child(0).child(0).text()
                 val sourceLink = element.select("div .field.field-name-field-link.field-type-link-field.field-label-hidden").first().child(0).child(0).child(0).attr("href")
 
-                return Post(id, header, publishDate, imageUrl, teaser, text, imageTitle, source, sourceLink)
+                return Post(id, header, publishDate, imageUrl, teaser, text, gamer, imageTitle, source, sourceLink)
             } catch (error: Exception) {
-                return Post(id, header, publishDate, imageUrl, teaser, text)
+                return Post(id, header, publishDate, imageUrl, teaser, text, gamer)
             }
 
         } catch (error: Exception){
