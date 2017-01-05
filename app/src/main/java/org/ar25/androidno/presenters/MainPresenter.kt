@@ -3,18 +3,26 @@ package org.ar25.androidno.presenters
 import org.ar25.androidno.api.NOPostsApi
 import org.ar25.androidno.api.getLastPosts
 import org.ar25.androidno.db.LocalStorage
+import org.ar25.androidno.entities.Post
+import org.ar25.androidno.mvp.BasePresenter
+import org.ar25.androidno.navigation.ScreenRouterManager
+import org.ar25.androidno.permission.PermissionManager
+import org.ar25.androidno.ui.DetailActivity
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import javax.inject.Inject
+import javax.inject.Singleton
 
 
-class MainPresenter {
-    @Inject lateinit var localStorage: LocalStorage
-    @Inject lateinit var noPostsApi: NOPostsApi
+@Singleton open class MainPresenter @Inject constructor(
 
-    var view: MainView? = null
+        val screenRouterManager: ScreenRouterManager,
+        permissionManager: PermissionManager,
+        val localStorage: LocalStorage,
+        val noPostsApi: NOPostsApi
 
+): BasePresenter<MainView>(permissionManager) {
 
     fun fetchPosts(page: Int, withCached: Boolean = true) {
 
@@ -37,5 +45,10 @@ class MainPresenter {
                         { posts -> mainView.onGetPosts(posts, page); mainView.setLoaded() },
                         { error -> mainView.onGetError(error); mainView.setLoaded() }
                 )
+    }
+
+    fun onItemClick(post: Post) {
+
+        screenRouterManager.openScreen(DetailActivity.getDetailActivityBuilder(post))
     }
 }

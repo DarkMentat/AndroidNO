@@ -1,7 +1,6 @@
 package org.ar25.androidno.ui
 
 import android.content.Context
-import android.content.Intent
 import android.support.v7.util.SortedList
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -102,6 +101,8 @@ class PostsRecyclerViewAdapter(
         }
     }
 
+
+    var onItemClick: (Post) -> Unit = {}
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         if(holder is PostContentViewHolder) {
             val post = sortedList[position]
@@ -109,10 +110,7 @@ class PostsRecyclerViewAdapter(
             holder.mHeader.text = post.header
             holder.mPublishDate.text = post.publishDate
             holder.mTeaser.setHtml(post.teaser)
-            holder.mCard.setOnClickListener {
-                context.startActivity(Intent(context, DetailActivity::class.java)
-                        .putExtra(DetailActivity.EXTRA_POST_ID, post.id))
-            }
+            holder.mCard.setOnClickListener { onItemClick(post) }
 
             Picasso.with(context).load(post.imageUrl).into(holder.mImage)
         }
@@ -125,9 +123,10 @@ class PostsRecyclerViewAdapter(
     override fun getItemViewType(position: Int) : Int {
         return if(position >= sortedList.size()) VIEW_TYPE_LOADING else VIEW_TYPE_CONTENT
     }
-    override fun getItemCount(): Int {
-        return sortedList.size() + 1
-    }
+    override fun getItemCount() = sortedList.size() + 1
+
+    var postsCount: Int = sortedList.size()
+        get() = sortedList.size()
 
 
     var onCreateLoadingViewHolder: (vh: LoadingViewHolder) -> Unit = {}

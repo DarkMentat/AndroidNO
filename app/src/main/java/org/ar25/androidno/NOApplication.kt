@@ -5,7 +5,6 @@ import dagger.Component
 import org.ar25.androidno.api.DaggerRetrofitModule
 import org.ar25.androidno.db.DaggerDbModule
 import org.ar25.androidno.db.LocalStorageImpl
-import org.ar25.androidno.presenters.DaggerPresenterModule
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.MainPresenter
 import org.ar25.androidno.ui.DetailActivity
@@ -20,7 +19,7 @@ class NOApplication : Application() {
     }
 
     @Singleton
-    @Component(modules = arrayOf(DaggerDbModule::class, DaggerPresenterModule::class, DaggerRetrofitModule::class))
+    @Component(modules = arrayOf(DaggerAppModule::class, DaggerDbModule::class, DaggerRetrofitModule::class))
     interface NOAppComponent {
         fun inject(presenter: MainPresenter)
         fun inject(presenter: DetailPresenter)
@@ -34,8 +33,8 @@ class NOApplication : Application() {
 
         noAppComponent = DaggerNOApplication_NOAppComponent
                             .builder()
+                            .daggerAppModule(DaggerAppModule(this))
                             .daggerDbModule(DaggerDbModule(this))
-                            .daggerPresenterModule(DaggerPresenterModule())
                             .daggerRetrofitModule(DaggerRetrofitModule())
                             .build()
     }

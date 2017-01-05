@@ -1,8 +1,10 @@
 package org.ar25.androidno.presenters
 
 import org.ar25.androidno.entities.Post
+import org.ar25.androidno.mvp.MvpView
 
-interface DetailView {
+
+interface DetailView: MvpView {
     fun onGetPost(post: Post?)
     fun onGetError(error: Throwable)
 

@@ -2,7 +2,6 @@ package org.ar25.androidno.ui
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -17,24 +16,23 @@ import org.ar25.androidno.NOApplication
 import org.ar25.androidno.R
 import org.ar25.androidno.api.ParseErrorException
 import org.ar25.androidno.entities.Post
+import org.ar25.androidno.mvp.BaseActivity
 import org.ar25.androidno.presenters.MainPresenter
 import org.ar25.androidno.presenters.MainView
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
-import javax.inject.Inject
 
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
-    @Inject lateinit var mainPresenter: MainPresenter
-
+    override fun getMvpView() = this
 
     val postsAdapter = PostsRecyclerViewAdapter(this)
     var currentPage = 0
 
     val onMoreItems: RecyclerView.OnScrollListener by lazy {
         OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
-            mainPresenter.fetchPosts(currentPage + 1)
+            presenter.fetchPosts(currentPage + 1)
             postsAdapter.enableLoadingIndicator()
         }
     }
@@ -53,15 +51,24 @@ class MainActivity : AppCompatActivity(), MainView {
 
         bindActionBar()
         setupRecyclerView()
-
-        bindPresenter()
     }
 
-    fun bindPresenter() {
-        mainPresenter.view = this
+    override fun onStart() {
+        super.onStart()
 
-        mainPresenter.fetchPosts(currentPage)
+        presenter.attach(this)
+
+        if(postsAdapter.postsCount == 0) {
+            presenter.fetchPosts(currentPage)
+        }
     }
+
+    override fun onStop() {
+        super.onStop()
+
+        presenter.detach()
+    }
+
     fun bindActionBar() {
         setSupportActionBar(toolbar)
     }
@@ -70,16 +77,11 @@ class MainActivity : AppCompatActivity(), MainView {
         postsList.itemAnimator = DefaultItemAnimator()
         postsList.adapter = postsAdapter
         postsList.addOnScrollListener(onMoreItems)
+        postsAdapter.onItemClick = { presenter?.onItemClick(it) }
 
-        swipeRefresh.setOnRefreshListener { mainPresenter.fetchPosts(0, withCached = false) }
-        postsNoItemsPlaceHolder.setOnClickListener { mainPresenter.fetchPosts(0) }
+        swipeRefresh.setOnRefreshListener { presenter.fetchPosts(0, withCached = false) }
+        postsNoItemsPlaceHolder.setOnClickListener { presenter.fetchPosts(0) }
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mainPresenter.view = null
-    }
-
 
     override fun onGetPosts(posts: List<Post>, page: Int) {
         if (posts.isEmpty())
@@ -115,7 +117,7 @@ class MainActivity : AppCompatActivity(), MainView {
         swipeRefresh.post { swipeRefresh.isRefreshing = true }
     }
     override fun setLoaded() {
-        postsAdapter.enableLoadMoreButton { mainPresenter.fetchPosts(currentPage + 1) }
+        postsAdapter.enableLoadMoreButton { presenter.fetchPosts(currentPage + 1) }
 
         swipeRefresh.isRefreshing = false
     }
@@ -125,7 +127,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
         when(item.itemId){
             R.id.action_settings -> Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
-            R.id.action_refresh -> mainPresenter.fetchPosts(0, withCached = false)
+            R.id.action_refresh -> presenter.fetchPosts(0, withCached = false)
             else -> return super.onOptionsItemSelected(item)
         }
 

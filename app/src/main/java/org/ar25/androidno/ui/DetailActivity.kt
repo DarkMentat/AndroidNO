@@ -5,7 +5,6 @@ import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View.GONE
@@ -20,6 +19,8 @@ import org.ar25.androidno.NOApplication
 import org.ar25.androidno.R
 import org.ar25.androidno.api.ParseErrorException
 import org.ar25.androidno.entities.Post
+import org.ar25.androidno.mvp.BaseActivity
+import org.ar25.androidno.navigation.ScreenRouterManager
 import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.DetailView
 import org.ar25.androidno.util.*
@@ -27,17 +28,23 @@ import org.sufficientlysecure.htmltextview.ClickableLocalLinkMovementMethod
 import org.sufficientlysecure.htmltextview.HtmlTextView
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
-import javax.inject.Inject
 
 
-class DetailActivity : AppCompatActivity(), DetailView {
+class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
+
+    override fun getMvpView() = this
 
     companion object {
         const val EXTRA_POST_ID = "EXTRA_POST_ID"
+
+        @JvmStatic fun getDetailActivityBuilder(post: Post): ScreenRouterManager.ActivityBuilder {
+
+            val activityBuilder = ScreenRouterManager.ActivityBuilder(DetailActivity::class.java)
+            activityBuilder.putArg(EXTRA_POST_ID, post.id)
+
+            return activityBuilder
+        }
     }
-
-    @Inject lateinit var detailPresenter: DetailPresenter
-
 
     val postId: Long by lazy {
 
@@ -67,7 +74,25 @@ class DetailActivity : AppCompatActivity(), DetailView {
         NOApplication.noAppComponent.inject(this)
 
         bindActionBar()
-        bindPresenter()
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        presenter.attach(this)
+
+        if(postId > 0) {
+            presenter.fetchPost(postId)
+        } else {
+            if(intent.data.pathSegments.size > 1)
+                presenter.fetchPost(intent.data.pathSegments[1])
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        presenter.detach()
     }
 
     fun bindActionBar() {
@@ -76,23 +101,6 @@ class DetailActivity : AppCompatActivity(), DetailView {
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-    fun bindPresenter() {
-        detailPresenter.view = this
-
-        if(postId > 0) {
-            detailPresenter.fetchPost(postId)
-        } else {
-            if(intent.data.pathSegments.size > 1)
-                detailPresenter.fetchPost(intent.data.pathSegments[1])
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        detailPresenter.view = null
-    }
-
 
     override fun onGetPost(post: Post?) {
 
