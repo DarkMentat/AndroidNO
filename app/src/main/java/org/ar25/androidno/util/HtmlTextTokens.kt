@@ -57,6 +57,10 @@ fun parseHtmlTextToTokens(html: String): List<PostToken>{
             continue
         }
 
+        if(tokens.size == 0) { //add teaser as separete token
+            addTextToken()
+        }
+
         if(!tag.text().trim().isEmpty()) {
             currentHtmlTextTokenBody += tag.toString()
         }

@@ -2,9 +2,11 @@ package org.ar25.androidno.ui
 
 import android.content.Intent
 import android.content.Intent.ACTION_VIEW
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v4.app.ActivityCompat
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View.GONE
@@ -216,6 +218,14 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
                     val view = layoutInflater.inflate(R.layout.view_html_text_token, postMainContent, false) as HtmlTextView
 
                     view.setHtml(token.text)
+
+                    if(postMainContent.childCount == 0) {
+
+                        view.setTypeface(null, Typeface.BOLD)
+                        view.setTextColor(ActivityCompat.getColor(context, R.color.text_color_black))
+                        view.setPadding(0, 0, 0, 24)
+                    }
+
                     view.movementMethod = linkMovementMethod //hack to allow customize behavior on link click
 
                     postMainContent.addView(view)
