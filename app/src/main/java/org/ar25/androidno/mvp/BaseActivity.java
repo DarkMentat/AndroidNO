@@ -27,7 +27,7 @@ public abstract class BaseActivity<P extends BasePresenter<V>, V extends MvpView
 
         super.onStart();
         screenRouterManager.setRouter(this);
-        presenter.setIntentExtras(getIntent().getExtras());
+        presenter.setIntent(getIntent());
         presenter.attach(getMvpView());
     }
 

@@ -1,6 +1,6 @@
 package org.ar25.androidno.mvp;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.annotation.IntDef;
 
 import org.ar25.androidno.permission.PermissionManager;
@@ -98,7 +98,7 @@ public abstract class BasePresenter<V extends MvpView> implements MvpPresenter<V
         return view != null;
     }
 
-    public void setIntentExtras(Bundle intentExtras) {}
+    public void setIntent(Intent intent) {}
 
     /**
      * A Transformer that reemits TWO last events emitted by source Observable on change of view

@@ -3,9 +3,17 @@ package org.ar25.androidno.db
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import org.ar25.androidno.ApplicationContext
+import javax.inject.Inject
+import javax.inject.Singleton
 
 
-class DbOpenHelper(val context: Context) : SQLiteOpenHelper(context, DbOpenHelper.DB_NAME, null, db_version) {
+@Singleton
+class DbOpenHelper @Inject constructor(
+
+        @ApplicationContext val context: Context
+
+) : SQLiteOpenHelper(context, DbOpenHelper.DB_NAME, null, db_version) {
 
     companion object {
         const val DB_NAME = "no_local_database"

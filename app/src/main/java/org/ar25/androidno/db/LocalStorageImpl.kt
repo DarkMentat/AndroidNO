@@ -5,7 +5,6 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.pushtorefresh.storio.sqlite.Changes
 import com.pushtorefresh.storio.sqlite.StorIOSQLite
 import com.pushtorefresh.storio.sqlite.queries.Query
-import org.ar25.androidno.NOApplication
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_ID
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_PUBLISH_DATE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TABLE
@@ -15,14 +14,13 @@ import org.ar25.androidno.entities.PostStorIOSQLitePutResolver
 import org.ar25.androidno.util.someObject
 import javax.inject.Inject
 
-class LocalStorageImpl : LocalStorage {
 
-    @Inject lateinit var mStorIOSQLite: StorIOSQLite
-    @Inject lateinit var mSQLiteOpenHelper: SQLiteOpenHelper
+class LocalStorageImpl @Inject constructor(
 
-    init {
-        NOApplication.noAppComponent.inject(this)
-    }
+        val mStorIOSQLite: StorIOSQLite,
+        val mSQLiteOpenHelper: SQLiteOpenHelper
+
+) : LocalStorage {
 
     override fun savePosts(posts: List<Post>) {
         insertManyPostPreviews(mStorIOSQLite.lowLevel(), mSQLiteOpenHelper, posts)

@@ -53,22 +53,6 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         setupRecyclerView()
     }
 
-    override fun onStart() {
-        super.onStart()
-
-        presenter.attach(this)
-
-        if(postsAdapter.postsCount == 0) {
-            presenter.fetchPosts(currentPage)
-        }
-    }
-
-    override fun onStop() {
-        super.onStop()
-
-        presenter.detach()
-    }
-
     fun bindActionBar() {
         setSupportActionBar(toolbar)
     }
@@ -81,6 +65,14 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
         swipeRefresh.setOnRefreshListener { presenter.fetchPosts(0, withCached = false) }
         postsNoItemsPlaceHolder.setOnClickListener { presenter.fetchPosts(0) }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if(postsAdapter.postsCount == 0) {
+            presenter.fetchPosts(currentPage)
+        }
     }
 
     override fun onGetPosts(posts: List<Post>, page: Int) {

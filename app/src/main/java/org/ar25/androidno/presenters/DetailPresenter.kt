@@ -1,9 +1,11 @@
 package org.ar25.androidno.presenters
 
+import android.content.Intent
 import org.ar25.androidno.api.NOPostsApi
 import org.ar25.androidno.db.LocalStorage
 import org.ar25.androidno.mvp.BasePresenter
 import org.ar25.androidno.permission.PermissionManager
+import org.ar25.androidno.ui.DetailActivity
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -19,7 +21,36 @@ import javax.inject.Singleton
 
 ): BasePresenter<DetailView>(permissionManager) {
 
-    fun fetchPost(slug: String) {
+    var postId: Long = -1L
+    var postSlug: String = ""
+
+    override fun setIntent(intent: Intent) {
+
+        postId = intent.extras.getLong(DetailActivity.EXTRA_POST_ID, -1L)
+
+        if (intent.action == Intent.ACTION_VIEW) {
+            if (intent.data.pathSegments.size > 1) {
+                try {
+                    postId = intent.data.pathSegments[1].toLong()
+                } catch (e: NumberFormatException){}
+            }
+        }
+
+        if(intent.data?.pathSegments?.size ?: -1 > 1)
+            postSlug = intent.data.pathSegments[1]
+    }
+
+    fun fetchPosts() {
+
+        when {
+
+            postId > 0 -> fetchPost(postId)
+
+            postSlug.isNotBlank() -> fetchPost(postSlug)
+        }
+    }
+
+    private fun fetchPost(slug: String) {
 
         val detailView : DetailView = view ?: return
 
@@ -37,7 +68,7 @@ import javax.inject.Singleton
                 )
 
     }
-    fun fetchPost(id: Long) {
+    private fun fetchPost(id: Long) {
 
         val detailView : DetailView = view ?: return
 

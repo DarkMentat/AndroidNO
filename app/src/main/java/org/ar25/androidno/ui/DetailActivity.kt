@@ -48,20 +48,6 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
         }
     }
 
-    val postId: Long by lazy {
-
-        if (intent.action == ACTION_VIEW) {
-            if (intent.data.pathSegments.size > 1) {
-                try {
-                    return@lazy intent.data.pathSegments[1].toLong()
-                } catch (e: NumberFormatException){
-                    return@lazy -1L
-                }
-            }
-        }
-
-        return@lazy intent.extras.getLong(EXTRA_POST_ID, -1L)
-    }
     var currentPost: Post? = null
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -78,23 +64,10 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
         bindActionBar()
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
 
-        presenter.attach(this)
-
-        if(postId > 0) {
-            presenter.fetchPost(postId)
-        } else {
-            if(intent.data.pathSegments.size > 1)
-                presenter.fetchPost(intent.data.pathSegments[1])
-        }
-    }
-
-    override fun onStop() {
-        super.onStop()
-
-        presenter.detach()
+        presenter.fetchPosts()
     }
 
     fun bindActionBar() {

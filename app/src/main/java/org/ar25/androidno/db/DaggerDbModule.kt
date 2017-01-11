@@ -28,7 +28,7 @@ class DaggerDbModule(private val mApplication: Application) {
     }
 
     @Provides @Singleton
-    fun provideLocalStorage(): LocalStorage {
-        return LocalStorageImpl()
+    fun provideLocalStorage(storIOSQLite: StorIOSQLite, sqLiteOpenHelper: SQLiteOpenHelper): LocalStorage {
+        return LocalStorageImpl(storIOSQLite, sqLiteOpenHelper)
     }
 }
