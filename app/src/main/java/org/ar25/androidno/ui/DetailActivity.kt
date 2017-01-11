@@ -48,10 +48,8 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
         }
     }
 
-    var currentPost: Post? = null
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menu_detail, menu)
         return true
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +65,7 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
     override fun onResume() {
         super.onResume()
 
-        presenter.fetchPosts()
+        presenter.fetchPost()
     }
 
     fun bindActionBar() {
@@ -97,7 +95,7 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
             }
         }
 
-        if(post == null || currentPost == post)
+        if(post == null)
             return
 
         publishDate.visibility = VISIBLE
@@ -115,7 +113,7 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
         if(post.text == null) {
             teaserText.setHtml(post.teaser)
 
-        } else if(currentPost == null || currentPost?.text != null) {
+        } else if(teaserText.text.isEmpty()) {
 
             fillContent(post)
         } else {
@@ -126,8 +124,6 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
                 postMainContent.animateToVisible()
             }
         }
-
-        currentPost = post
     }
     override fun onGetError(error: Throwable) {
 
@@ -155,6 +151,8 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
         when(item.itemId){
             R.id.action_settings -> Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+            R.id.action_refresh -> presenter.fetchPost()
+            R.id.action_share -> presenter.share()
             android.R.id.home -> finish()
             else -> return super.onOptionsItemSelected(item)
         }

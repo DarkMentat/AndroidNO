@@ -62,6 +62,15 @@ public class ScreenRouterManager {
         openScreen(activityBuilder, false);
     }
 
+    public void openScreen(Intent intent) {
+        openScreen(intent, false);
+    }
+    public void openScreen(Intent intent, boolean finishCurrent) {
+
+        router.changeScreen(intent);
+        if (finishCurrent) router.finishScreen();
+    }
+
     /**
      * Open activity with shared element from intent without finishing current one
      *
