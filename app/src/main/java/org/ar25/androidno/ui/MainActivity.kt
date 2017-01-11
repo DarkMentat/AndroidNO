@@ -19,13 +19,12 @@ import org.ar25.androidno.entities.Post
 import org.ar25.androidno.mvp.BaseActivity
 import org.ar25.androidno.presenters.MainPresenter
 import org.ar25.androidno.presenters.MainView
+import org.ar25.androidno.util.inflateOptionsMenu
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
 
 class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
-
-    override fun getMvpView() = this
 
     val postsAdapter = PostsRecyclerViewAdapter(this)
     var currentPage = 0
@@ -37,11 +36,9 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         }
     }
 
+    override fun getMvpView() = this
+    override fun onCreateOptionsMenu(menu: Menu?) = inflateOptionsMenu(R.menu.menu_main, menu)
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

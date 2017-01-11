@@ -10,6 +10,7 @@ import org.ar25.androidno.mvp.BasePresenter
 import org.ar25.androidno.navigation.ScreenRouterManager
 import org.ar25.androidno.permission.PermissionManager
 import org.ar25.androidno.ui.DetailActivity
+import org.ar25.androidno.util.parseHtmlTextToTokens
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -107,11 +108,13 @@ import javax.inject.Singleton
                 .subscribeOn(Schedulers.io())
                 .doOnNext { localStorage.savePost(it)}
                 .flatMap { Observable.just(localStorage.getPost(id)) }
+                .map { post -> post?.htmlTokens = parseHtmlTextToTokens(post?.teaser + post?.text); post}
                 .doOnNext { currentPost = it }
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext { detailView.setLoaded() }
                 .subscribe(
-                        { post -> detailView.onGetPost(post); detailView.setLoaded() },
-                        { error -> detailView.onGetError(error); detailView.setLoaded() }
+                        { post -> detailView.onGetPost(post) },
+                        { error -> detailView.onGetError(error) }
                 )
     }
 }

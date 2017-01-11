@@ -34,8 +34,6 @@ import java.net.UnknownHostException
 
 class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
-    override fun getMvpView() = this
-
     companion object {
         const val EXTRA_POST_ID = "EXTRA_POST_ID"
 
@@ -48,10 +46,9 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_detail, menu)
-        return true
-    }
+    override fun getMvpView() = this
+    override fun onCreateOptionsMenu(menu: Menu?) = inflateOptionsMenu(R.menu.menu_detail, menu)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -77,9 +74,9 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
     override fun onGetPost(post: Post?) {
 
-        fun fillContent(post: Post) {
+        fun loadPostDetails(post: Post) {
 
-            fillContent(post.teaser + post.text)
+            fillContent(post)
 
             if(post.imageTitle != null) {
                 imageTitle.visibility = VISIBLE
@@ -115,11 +112,11 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
         } else if(teaserText.text.isEmpty()) {
 
-            fillContent(post)
+            loadPostDetails(post)
         } else {
             postMainContent.animateToTransparent {
 
-                fillContent(post)
+                loadPostDetails(post)
 
                 postMainContent.animateToVisible()
             }
@@ -176,10 +173,9 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
             link.onClick(view)
         }
     }
-    fun fillContent(html: String?){
-        if(html == null) return
+    fun fillContent(post: Post){
 
-        val tokens = parseHtmlTextToTokens(html)
+        val tokens = post.htmlTokens ?: parseHtmlTextToTokens(post.teaser + post.text)
 
         postMainContent.removeAllViews()
 

@@ -1,6 +1,9 @@
 package org.ar25.androidno.util
 
 import android.animation.Animator
+import android.app.Activity
+import android.support.annotation.MenuRes
+import android.view.Menu
 import android.view.View
 
 
@@ -28,4 +31,10 @@ fun View.animateToVisible(afterAnimation: () -> Unit = {}){
 
                 override fun onAnimationEnd(animation: Animator) = afterAnimation()
             })
+}
+
+fun Activity.inflateOptionsMenu(@MenuRes menuLayout: Int, menu: Menu?): Boolean {
+
+    menuInflater.inflate(menuLayout, menu)
+    return true
 }
