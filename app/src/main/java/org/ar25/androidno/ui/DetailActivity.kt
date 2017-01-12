@@ -154,6 +154,7 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
             R.id.action_refresh -> presenter.fetchPost()
             R.id.action_share -> presenter.share()
             R.id.action_add_to_favorites -> presenter.addToFavorites()
+            R.id.action_open_in_browser -> presenter.openInBrowser()
             android.R.id.home -> finish()
             else -> return super.onOptionsItemSelected(item)
         }

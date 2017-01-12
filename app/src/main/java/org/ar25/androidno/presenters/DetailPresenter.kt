@@ -1,8 +1,11 @@
 package org.ar25.androidno.presenters
 
+import android.app.Activity
 import android.content.Intent
 import android.content.Intent.ACTION_SEND
 import android.content.Intent.ACTION_VIEW
+import android.net.Uri
+import org.ar25.androidno.R
 import org.ar25.androidno.api.NOPostsApi
 import org.ar25.androidno.db.LocalStorage
 import org.ar25.androidno.entities.Post
@@ -60,6 +63,31 @@ import javax.inject.Singleton
             putExtra(Intent.EXTRA_SUBJECT, post.header)
             putExtra(Intent.EXTRA_TEXT, link)
         })
+    }
+
+    fun openInBrowser() {
+
+        val context = view as Activity
+
+        val link = if(postId > 0) "http://ar25.org/node/$postId" else "http://ar25.org/article/$postSlug"
+        val commonIntent = Intent(ACTION_VIEW, Uri.parse(link))
+        val targetIntents = context.packageManager.queryIntentActivities(commonIntent, 0)
+
+                .filter { !it.activityInfo.packageName.contains("org.ar25.androidno") }
+                .map { Intent(ACTION_VIEW, Uri.parse(link)).apply { setPackage(it.activityInfo.packageName) } }
+
+
+        if(targetIntents.isNotEmpty()) {
+
+            val chooserIntent = Intent.createChooser(Intent(), context.getString(R.string.open_with))
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, targetIntents.toTypedArray())
+
+            screenRouterManager.openScreen(chooserIntent)
+
+        } else {
+
+            screenRouterManager.openScreen(commonIntent)
+        }
     }
 
     fun addToFavorites() {

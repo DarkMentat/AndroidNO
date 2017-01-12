@@ -6,12 +6,14 @@
     <string name="action_refresh">Refresh</string>
     <string name="action_share">Share</string>
     <string name="action_add_to_favorites">Add to favorites</string>
+    <string name="action_open_in_browser">Open in browser</string>
 
     <string name="post_image">Post image</string>
 
     <string name="no_items">There is no items. Connect to the internet to get last articles.</string>
     <string name="load_more_posts">Load more posts</string>
     <string name="open_in_Youtube">open with Youtube</string>
+    <string name="open_with">Open with</string>
 
     <string name="post_source"><![CDATA[ <i>Source: <a href="%1$s">%2$s</a></i> ]]></string>
     <string name="post_gamer">Gamer: %1$s</string>

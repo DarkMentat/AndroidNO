@@ -6,13 +6,15 @@
     <string name="action_settings">Налаштування</string>
     <string name="action_refresh">Оновити</string>
     <string name="action_share">Поділитись</string>
+    <string name="action_add_to_favorites">Додати до обраних</string>
+    <string name="action_open_in_browser">Відкрити в браузері</string>
 
     <string name="post_image">Картинка статті</string>
 
     <string name="no_items">Немає жодної статті. Підключіться до інтернету, щоб завантажити останні статті.</string>
     <string name="load_more_posts">Завантажити більше</string>
-
     <string name="open_in_Youtube">відкрити в Youtube</string>
+    <string name="open_with">Відкрити за допомогою</string>
 
     <string name="post_source"><![CDATA[ <i>Джерело: <a href="%1$s">%2$s</a></i> ]]></string>
     <string name="post_gamer">Гравець: %1$s</string>
