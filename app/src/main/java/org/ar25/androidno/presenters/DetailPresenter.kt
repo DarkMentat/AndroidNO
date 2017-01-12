@@ -62,6 +62,15 @@ import javax.inject.Singleton
         })
     }
 
+    fun addToFavorites() {
+
+        val post = currentPost ?: return
+
+        post.isFavorite = !post.isFavorite
+
+        localStorage.savePost(post)
+    }
+
     fun fetchPost() {
 
         when {

@@ -10,4 +10,6 @@ interface DetailView: MvpView {
 
     fun setLoading(): Unit
     fun setLoaded(): Unit
+
+    fun showAddedToFavoritesMessage()
 }

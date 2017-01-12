@@ -143,6 +143,9 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
         loadingIndicator.visibility = GONE
     }
 
+    override fun showAddedToFavoritesMessage() {
+        Toast.makeText(this, presenter.currentPost?.isFavorite?.toString() ?: "", Toast.LENGTH_SHORT).show()
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
@@ -150,6 +153,7 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
             R.id.action_settings -> Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
             R.id.action_refresh -> presenter.fetchPost()
             R.id.action_share -> presenter.share()
+            R.id.action_add_to_favorites -> presenter.addToFavorites()
             android.R.id.home -> finish()
             else -> return super.onOptionsItemSelected(item)
         }

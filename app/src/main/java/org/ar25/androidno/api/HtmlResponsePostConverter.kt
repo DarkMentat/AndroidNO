@@ -26,9 +26,9 @@ class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
                 val source = element.select("div .field.field-name-field-link.field-type-link-field.field-label-hidden").first().child(0).child(0).child(0).text()
                 val sourceLink = element.select("div .field.field-name-field-link.field-type-link-field.field-label-hidden").first().child(0).child(0).child(0).attr("href")
 
-                return Post(id, header, publishDate, imageUrl, teaser, text, gamer, imageTitle, source, sourceLink)
+                return Post(id, header, publishDate, imageUrl, teaser, false, text, gamer, imageTitle, source, sourceLink)
             } catch (error: Exception) {
-                return Post(id, header, publishDate, imageUrl, teaser, text, gamer)
+                return Post(id, header, publishDate, imageUrl, teaser, false, text, gamer)
             }
 
         } catch (error: Exception){

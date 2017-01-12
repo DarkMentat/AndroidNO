@@ -19,6 +19,7 @@ class DbOpenHelper @Inject constructor(
         const val DB_NAME = "no_local_database"
         const val DB_POSTS_TABLE = "no_posts"
         const val DB_POSTS_ID = "id"
+        const val DB_POSTS_IS_FAVORITE = "is_favorite"
         const val DB_POSTS_HEADER = "header"
         const val DB_POSTS_PUBLISH_DATE = "publish_date"
         const val DB_POSTS_TEASER = "teaser"
@@ -35,6 +36,7 @@ class DbOpenHelper @Inject constructor(
     val createPostsTableQuery =
          "CREATE TABLE $DB_POSTS_TABLE (" +
              "$DB_POSTS_ID INTEGER NOT NULL PRIMARY KEY, " +
+             "$DB_POSTS_IS_FAVORITE INTEGER DEFAULT 0, " +
              "$DB_POSTS_HEADER TEXT NOT NULL, " +
              "$DB_POSTS_PUBLISH_DATE TEXT NOT NULL, " +
              "$DB_POSTS_IMAGE_URL TEXT NOT NULL, " +

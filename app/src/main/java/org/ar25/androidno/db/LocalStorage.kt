@@ -12,4 +12,6 @@ interface LocalStorage {
     fun savePost(post: Post)
     fun getPosts(offset: Int): List<Post>
     fun getPost(id: Long): Post?
+
+    fun getFavoritePosts(offset: Int): List<Post>
 }
