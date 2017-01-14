@@ -1,6 +1,7 @@
 package org.ar25.androidno.db
 
 import org.ar25.androidno.entities.Post
+import org.ar25.androidno.entities.Section
 
 
 interface LocalStorage {
@@ -14,4 +15,5 @@ interface LocalStorage {
     fun getPost(id: Long): Post?
 
     fun getFavoritePosts(offset: Int): List<Post>
+    fun getPostsAtSection(section: Section, offset: Int): List<Post>
 }

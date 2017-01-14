@@ -33,4 +33,20 @@
 
     <string name="title_latest_posts">Latest Posts</string>
     <string name="title_favorites">Favorites</string>
+
+    <string name="sections">Sections</string>
+
+    <string name="sectionCommonSocial">Common social</string>
+    <string name="sectionSensarProject">Sensar project</string>
+    <string name="sectionEthnonetwork">Ethnonetwork</string>
+    <string name="sectionAltPolitics">Alternative politics</string>
+    <string name="sectionUnknownUkraine">Unknown Ukraine</string>
+    <string name="sectionMeetingClub">Meeting Club</string>
+    <string name="sectionWorldAtWeek">World at week</string>
+    <string name="sectionCulture">Culture</string>
+    <string name="sectionArt">Art</string>
+    <string name="sectionScience">Science</string>
+    <string name="sectionEducation">Education</string>
+    <string name="sectionEconomicsAndBusiness">Economics and business</string>
+    <string name="sectionLifeAroundUs">Life around us</string>
 </resources>

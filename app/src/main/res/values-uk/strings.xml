@@ -34,4 +34,21 @@
 
     <string name="title_latest_posts">Останні дописи</string>
     <string name="title_favorites">Обране</string>
+
+    <string name="sections">Розділи</string>
+
+    <string name="sectionCommonSocial">Загальносуспільні новини (Україна)</string>
+    <string name="sectionSensarProject">Проект Сенсар</string>
+    <string name="sectionEthnonetwork">Етномережа</string>
+    <string name="sectionAltPolitics">Альтернативна політика</string>
+    <string name="sectionUnknownUkraine">Україна невідома</string>
+    <string name="sectionMeetingClub">Клуб знайомств Перехід-IV</string>
+    <string name="sectionWorldAtWeek">Світ за тиждень</string>
+    <string name="sectionCulture">Культура</string>
+    <string name="sectionArt">Мистецтво</string>
+    <string name="sectionScience">Наука</string>
+    <string name="sectionEducation">Освіта</string>
+    <string name="sectionEconomicsAndBusiness">Економіка і бізнес</string>
+    <string name="sectionLifeAroundUs">Життя навколо нас</string>
+
 </resources>

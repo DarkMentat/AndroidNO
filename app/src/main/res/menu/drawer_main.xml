@@ -10,6 +10,62 @@
             android:id="@+id/navFavorites"
             android:icon="@drawable/ic_star"
             android:title="@string/title_favorites" />
-    </group>
 
+        <item android:title="@string/sections">
+            <menu><group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/sectionCommonSocial"
+                    android:icon="@drawable/ic_sectioncommonsocial"
+                    android:title="@string/sectionCommonSocial" />
+                <item
+                    android:id="@+id/sectionSensarProject"
+                    android:icon="@drawable/ic_sectionsensarproject"
+                    android:title="@string/sectionSensarProject" />
+                <item
+                    android:id="@+id/sectionEthnonetwork"
+                    android:icon="@drawable/ic_sectionethnonetwork"
+                    android:title="@string/sectionEthnonetwork" />
+                <item
+                    android:id="@+id/sectionAltPolitics"
+                    android:icon="@drawable/ic_sectionaltpolitics"
+                    android:title="@string/sectionAltPolitics" />
+                <item
+                    android:id="@+id/sectionUnknownUkraine"
+                    android:icon="@drawable/ic_sectionunknownukraine"
+                    android:title="@string/sectionUnknownUkraine" />
+                <item
+                    android:id="@+id/sectionMeetingClub"
+                    android:icon="@drawable/ic_sectionmeetingclub"
+                    android:title="@string/sectionMeetingClub" />
+                <item
+                    android:id="@+id/sectionWorldAtWeek"
+                    android:icon="@drawable/ic_sectionworldatweek"
+                    android:title="@string/sectionWorldAtWeek" />
+                <item
+                    android:id="@+id/sectionCulture"
+                    android:icon="@drawable/ic_sectionculture"
+                    android:title="@string/sectionCulture" />
+                <item
+                    android:id="@+id/sectionArt"
+                    android:icon="@drawable/ic_sectionart"
+                    android:title="@string/sectionArt" />
+                <item
+                    android:id="@+id/sectionScience"
+                    android:icon="@drawable/ic_sectionscience"
+                    android:title="@string/sectionScience" />
+                <item
+                    android:id="@+id/sectionEducation"
+                    android:icon="@drawable/ic_sectioneducation"
+                    android:title="@string/sectionEducation" />
+                <item
+                    android:id="@+id/sectionEconomicsAndBusiness"
+                    android:icon="@drawable/ic_sectioneconomicsandbusiness"
+                    android:title="@string/sectionEconomicsAndBusiness" />
+                <item
+                    android:id="@+id/sectionLifeAroundUs"
+                    android:icon="@drawable/ic_sectionworldatweek"
+                    android:title="@string/sectionLifeAroundUs" />
+            </group></menu>
+        </item>
+    </group>
 </menu>

@@ -29,8 +29,9 @@ class DbOpenHelper @Inject constructor(
         const val DB_POSTS_GAMER = "gamer"
         const val DB_POSTS_SOURCE = "source"
         const val DB_POSTS_SOURCE_LINK = "source_link"
+        const val DB_POSTS_SECTION = "navSection"
 
-        const val db_version = 1
+        const val db_version = 2
     }
 
     val createPostsTableQuery =
@@ -41,6 +42,7 @@ class DbOpenHelper @Inject constructor(
              "$DB_POSTS_PUBLISH_DATE TEXT NOT NULL, " +
              "$DB_POSTS_IMAGE_URL TEXT NOT NULL, " +
              "$DB_POSTS_TEASER TEXT NOT NULL, " +
+             "$DB_POSTS_SECTION TEXT NULL, " +
              "$DB_POSTS_TEXT TEXT NULL, " +
              "$DB_POSTS_GAMER TEXT NULL, " +
              "$DB_POSTS_IMAGE_TITLE TEXT NULL, " +

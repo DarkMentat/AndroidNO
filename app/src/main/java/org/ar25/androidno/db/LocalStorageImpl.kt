@@ -5,14 +5,18 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.pushtorefresh.storio.sqlite.Changes
 import com.pushtorefresh.storio.sqlite.StorIOSQLite
 import com.pushtorefresh.storio.sqlite.queries.Query
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_HEADER
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_ID
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_IMAGE_URL
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_IS_FAVORITE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_PUBLISH_DATE
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_SECTION
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TABLE
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TEASER
 import org.ar25.androidno.db.LocalStorage.Companion.POSTS_PER_PAGE
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.entities.PostStorIOSQLitePutResolver
+import org.ar25.androidno.entities.Section
 import org.ar25.androidno.util.someObject
 import javax.inject.Inject
 
@@ -106,12 +110,34 @@ class LocalStorageImpl @Inject constructor(
                 .executeAsBlocking()
     }
 
+    override fun getPostsAtSection(section: Section, offset: Int): List<Post> {
+        if (offset < 0)
+            return emptyList()
+
+        return mStorIOSQLite
+                .get()
+                .listOfObjects(Post::class.java)
+                .withQuery(
+                        Query.builder()
+                                .table(DB_POSTS_TABLE)
+                                .where("$DB_POSTS_SECTION = ?")
+                                .whereArgs(section.apiSlug)
+                                .orderBy("substr($DB_POSTS_PUBLISH_DATE, 7, 10) DESC, " +
+                                        "substr($DB_POSTS_PUBLISH_DATE, 4, 5) DESC, " +
+                                        "substr($DB_POSTS_PUBLISH_DATE, 1, 2) DESC, " +
+                                        "$DB_POSTS_ID DESC")
+                                .limit(offset * POSTS_PER_PAGE, POSTS_PER_PAGE)
+                                .build())
+                .prepare()
+                .executeAsBlocking()
+    }
+
     private fun insertManyPostPreviews(lowLevel: StorIOSQLite.LowLevel, helper: SQLiteOpenHelper, posts: List<Post>) {
         val db = helper.writableDatabase
         try {
             db.beginTransaction()
 
-            val sql = "INSERT OR IGNORE INTO $DB_POSTS_TABLE (id, header, image_url, publish_date, teaser) VALUES (?,?,?,?,?)"
+            val sql = "INSERT OR IGNORE INTO $DB_POSTS_TABLE ($DB_POSTS_ID, $DB_POSTS_HEADER, $DB_POSTS_IMAGE_URL, $DB_POSTS_PUBLISH_DATE, $DB_POSTS_TEASER, $DB_POSTS_SECTION) VALUES (?,?,?,?,?,?)"
             val statement = db.compileStatement(sql)
 
             for (post in posts) {
@@ -121,6 +147,13 @@ class LocalStorageImpl @Inject constructor(
                 statement.bindString(3, post.imageUrl)
                 statement.bindString(4, post.publishDate)
                 statement.bindString(5, post.teaser)
+
+                if(post.section != null) {
+                    statement.bindString(6, post.section)
+                } else {
+                    statement.bindNull(6)
+                }
+
                 statement.executeInsert()
             }
 

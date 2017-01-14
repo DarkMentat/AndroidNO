@@ -17,6 +17,7 @@ import org.ar25.androidno.NOApplication
 import org.ar25.androidno.R
 import org.ar25.androidno.api.ParseErrorException
 import org.ar25.androidno.entities.Post
+import org.ar25.androidno.entities.Section
 import org.ar25.androidno.mvp.BaseActivity
 import org.ar25.androidno.presenters.MainPresenter
 import org.ar25.androidno.presenters.MainView
@@ -61,7 +62,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
         sectionTitle.text = getString(R.string.title_latest_posts)
         postsAdapter.removeAllItems()
-        presenter.section = MainPresenter.Section.LatestPosts
+        presenter.navSection = MainPresenter.NavSection.LatestPosts
         swipeRefresh.isEnabled = true
         postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
         navigationView.menu.getItem(0).isChecked = true
@@ -72,17 +73,33 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
         toggle.syncState()
 
+        fun setSection(title: String, section: Section): Boolean {
+            sectionTitle.text = title
+            postsAdapter.removeAllItems()
+            postsList.scrollToPosition(0)
+            presenter.navSection = MainPresenter.NavSection.Section
+            presenter.section = section
+            swipeRefresh.isEnabled = true
+            postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
+            presenter.fetchPosts(0)
+
+            return true
+        }
+
         navigationView.setNavigationItemSelectedListener { menuItem ->
 
-            menuItem.isChecked = true
+            navigationView.setCheckedItem(menuItem.itemId)
             drawerLayout.closeDrawers()
+
+            presenter.section = null
 
             when(menuItem.itemId) {
 
                 R.id.navLatestPosts -> trueAnd {
                     sectionTitle.text = getString(R.string.title_latest_posts)
                     postsAdapter.removeAllItems()
-                    presenter.section = MainPresenter.Section.LatestPosts
+                    postsList.scrollToPosition(0)
+                    presenter.navSection = MainPresenter.NavSection.LatestPosts
                     swipeRefresh.isEnabled = true
                     postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
                     presenter.fetchPosts(0)
@@ -91,11 +108,26 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
                 R.id.navFavorites -> trueAnd {
                     sectionTitle.text = getString(R.string.title_favorites)
                     postsAdapter.removeAllItems()
-                    presenter.section = MainPresenter.Section.Favorites
+                    postsList.scrollToPosition(0)
+                    presenter.navSection = MainPresenter.NavSection.Favorites
                     swipeRefresh.isEnabled = false
                     postsNoItemsPlaceHolder.setText(R.string.favorites_no_items)
                     presenter.fetchPosts(0)
                 }
+
+                R.id.sectionCommonSocial -> setSection(getString(R.string.sectionCommonSocial), Section.CommonSocial)
+                R.id.sectionSensarProject -> setSection(getString(R.string.sectionSensarProject), Section.SensarProject)
+                R.id.sectionEthnonetwork -> setSection(getString(R.string.sectionEthnonetwork), Section.Ethnonetwork)
+                R.id.sectionAltPolitics -> setSection(getString(R.string.sectionAltPolitics), Section.AltPolitics)
+                R.id.sectionUnknownUkraine -> setSection(getString(R.string.sectionUnknownUkraine), Section.UnknownUkraine)
+                R.id.sectionMeetingClub -> setSection(getString(R.string.sectionMeetingClub), Section.MeetingClub)
+                R.id.sectionWorldAtWeek -> setSection(getString(R.string.sectionWorldAtWeek), Section.WorldAtWeek)
+                R.id.sectionCulture -> setSection(getString(R.string.sectionCulture), Section.Culture)
+                R.id.sectionArt -> setSection(getString(R.string.sectionArt), Section.Art)
+                R.id.sectionScience -> setSection(getString(R.string.sectionScience), Section.Science)
+                R.id.sectionEducation -> setSection(getString(R.string.sectionEducation), Section.Education)
+                R.id.sectionEconomicsAndBusiness -> setSection(getString(R.string.sectionEconomicsAndBusiness), Section.EconomicsAndBusiness)
+                R.id.sectionLifeAroundUs -> setSection(getString(R.string.sectionLifeAroundUs), Section.LifeAroundUs)
 
                 else -> false
             }

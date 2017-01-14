@@ -2,8 +2,10 @@ package org.ar25.androidno.presenters
 
 import org.ar25.androidno.api.NOPostsApi
 import org.ar25.androidno.api.getLastPosts
+import org.ar25.androidno.api.getPostsAtSection
 import org.ar25.androidno.db.LocalStorage
 import org.ar25.androidno.entities.Post
+import org.ar25.androidno.entities.Section
 import org.ar25.androidno.mvp.BasePresenter
 import org.ar25.androidno.navigation.ScreenRouterManager
 import org.ar25.androidno.permission.PermissionManager
@@ -26,12 +28,14 @@ import javax.inject.Singleton
 
     val postsPerPage = LocalStorage.POSTS_PER_PAGE
 
-    enum class Section{
+    enum class NavSection {
         LatestPosts,
-        Favorites
+        Favorites,
+        Section
     }
 
-    var section = Section.LatestPosts
+    var navSection = NavSection.LatestPosts
+    var section: Section? = null
 
 
 
@@ -40,11 +44,13 @@ import javax.inject.Singleton
         val mainView: MainView = view ?: return
 
 
-        when(section) {
+        when(navSection) {
 
-            Section.LatestPosts -> fetchLatestPosts(mainView, page, withCached)
+            NavSection.LatestPosts -> fetchLatestPosts(mainView, page, withCached)
 
-            Section.Favorites -> fetchFavorites(mainView, page)
+            NavSection.Favorites -> fetchFavorites(mainView, page)
+
+            NavSection.Section -> section?.let { fetchSectionPosts(mainView, it, page, withCached) }
         }
 
     }
@@ -52,6 +58,27 @@ import javax.inject.Singleton
     private fun fetchFavorites(mainView: MainView, page: Int) {
 
         mainView.onGetPosts(localStorage.getFavoritePosts(page), page)
+    }
+
+    private fun fetchSectionPosts(mainView: MainView, section: Section, page: Int, withCached: Boolean) {
+
+        if(page == 0)
+            mainView.setLoading()
+
+        if (withCached)
+            mainView.onGetPosts(localStorage.getPostsAtSection(section, page), page)
+
+        noPostsApi
+                .getPostsAtSection(section, page)
+                .subscribeOn(Schedulers.io())
+                .doOnNext { it.forEach { post -> post.section = section.apiSlug } }
+                .doOnNext { localStorage.savePosts(it) }
+                .switchMap { Observable.just(localStorage.getPostsAtSection(section, page)) }
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        { posts -> mainView.onGetPosts(posts, page); mainView.setLoaded() },
+                        { error -> mainView.onGetError(error); mainView.setLoaded() }
+                )
     }
 
     private fun fetchLatestPosts(mainView: MainView, page: Int, withCached: Boolean) {
