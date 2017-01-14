@@ -6,6 +6,7 @@
     <string name="action_refresh">Refresh</string>
     <string name="action_share">Share</string>
     <string name="action_add_to_favorites">Add to favorites</string>
+    <string name="action_remove_from_favorites">Remove from Favorites</string>
     <string name="action_open_in_browser">Open in browser</string>
 
     <string name="post_image">Post image</string>

@@ -78,4 +78,18 @@ import javax.inject.Singleton
 
         screenRouterManager.openScreen(DetailActivity.getDetailActivityBuilder(post))
     }
+
+    fun onAddToFavorites(post: Post) {
+
+        post.isFavorite = true
+
+        localStorage.savePost(post, updateFavorite = true)
+    }
+
+    fun  onRemoveFromFavorites(post: Post) {
+
+        post.isFavorite = false
+
+        localStorage.savePost(post, updateFavorite = true)
+    }
 }

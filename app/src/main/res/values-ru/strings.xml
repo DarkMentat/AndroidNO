@@ -7,6 +7,7 @@
     <string name="action_refresh">Оновити</string>
     <string name="action_share">Поділитись</string>
     <string name="action_add_to_favorites">Додати до обраних</string>
+    <string name="action_remove_from_favorites">Видалити з обраних</string>
     <string name="action_open_in_browser">Відкрити в браузері</string>
 
     <string name="post_image">Картинка статті</string>

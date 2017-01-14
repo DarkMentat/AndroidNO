@@ -2,7 +2,9 @@ package org.ar25.androidno.ui
 
 import android.content.Context
 import android.support.v7.util.SortedList
+import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.RecyclerView
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -17,6 +19,7 @@ import org.ar25.androidno.R
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.ui.PostsRecyclerViewAdapter.PostViewHolder.LoadingViewHolder
 import org.ar25.androidno.ui.PostsRecyclerViewAdapter.PostViewHolder.PostContentViewHolder
+import org.ar25.androidno.util.trueAnd
 import org.sufficientlysecure.htmltextview.HtmlTextView
 
 
@@ -45,6 +48,7 @@ class PostsRecyclerViewAdapter(
             val mHeader = itemView.findViewById(R.id.header) as TextView
             val mImage = itemView.findViewById(R.id.image) as ImageView
             val mTeaser = itemView.findViewById(R.id.teaser) as HtmlTextView
+            val mOverflowMenu = itemView.findViewById(R.id.overflow_menu) as View
         }
     }
 
@@ -108,6 +112,9 @@ class PostsRecyclerViewAdapter(
 
 
     var onItemClick: (Post) -> Unit = {}
+    var onAddToFavorites: (Post) -> Unit = {}
+    var onRemoveFromFavorites: (Post) -> Unit = {}
+
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         if(holder is PostContentViewHolder) {
             val post = sortedList[position]
@@ -116,6 +123,30 @@ class PostsRecyclerViewAdapter(
             holder.mPublishDate.text = post.publishDate
             holder.mTeaser.setHtml(post.teaser)
             holder.mCard.setOnClickListener { onItemClick(post) }
+
+            holder.mOverflowMenu.setOnClickListener {
+
+                val popup = PopupMenu(context, holder.mOverflowMenu, Gravity.END)
+                popup.menuInflater.inflate(R.menu.popup_menu_post, popup.menu)
+
+                if(post.isFavorite)
+                    popup.menu.removeItem(R.id.action_add_to_favorites)
+                else
+                    popup.menu.removeItem(R.id.action_remove_from_favorites)
+
+                popup.setOnMenuItemClickListener { menuItem ->
+
+                    when(menuItem.itemId) {
+
+                        R.id.action_add_to_favorites -> trueAnd { onAddToFavorites(post) }
+                        R.id.action_remove_from_favorites -> trueAnd { onRemoveFromFavorites(post) }
+
+                        else -> false
+                    }
+                }
+
+                popup.show()
+            }
 
             Picasso.with(context).load(post.imageUrl).into(holder.mImage)
         }

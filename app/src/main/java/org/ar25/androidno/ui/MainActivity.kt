@@ -107,6 +107,8 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         postsList.adapter = postsAdapter
         postsList.addOnScrollListener(onMoreItems)
         postsAdapter.onItemClick = { presenter?.onItemClick(it) }
+        postsAdapter.onAddToFavorites = { presenter?.onAddToFavorites(it) }
+        postsAdapter.onRemoveFromFavorites = { presenter?.onRemoveFromFavorites(it) }
 
         swipeRefresh.setOnRefreshListener { presenter.fetchPosts(0, withCached = false) }
         postsNoItemsPlaceHolder.setOnClickListener { presenter.fetchPosts(0) }
