@@ -11,7 +11,8 @@
 
     <string name="post_image">Картинка статті</string>
 
-    <string name="no_items">Немає жодної статті. Підключіться до інтернету, щоб завантажити останні статті.</string>
+    <string name="inet_no_items">Немає жодної статті. Підключіться до інтернету, щоб завантажити останні статті.</string>
+    <string name="favorites_no_items">Немає жодної статті. Коли ви додасте деякі статті до обраних, вони з\'являться тут.</string>
     <string name="load_more_posts">Завантажити більше</string>
     <string name="open_in_Youtube">відкрити в Youtube</string>
     <string name="open_with">Відкрити за допомогою</string>
@@ -23,6 +24,9 @@
     <string name="unknownhost_error">Не вдалося під\'єднатись до мережі\nНеможливо знайти сервер</string>
     <string name="parse_error">Не вдалося відобразити сторінку\nНеможливо розпізнати відповідь сервера</string>
     <string name="unhandled_error">Сталась якась помилка\n%1$s</string>
+
+    <string name="added_to_favorite">Стаття додана до обраних</string>
+    <string name="undo">Відмінити</string>
 
     <string name="navigation_drawer_open">Відкрити бокове меню</string>
     <string name="navigation_drawer_close">Приховати бокове меню</string>

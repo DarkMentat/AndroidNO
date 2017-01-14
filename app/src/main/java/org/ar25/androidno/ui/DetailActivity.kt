@@ -70,11 +70,28 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        fabAddToFavorite.setOnClickListener {
+
+            presenter.addToFavorites()
+
+            Snackbar
+                    .make(parentScrollView, getString(R.string.added_to_favorite), Snackbar.LENGTH_LONG)
+                    .setAction(R.string.undo) { presenter.addToFavorites(); fabAddToFavorite.show() }
+                    .show()
+
+            fabAddToFavorite.hide()
+        }
     }
 
     override fun onGetPost(post: Post?) {
 
         fun loadPostDetails(post: Post) {
+
+            if(!post.isFavorite) {
+
+                fabAddToFavorite.show()
+            }
 
             fillContent(post)
 
@@ -153,7 +170,6 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
             R.id.action_settings -> Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
             R.id.action_refresh -> presenter.fetchPost()
             R.id.action_share -> presenter.share()
-            R.id.action_add_to_favorites -> presenter.addToFavorites()
             R.id.action_open_in_browser -> presenter.openInBrowser()
             android.R.id.home -> finish()
             else -> return super.onOptionsItemSelected(item)

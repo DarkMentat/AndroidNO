@@ -96,7 +96,7 @@ import javax.inject.Singleton
 
         post.isFavorite = !post.isFavorite
 
-        localStorage.savePost(post)
+        localStorage.savePost(post, updateFavorite = true)
     }
 
     fun fetchPost() {

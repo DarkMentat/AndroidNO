@@ -3,12 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.MainActivity" >
 
-    <item android:id="@+id/action_add_to_favorites"
-        android:title="@string/action_add_to_favorites"
-        android:icon="@drawable/ic_star"
-        android:orderInCategory="70"
-        app:showAsAction="ifRoom" />
-
     <item android:id="@+id/action_share"
         android:title="@string/action_share"
         android:icon="@drawable/ic_share"

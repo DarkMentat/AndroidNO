@@ -63,6 +63,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         postsAdapter.removeAllItems()
         presenter.section = MainPresenter.Section.LatestPosts
         swipeRefresh.isEnabled = true
+        postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
         navigationView.menu.getItem(0).isChecked = true
 
         for (i in 0..navigationView.childCount - 1) {
@@ -83,6 +84,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
                     postsAdapter.removeAllItems()
                     presenter.section = MainPresenter.Section.LatestPosts
                     swipeRefresh.isEnabled = true
+                    postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
                     presenter.fetchPosts(0)
                 }
 
@@ -91,6 +93,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
                     postsAdapter.removeAllItems()
                     presenter.section = MainPresenter.Section.Favorites
                     swipeRefresh.isEnabled = false
+                    postsNoItemsPlaceHolder.setText(R.string.favorites_no_items)
                     presenter.fetchPosts(0)
                 }
 
@@ -121,16 +124,23 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
         postsAdapter.enabledBottomLoadedView = posts.size == presenter.postsPerPage
 
-        if (posts.isEmpty())
-            return
+        if (posts.isNotEmpty()) {
 
-        postsAdapter.updateItems(posts)
+            postsAdapter.updateItems(posts)
+        }
+
+        if(postsAdapter.postsCount > 0) {
+
+            postsList.visibility = VISIBLE
+            postsNoItemsPlaceHolder.visibility = GONE
+        } else {
+
+            postsList.visibility = GONE
+            postsNoItemsPlaceHolder.visibility = VISIBLE
+        }
 
         if(page > currentPage)
             currentPage = page
-
-        postsList.visibility = VISIBLE
-        postsNoItemsPlaceHolder.visibility = GONE
 
         if(page == 0)
             postsList.smoothScrollToPosition(0)

@@ -9,7 +9,7 @@ interface LocalStorage {
     }
 
     fun savePosts(posts: List<Post>)
-    fun savePost(post: Post)
+    fun savePost(post: Post, updateFavorite:Boolean = false)
     fun getPosts(offset: Int): List<Post>
     fun getPost(id: Long): Post?
 

@@ -28,7 +28,7 @@
             android:visibility="visible"
             android:padding="@dimen/activity_horizontal_margin"
             android:id="@+id/postsNoItemsPlaceHolder"
-            android:text="@string/no_items"
+            android:text="@string/inet_no_items"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="300dp"/>

@@ -10,7 +10,8 @@
 
     <string name="post_image">Post image</string>
 
-    <string name="no_items">There is no items. Connect to the internet to get last articles.</string>
+    <string name="inet_no_items">There are no posts. Connect to the internet to get last articles.</string>
+    <string name="favorites_no_items">There is no items. Add some posts to favorites to find them here</string>
     <string name="load_more_posts">Load more posts</string>
     <string name="open_in_Youtube">open with Youtube</string>
     <string name="open_with">Open with</string>
@@ -22,6 +23,9 @@
     <string name="unknownhost_error">Some error happened\nCan not connect to host</string>
     <string name="parse_error">Some error happened\nCan not read response</string>
     <string name="unhandled_error">Some error happened\n%1$s</string>
+
+    <string name="added_to_favorite">Post added to favorite</string>
+    <string name="undo">Undo</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

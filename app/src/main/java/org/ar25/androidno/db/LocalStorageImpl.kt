@@ -6,6 +6,7 @@ import com.pushtorefresh.storio.sqlite.Changes
 import com.pushtorefresh.storio.sqlite.StorIOSQLite
 import com.pushtorefresh.storio.sqlite.queries.Query
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_ID
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_IMAGE_URL
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_IS_FAVORITE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_PUBLISH_DATE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TABLE
@@ -27,7 +28,7 @@ class LocalStorageImpl @Inject constructor(
         insertManyPostPreviews(mStorIOSQLite.lowLevel(), mSQLiteOpenHelper, posts)
     }
 
-    override fun savePost(post: Post) {
+    override fun savePost(post: Post, updateFavorite: Boolean) {
         mStorIOSQLite
                 .put()
                 .someObject(post)
@@ -36,9 +37,12 @@ class LocalStorageImpl @Inject constructor(
                             override fun mapToContentValues(`object`: Post): ContentValues {
                                 val values = super.mapToContentValues(`object`)
 
-                                if (values.getAsString("image_url") == "") {
-                                    values.remove("image_url")
+                                if (values.getAsString(DB_POSTS_IMAGE_URL) == "") {
+                                    values.remove(DB_POSTS_IMAGE_URL)
                                 }
+
+                                if(!updateFavorite)
+                                    values.remove(DB_POSTS_IS_FAVORITE)
 
                                 return values
                             }
