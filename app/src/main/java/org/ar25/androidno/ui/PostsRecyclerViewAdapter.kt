@@ -89,6 +89,11 @@ class PostsRecyclerViewAdapter(
 
     }
 
+    fun removeAllItems() {
+
+        sortedList.clear()
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val inflate: (Int) -> View =
@@ -123,7 +128,25 @@ class PostsRecyclerViewAdapter(
     override fun getItemViewType(position: Int) : Int {
         return if(position >= sortedList.size()) VIEW_TYPE_LOADING else VIEW_TYPE_CONTENT
     }
-    override fun getItemCount() = sortedList.size() + 1
+
+    private var _enabledBottomLoadedView = true
+    var enabledBottomLoadedView: Boolean
+        get() = _enabledBottomLoadedView
+        set(value) {
+
+            if(_enabledBottomLoadedView == value) return
+
+            _enabledBottomLoadedView = value
+            if (_enabledBottomLoadedView) {
+
+                notifyItemInserted(sortedList.size())
+            } else {
+
+                notifyItemRemoved(sortedList.size())
+            }
+        }
+
+    override fun getItemCount() = sortedList.size() + if(enabledBottomLoadedView) 1 else 0
 
     var postsCount: Int = sortedList.size()
         get() = sortedList.size()
@@ -137,6 +160,7 @@ class PostsRecyclerViewAdapter(
             onCreateLoadingViewHolder = {
                 loadingViewHolder = it
                 enableLoadingIndicator()
+                onCreateLoadingViewHolder = {}
             }
             return
         }

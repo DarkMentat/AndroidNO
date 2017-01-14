@@ -24,15 +24,42 @@ import javax.inject.Singleton
 
 ): BasePresenter<MainView>(permissionManager) {
 
+    val postsPerPage = LocalStorage.POSTS_PER_PAGE
+
+    enum class Section{
+        LatestPosts,
+        Favorites
+    }
+
+    var section = Section.LatestPosts
+
+
+
     fun fetchPosts(page: Int, withCached: Boolean = true) {
 
         val mainView: MainView = view ?: return
 
 
+        when(section) {
+
+            Section.LatestPosts -> fetchLatestPosts(mainView, page, withCached)
+
+            Section.Favorites -> fetchFavorites(mainView, page)
+        }
+
+    }
+
+    private fun fetchFavorites(mainView: MainView, page: Int) {
+
+        mainView.onGetPosts(localStorage.getFavoritePosts(page), page)
+    }
+
+    private fun fetchLatestPosts(mainView: MainView, page: Int, withCached: Boolean) {
+
         if(page == 0)
             mainView.setLoading()
 
-        if(withCached)
+        if (withCached)
             mainView.onGetPosts(localStorage.getPosts(page), page)
 
         noPostsApi

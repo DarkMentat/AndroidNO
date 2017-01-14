@@ -5,7 +5,7 @@ import org.ar25.androidno.entities.Post
 
 interface LocalStorage {
     companion object {
-        val POSTS_PER_PAGE = 20
+        const val POSTS_PER_PAGE = 20
     }
 
     fun savePosts(posts: List<Post>)

@@ -38,3 +38,10 @@ fun Activity.inflateOptionsMenu(@MenuRes menuLayout: Int, menu: Menu?): Boolean 
     menuInflater.inflate(menuLayout, menu)
     return true
 }
+
+inline fun trueAnd(unit: () -> Unit) : Boolean {
+
+    unit()
+
+    return true
+}

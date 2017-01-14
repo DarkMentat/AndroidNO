@@ -23,4 +23,10 @@
     <string name="unknownhost_error">Не вдалося під\'єднатись до мережі\nНеможливо знайти сервер</string>
     <string name="parse_error">Не вдалося відобразити сторінку\nНеможливо розпізнати відповідь сервера</string>
     <string name="unhandled_error">Сталась якась помилка\n%1$s</string>
+
+    <string name="navigation_drawer_open">Відкрити бокове меню</string>
+    <string name="navigation_drawer_close">Приховати бокове меню</string>
+
+    <string name="title_latest_posts">Останні дописи</string>
+    <string name="title_favorites">Обране</string>
 </resources>

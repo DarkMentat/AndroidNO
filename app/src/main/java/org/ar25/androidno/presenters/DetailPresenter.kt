@@ -37,7 +37,7 @@ import javax.inject.Singleton
 
     override fun setIntent(intent: Intent) {
 
-        postId = intent.extras.getLong(DetailActivity.EXTRA_POST_ID, -1L)
+        postId = intent.extras?.getLong(DetailActivity.EXTRA_POST_ID, -1L) ?: -1L
 
         if (intent.action == ACTION_VIEW) {
             if (intent.data.pathSegments.size > 1) {

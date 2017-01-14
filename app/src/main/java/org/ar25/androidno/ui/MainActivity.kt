@@ -2,11 +2,12 @@ package org.ar25.androidno.ui
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Toast
@@ -20,6 +21,7 @@ import org.ar25.androidno.mvp.BaseActivity
 import org.ar25.androidno.presenters.MainPresenter
 import org.ar25.androidno.presenters.MainView
 import org.ar25.androidno.util.inflateOptionsMenu
+import org.ar25.androidno.util.trueAnd
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
@@ -29,7 +31,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
     val postsAdapter = PostsRecyclerViewAdapter(this)
     var currentPage = 0
 
-    val onMoreItems: RecyclerView.OnScrollListener by lazy {
+    val onMoreItems by lazy {
         OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
             presenter.fetchPosts(currentPage + 1)
             postsAdapter.enableLoadingIndicator()
@@ -52,6 +54,49 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
     fun bindActionBar() {
         setSupportActionBar(toolbar)
+
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawerLayout.addDrawerListener(toggle)
+
+        sectionTitle.text = getString(R.string.title_latest_posts)
+        postsAdapter.removeAllItems()
+        presenter.section = MainPresenter.Section.LatestPosts
+        swipeRefresh.isEnabled = true
+        navigationView.menu.getItem(0).isChecked = true
+
+        for (i in 0..navigationView.childCount - 1) {
+            navigationView.getChildAt(i).overScrollMode = View.OVER_SCROLL_NEVER
+        }
+
+        toggle.syncState()
+
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+
+            menuItem.isChecked = true
+            drawerLayout.closeDrawers()
+
+            when(menuItem.itemId) {
+
+                R.id.navLatestPosts -> trueAnd {
+                    sectionTitle.text = getString(R.string.title_latest_posts)
+                    postsAdapter.removeAllItems()
+                    presenter.section = MainPresenter.Section.LatestPosts
+                    swipeRefresh.isEnabled = true
+                    presenter.fetchPosts(0)
+                }
+
+                R.id.navFavorites -> trueAnd {
+                    sectionTitle.text = getString(R.string.title_favorites)
+                    postsAdapter.removeAllItems()
+                    presenter.section = MainPresenter.Section.Favorites
+                    swipeRefresh.isEnabled = false
+                    presenter.fetchPosts(0)
+                }
+
+                else -> false
+            }
+        }
     }
     fun setupRecyclerView() {
         postsList.layoutManager = LinearLayoutManager(this)
@@ -73,6 +118,9 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
     }
 
     override fun onGetPosts(posts: List<Post>, page: Int) {
+
+        postsAdapter.enabledBottomLoadedView = posts.size == presenter.postsPerPage
+
         if (posts.isEmpty())
             return
 

@@ -22,4 +22,10 @@
     <string name="unknownhost_error">Some error happened\nCan not connect to host</string>
     <string name="parse_error">Some error happened\nCan not read response</string>
     <string name="unhandled_error">Some error happened\n%1$s</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_latest_posts">Latest Posts</string>
+    <string name="title_favorites">Favorites</string>
 </resources>
