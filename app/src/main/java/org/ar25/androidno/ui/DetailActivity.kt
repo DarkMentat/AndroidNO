@@ -5,6 +5,7 @@ import android.content.Intent.ACTION_VIEW
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityCompat
 import android.view.Menu
@@ -88,11 +89,6 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
         fun loadPostDetails(post: Post) {
 
-            if(!post.isFavorite) {
-
-                fabAddToFavorite.show()
-            }
-
             fillContent(post)
 
             if(post.imageTitle != null) {
@@ -129,9 +125,15 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
         } else if(teaserText.text.isEmpty()) {
 
+            if(!post.isFavorite)
+                fabAddToFavorite.show()
+
             loadPostDetails(post)
         } else {
             postMainContent.animateToTransparent {
+
+                if(!post.isFavorite)
+                    Handler().postDelayed({ fabAddToFavorite.show() }, 200L)
 
                 loadPostDetails(post)
 

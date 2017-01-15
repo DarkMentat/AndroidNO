@@ -44,7 +44,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_star"
-        android:visibility="gone"
+        android:visibility="invisible"
         app:layout_behavior="org.ar25.androidno.ui.behaviors.FabBehavior"
         app:layout_anchor="@id/parentScrollView"
         app:layout_anchorGravity="bottom|right|end" />
