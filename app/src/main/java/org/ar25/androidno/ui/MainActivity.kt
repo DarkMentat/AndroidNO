@@ -32,6 +32,8 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
     val postsAdapter = PostsRecyclerViewAdapter(this)
     var currentPage = 0
 
+    var shouldScrollUp = false
+
     val onMoreItems by lazy {
         OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
             presenter.fetchPosts(currentPage + 1)
@@ -76,7 +78,6 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         fun setSection(title: String, section: Section): Boolean {
             sectionTitle.text = title
             postsAdapter.removeAllItems()
-            postsList.scrollToPosition(0)
             presenter.navSection = MainPresenter.NavSection.Section
             presenter.section = section
             swipeRefresh.isEnabled = true
@@ -98,7 +99,6 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
                 R.id.navLatestPosts -> trueAnd {
                     sectionTitle.text = getString(R.string.title_latest_posts)
                     postsAdapter.removeAllItems()
-                    postsList.scrollToPosition(0)
                     presenter.navSection = MainPresenter.NavSection.LatestPosts
                     swipeRefresh.isEnabled = true
                     postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
@@ -108,7 +108,6 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
                 R.id.navFavorites -> trueAnd {
                     sectionTitle.text = getString(R.string.title_favorites)
                     postsAdapter.removeAllItems()
-                    postsList.scrollToPosition(0)
                     presenter.navSection = MainPresenter.NavSection.Favorites
                     swipeRefresh.isEnabled = false
                     postsNoItemsPlaceHolder.setText(R.string.favorites_no_items)
@@ -176,8 +175,10 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         if(page > currentPage)
             currentPage = page
 
-        if(page == 0)
+        if(shouldScrollUp) {
             postsList.smoothScrollToPosition(0)
+            shouldScrollUp = false
+        }
     }
 
     override fun onGetError(error: Throwable) {
@@ -208,7 +209,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
         when(item.itemId){
             R.id.action_settings -> Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
-            R.id.action_refresh -> presenter.fetchPosts(0, withCached = false)
+            R.id.action_refresh -> { presenter.fetchPosts(0, withCached = false); shouldScrollUp = true }
             else -> return super.onOptionsItemSelected(item)
         }
 
