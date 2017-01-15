@@ -63,7 +63,7 @@
                     android:title="@string/sectionEconomicsAndBusiness" />
                 <item
                     android:id="@+id/sectionLifeAroundUs"
-                    android:icon="@drawable/ic_sectionworldatweek"
+                    android:icon="@drawable/ic_sectionlifearoundus"
                     android:title="@string/sectionLifeAroundUs" />
             </group></menu>
         </item>
