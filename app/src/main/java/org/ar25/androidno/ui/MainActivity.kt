@@ -78,6 +78,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         fun setSection(title: String, section: Section): Boolean {
             sectionTitle.text = title
             postsAdapter.removeAllItems()
+            postsList.scrollToPosition(0)
             presenter.navSection = MainPresenter.NavSection.Section
             presenter.section = section
             swipeRefresh.isEnabled = true
@@ -99,6 +100,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
                 R.id.navLatestPosts -> trueAnd {
                     sectionTitle.text = getString(R.string.title_latest_posts)
                     postsAdapter.removeAllItems()
+                    postsList.scrollToPosition(0)
                     presenter.navSection = MainPresenter.NavSection.LatestPosts
                     swipeRefresh.isEnabled = true
                     postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
@@ -108,6 +110,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
                 R.id.navFavorites -> trueAnd {
                     sectionTitle.text = getString(R.string.title_favorites)
                     postsAdapter.removeAllItems()
+                    postsList.scrollToPosition(0)
                     presenter.navSection = MainPresenter.NavSection.Favorites
                     swipeRefresh.isEnabled = false
                     postsNoItemsPlaceHolder.setText(R.string.favorites_no_items)
