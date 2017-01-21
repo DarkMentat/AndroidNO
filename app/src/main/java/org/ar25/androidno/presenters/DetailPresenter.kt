@@ -77,12 +77,17 @@ import javax.inject.Singleton
                 .map { Intent(ACTION_VIEW, Uri.parse(link)).apply { setPackage(it.activityInfo.packageName) } }
 
 
-        if(targetIntents.isNotEmpty()) {
+        if(targetIntents.size > 1) {
 
-            val chooserIntent = Intent.createChooser(Intent(), context.getString(R.string.open_with))
-            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, targetIntents.toTypedArray())
+            val chooserIntent = Intent.createChooser(targetIntents[0], context.getString(R.string.open_with))
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, targetIntents.subList(1, targetIntents.size).toTypedArray())
 
             screenRouterManager.openScreen(chooserIntent)
+
+        } else if(targetIntents.size == 1) {
+
+            screenRouterManager.openScreen(targetIntents[0])
+
 
         } else {
 
