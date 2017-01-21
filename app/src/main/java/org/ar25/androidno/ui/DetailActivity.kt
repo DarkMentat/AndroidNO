@@ -85,6 +85,7 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
         }
     }
 
+    private var currentPost: Post? = null
     override fun onGetPost(post: Post?) {
 
         fun loadPostDetails(post: Post) {
@@ -105,8 +106,10 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
             }
         }
 
-        if(post == null)
+        if(post == null || post == currentPost)
             return
+
+        currentPost = post
 
         publishDate.visibility = VISIBLE
         header.visibility = VISIBLE
