@@ -83,19 +83,16 @@ class PostsRecyclerViewAdapter(
         }
     })
 
+    fun getPosts() = if(sortedList.size() != 0) (0..sortedList.size()-1).map { i -> sortedList[i] } else emptyList()
     fun updateItems(items: List<Post>) {
 
-        sortedList.beginBatchedUpdates()
-        for (item in items) {
-            sortedList.add(item)
-        }
-        sortedList.endBatchedUpdates()
-
+        sortedList.addAll(items)
     }
 
     fun removeAllItems() {
 
         sortedList.clear()
+        notifyDataSetChanged()
     }
 
 

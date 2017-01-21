@@ -1,6 +1,7 @@
 package org.ar25.androidno
 
 import android.app.Application
+import com.facebook.stetho.Stetho
 import dagger.Component
 import org.ar25.androidno.api.DaggerRetrofitModule
 import org.ar25.androidno.db.DaggerDbModule
@@ -30,6 +31,11 @@ class NOApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        if (BuildConfig.DEBUG && BuildConfig.FLAVOR == "dev") {
+
+            Stetho.initializeWithDefaults(this)
+        }
 
         noAppComponent = DaggerNOApplication_NOAppComponent
                             .builder()

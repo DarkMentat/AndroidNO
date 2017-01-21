@@ -16,8 +16,13 @@ open class OnLoadMoreEndlessRecyclerView(
 
     private var previousTotal = 0 // The total number of items in the dataset after the last load
     private var loading = true // True if we are still waiting for the last set of data to load.
-    private val visibleThreshold = 1 // The minimum amount of items to have below your current scroll position before loading more.
+    private val visibleThreshold = 2 // The minimum amount of items to have below your current scroll position before loading more.
 
+
+    fun reset() {
+
+        previousTotal = 0
+    }
 
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)

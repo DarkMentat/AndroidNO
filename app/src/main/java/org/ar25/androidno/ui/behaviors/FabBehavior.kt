@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.View
 
 
+@Suppress("UNUSED_PARAMETER")
 class FabBehavior(context: Context, attrs: AttributeSet) : FloatingActionButton.Behavior() {
 
 

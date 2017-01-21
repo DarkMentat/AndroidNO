@@ -33,6 +33,8 @@ class HtmlResponsePostConverter : Converter<ResponseBody, Post> {
 
         } catch (error: Exception){
             throw ParseErrorException("Can not parse post response", error)
+        } finally {
+            value.close()
         }
     }
 }

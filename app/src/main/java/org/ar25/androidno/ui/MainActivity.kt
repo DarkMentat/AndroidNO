@@ -20,9 +20,9 @@ import org.ar25.androidno.entities.Post
 import org.ar25.androidno.entities.Section
 import org.ar25.androidno.mvp.BaseActivity
 import org.ar25.androidno.presenters.MainPresenter
+import org.ar25.androidno.presenters.MainPresenter.NavSection.*
 import org.ar25.androidno.presenters.MainView
 import org.ar25.androidno.util.inflateOptionsMenu
-import org.ar25.androidno.util.trueAnd
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
@@ -31,13 +31,13 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
     val postsAdapter = PostsRecyclerViewAdapter(this)
     var currentPage = 0
+    var requestingPage = 0
 
     var shouldScrollUp = false
 
     val onMoreItems by lazy {
         OnLoadMoreEndlessRecyclerView(postsList.layoutManager as LinearLayoutManager) {
-            presenter.fetchPosts(currentPage + 1)
-            postsAdapter.enableLoadingIndicator()
+            fetchPage(currentPage + 1)
         }
     }
 
@@ -53,88 +53,89 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
         bindActionBar()
         setupRecyclerView()
+        setupNavDrawer()
     }
 
     fun bindActionBar() {
         setSupportActionBar(toolbar)
+    }
+
+    fun setupNavDrawer() {
 
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawerLayout.addDrawerListener(toggle)
 
-        sectionTitle.text = getString(R.string.title_latest_posts)
-        postsAdapter.removeAllItems()
-        presenter.navSection = MainPresenter.NavSection.LatestPosts
-        swipeRefresh.isEnabled = true
-        postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
-        navigationView.menu.getItem(0).isChecked = true
-
         for (i in 0..navigationView.childCount - 1) {
-            navigationView.getChildAt(i).overScrollMode = View.OVER_SCROLL_NEVER
+            navigationView.getChildAt(i)?.overScrollMode = View.OVER_SCROLL_NEVER
+            navigationView.getChildAt(i)?.isVerticalScrollBarEnabled = false
         }
 
         toggle.syncState()
 
-        fun setSection(title: String, section: Section): Boolean {
+        fun loadNavPage(title: String, navSection: MainPresenter.NavSection, section: Section? = null, withoutFetch: Boolean = false): Boolean {
+
             sectionTitle.text = title
             postsAdapter.removeAllItems()
             postsList.scrollToPosition(0)
-            presenter.navSection = MainPresenter.NavSection.Section
+            presenter.navSection = navSection
             presenter.section = section
-            swipeRefresh.isEnabled = true
-            postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
-            presenter.fetchPosts(0)
+            swipeRefresh.isEnabled = navSection != Favorites
+            postsNoItemsPlaceHolder.setText(if (navSection == Favorites) R.string.favorites_no_items else R.string.inet_no_items)
+
+            if(!withoutFetch)
+                fetchFirstPage()
 
             return true
         }
+
+        loadNavPage(getString(R.string.title_latest_posts), LatestPosts)
+        navigationView.menu.getItem(0).isChecked = true
 
         navigationView.setNavigationItemSelectedListener { menuItem ->
 
             navigationView.setCheckedItem(menuItem.itemId)
             drawerLayout.closeDrawers()
 
-            presenter.section = null
-
             when(menuItem.itemId) {
 
-                R.id.navLatestPosts -> trueAnd {
-                    sectionTitle.text = getString(R.string.title_latest_posts)
-                    postsAdapter.removeAllItems()
-                    postsList.scrollToPosition(0)
-                    presenter.navSection = MainPresenter.NavSection.LatestPosts
-                    swipeRefresh.isEnabled = true
-                    postsNoItemsPlaceHolder.setText(R.string.inet_no_items)
-                    presenter.fetchPosts(0)
-                }
+                R.id.navLatestPosts -> loadNavPage(getString(R.string.title_latest_posts), LatestPosts)
+                R.id.navFavorites -> loadNavPage(getString(R.string.title_favorites), Favorites)
 
-                R.id.navFavorites -> trueAnd {
-                    sectionTitle.text = getString(R.string.title_favorites)
-                    postsAdapter.removeAllItems()
-                    postsList.scrollToPosition(0)
-                    presenter.navSection = MainPresenter.NavSection.Favorites
-                    swipeRefresh.isEnabled = false
-                    postsNoItemsPlaceHolder.setText(R.string.favorites_no_items)
-                    presenter.fetchPosts(0)
-                }
-
-                R.id.sectionCommonSocial -> setSection(getString(R.string.sectionCommonSocial), Section.CommonSocial)
-                R.id.sectionSensarProject -> setSection(getString(R.string.sectionSensarProject), Section.SensarProject)
-                R.id.sectionEthnonetwork -> setSection(getString(R.string.sectionEthnonetwork), Section.Ethnonetwork)
-                R.id.sectionAltPolitics -> setSection(getString(R.string.sectionAltPolitics), Section.AltPolitics)
-                R.id.sectionUnknownUkraine -> setSection(getString(R.string.sectionUnknownUkraine), Section.UnknownUkraine)
-                R.id.sectionMeetingClub -> setSection(getString(R.string.sectionMeetingClub), Section.MeetingClub)
-                R.id.sectionWorldAtWeek -> setSection(getString(R.string.sectionWorldAtWeek), Section.WorldAtWeek)
-                R.id.sectionCulture -> setSection(getString(R.string.sectionCulture), Section.Culture)
-                R.id.sectionArt -> setSection(getString(R.string.sectionArt), Section.Art)
-                R.id.sectionScience -> setSection(getString(R.string.sectionScience), Section.Science)
-                R.id.sectionEducation -> setSection(getString(R.string.sectionEducation), Section.Education)
-                R.id.sectionEconomicsAndBusiness -> setSection(getString(R.string.sectionEconomicsAndBusiness), Section.EconomicsAndBusiness)
-                R.id.sectionLifeAroundUs -> setSection(getString(R.string.sectionLifeAroundUs), Section.LifeAroundUs)
+                R.id.sectionCommonSocial -> loadNavPage(getString(R.string.sectionCommonSocial), Section, Section.CommonSocial)
+                R.id.sectionSensarProject -> loadNavPage(getString(R.string.sectionSensarProject), Section, Section.SensarProject)
+                R.id.sectionEthnonetwork -> loadNavPage(getString(R.string.sectionEthnonetwork), Section, Section.Ethnonetwork)
+                R.id.sectionAltPolitics -> loadNavPage(getString(R.string.sectionAltPolitics), Section, Section.AltPolitics)
+                R.id.sectionUnknownUkraine -> loadNavPage(getString(R.string.sectionUnknownUkraine), Section, Section.UnknownUkraine)
+                R.id.sectionMeetingClub -> loadNavPage(getString(R.string.sectionMeetingClub), Section, Section.MeetingClub)
+                R.id.sectionWorldAtWeek -> loadNavPage(getString(R.string.sectionWorldAtWeek), Section, Section.WorldAtWeek)
+                R.id.sectionCulture -> loadNavPage(getString(R.string.sectionCulture), Section, Section.Culture)
+                R.id.sectionArt -> loadNavPage(getString(R.string.sectionArt), Section, Section.Art)
+                R.id.sectionScience -> loadNavPage(getString(R.string.sectionScience), Section, Section.Science)
+                R.id.sectionEducation -> loadNavPage(getString(R.string.sectionEducation), Section, Section.Education)
+                R.id.sectionEconomicsAndBusiness -> loadNavPage(getString(R.string.sectionEconomicsAndBusiness), Section, Section.EconomicsAndBusiness)
+                R.id.sectionLifeAroundUs -> loadNavPage(getString(R.string.sectionLifeAroundUs), Section, Section.LifeAroundUs)
 
                 else -> false
             }
         }
     }
+
+    fun fetchPage(page: Int){
+
+        requestingPage = page
+        presenter.fetchPosts(page)
+    }
+    fun fetchFirstPage(withCached: Boolean = true){
+
+        onMoreItems.reset()
+
+        currentPage = 0
+        requestingPage = 0
+
+        presenter.fetchPosts(0, withCached = withCached)
+    }
+
     fun setupRecyclerView() {
         postsList.layoutManager = LinearLayoutManager(this)
         postsList.itemAnimator = DefaultItemAnimator()
@@ -144,23 +145,36 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         postsAdapter.onAddToFavorites = { presenter?.onAddToFavorites(it) }
         postsAdapter.onRemoveFromFavorites = { presenter?.onRemoveFromFavorites(it) }
 
-        swipeRefresh.setOnRefreshListener { presenter.fetchPosts(0, withCached = false) }
-        postsNoItemsPlaceHolder.setOnClickListener { presenter.fetchPosts(0) }
+        swipeRefresh.setOnRefreshListener { fetchFirstPage(withCached = false) }
+        postsNoItemsPlaceHolder.setOnClickListener { fetchFirstPage() }
     }
 
     override fun onResume() {
         super.onResume()
 
         if(postsAdapter.postsCount == 0) {
-            presenter.fetchPosts(currentPage)
+            fetchPage(currentPage)
         }
     }
 
     override fun onGetPosts(posts: List<Post>, page: Int) {
 
-        postsAdapter.enabledBottomLoadedView = posts.size == presenter.postsPerPage
+        if(shouldScrollUp) {
+            postsAdapter.removeAllItems()
+        }
 
         if (posts.isNotEmpty()) {
+
+            val currentPosts = postsAdapter.getPosts()
+            val updated = posts.filter { currentPosts.contains(it) }.size
+
+            if(updated > 0) {
+
+                val visiblePos = (postsList.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+
+                if(!isLoading && visiblePos >= postsAdapter.postsCount - updated)
+                    postsList.scrollToPosition(postsAdapter.postsCount - updated)
+            }
 
             postsAdapter.updateItems(posts)
         }
@@ -178,10 +192,17 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         if(page > currentPage)
             currentPage = page
 
+        if(posts.isNotEmpty() && posts.size < 5) {
+
+            fetchPage(currentPage + 1)
+        }
+
         if(shouldScrollUp) {
             postsList.smoothScrollToPosition(0)
             shouldScrollUp = false
         }
+
+        postsAdapter.enabledBottomLoadedView = posts.isNotEmpty() || isLoading
     }
 
     override fun onGetError(error: Throwable) {
@@ -198,11 +219,25 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
         }
     }
 
+    private var unresolvedRequests = 0
+    private var isLoading = false
     override fun setLoading() {
-        swipeRefresh.post { swipeRefresh.isRefreshing = true }
+
+        unresolvedRequests++
+        isLoading = true
+
+        postsAdapter.enableLoadingIndicator()
+
+        if(requestingPage == 0)
+            swipeRefresh.post { swipeRefresh.isRefreshing = true }
     }
     override fun setLoaded() {
-        postsAdapter.enableLoadMoreButton { presenter.fetchPosts(currentPage + 1) }
+
+        unresolvedRequests--
+
+        isLoading = unresolvedRequests != 0
+
+        postsAdapter.enableLoadMoreButton { fetchPage(currentPage + 1) }
 
         swipeRefresh.isRefreshing = false
     }
@@ -212,7 +247,7 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
 
         when(item.itemId){
             R.id.action_settings -> Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
-            R.id.action_refresh -> { presenter.fetchPosts(0, withCached = false); shouldScrollUp = true }
+            R.id.action_refresh -> {  fetchFirstPage(withCached = false); shouldScrollUp = true }
             else -> return super.onOptionsItemSelected(item)
         }
 

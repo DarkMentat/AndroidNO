@@ -35,8 +35,10 @@ class HtmlResponsePostsListConverter : Converter<ResponseBody, List<Post>> {
 
             return data
 
-        } catch (error: Exception){
+        } catch (error: Exception) {
             throw ParseErrorException("Can not parse post list response", error)
+        } finally {
+            value.close()
         }
     }
 }

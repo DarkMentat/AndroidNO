@@ -10,7 +10,6 @@ import org.ar25.androidno.mvp.BasePresenter
 import org.ar25.androidno.navigation.ScreenRouterManager
 import org.ar25.androidno.permission.PermissionManager
 import org.ar25.androidno.ui.DetailActivity
-import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import javax.inject.Inject
@@ -62,8 +61,7 @@ import javax.inject.Singleton
 
     private fun fetchSectionPosts(mainView: MainView, section: Section, page: Int, withCached: Boolean) {
 
-        if(page == 0)
-            mainView.setLoading()
+        mainView.setLoading()
 
         if (withCached)
             mainView.onGetPosts(localStorage.getPostsAtSection(section, page), page)
@@ -73,18 +71,17 @@ import javax.inject.Singleton
                 .subscribeOn(Schedulers.io())
                 .doOnNext { it.forEach { post -> post.section = section.apiSlug } }
                 .doOnNext { localStorage.savePosts(it) }
-                .switchMap { Observable.just(localStorage.getPostsAtSection(section, page)) }
+                .map { localStorage.getPostsAtSection(section, page) }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        { posts -> mainView.onGetPosts(posts, page); mainView.setLoaded() },
-                        { error -> mainView.onGetError(error); mainView.setLoaded() }
+                        { posts -> mainView.setLoaded(); mainView.onGetPosts(posts, page) },
+                        { error -> mainView.setLoaded(); mainView.onGetError(error) }
                 )
     }
 
     private fun fetchLatestPosts(mainView: MainView, page: Int, withCached: Boolean) {
 
-        if(page == 0)
-            mainView.setLoading()
+        mainView.setLoading()
 
         if (withCached)
             mainView.onGetPosts(localStorage.getPosts(page), page)
@@ -93,11 +90,11 @@ import javax.inject.Singleton
                 .getLastPosts(page)
                 .subscribeOn(Schedulers.io())
                 .doOnNext { localStorage.savePosts(it) }
-                .switchMap { Observable.just(localStorage.getPosts(page)) }
+                .map { localStorage.getPosts(page) }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        { posts -> mainView.onGetPosts(posts, page); mainView.setLoaded() },
-                        { error -> mainView.onGetError(error); mainView.setLoaded() }
+                        { posts -> mainView.setLoaded(); mainView.onGetPosts(posts, page) },
+                        { error -> mainView.setLoaded(); mainView.onGetError(error) }
                 )
     }
 

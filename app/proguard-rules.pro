@@ -33,6 +33,8 @@
 
 -dontwarn sun.misc.**
 
+-dontwarn java.lang.invoke.*
+
 -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
    long producerIndex;
    long consumerIndex;

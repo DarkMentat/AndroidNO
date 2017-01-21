@@ -33,7 +33,7 @@
                 android:fitsSystemWindows="true"
                 android:theme="@style/AppTheme.AppBarOverlay"
                 app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMarginEnd="48dp"
+                app:expandedTitleMarginEnd="96dp"
                 app:expandedTitleMarginStart="16dp"
                 app:expandedTitleTextAppearance="@style/TextAppearance.ExpandedTitle"
                 app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"

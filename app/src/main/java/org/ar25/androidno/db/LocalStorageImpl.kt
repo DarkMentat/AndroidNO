@@ -137,24 +137,31 @@ class LocalStorageImpl @Inject constructor(
         try {
             db.beginTransaction()
 
-            val sql = "INSERT OR IGNORE INTO $DB_POSTS_TABLE ($DB_POSTS_ID, $DB_POSTS_HEADER, $DB_POSTS_IMAGE_URL, $DB_POSTS_PUBLISH_DATE, $DB_POSTS_TEASER, $DB_POSTS_SECTION) VALUES (?,?,?,?,?,?)"
-            val statement = db.compileStatement(sql)
+            val insertSql = "INSERT OR IGNORE INTO $DB_POSTS_TABLE ($DB_POSTS_ID, $DB_POSTS_HEADER, $DB_POSTS_IMAGE_URL, $DB_POSTS_PUBLISH_DATE, $DB_POSTS_TEASER, $DB_POSTS_SECTION) VALUES (?,?,?,?,?,?)"
+            val updateSql = "UPDATE $DB_POSTS_TABLE SET $DB_POSTS_SECTION=? WHERE $DB_POSTS_ID=?"
+            val insertStatement = db.compileStatement(insertSql)
+            val updateStatement = db.compileStatement(updateSql)
 
             for (post in posts) {
-                statement.clearBindings()
-                statement.bindLong(1, post.id)
-                statement.bindString(2, post.header)
-                statement.bindString(3, post.imageUrl)
-                statement.bindString(4, post.publishDate)
-                statement.bindString(5, post.teaser)
+                insertStatement.clearBindings()
+                insertStatement.bindLong(1, post.id)
+                insertStatement.bindString(2, post.header)
+                insertStatement.bindString(3, post.imageUrl)
+                insertStatement.bindString(4, post.publishDate)
+                insertStatement.bindString(5, post.teaser)
 
                 if(post.section != null) {
-                    statement.bindString(6, post.section)
+                    insertStatement.bindString(6, post.section)
+                    updateStatement.bindString(1, post.section)
                 } else {
-                    statement.bindNull(6)
+                    insertStatement.bindNull(6)
+                    updateStatement.bindNull(1)
                 }
 
-                statement.executeInsert()
+                updateStatement.bindLong(2, post.id)
+
+                insertStatement.executeInsert()
+                updateStatement.executeUpdateDelete()
             }
 
             db.setTransactionSuccessful()
