@@ -1,8 +1,7 @@
 package org.ar25.androidno
 
 import android.app.Application
-import com.facebook.stetho.Stetho
-import dagger.Component
+import android.os.StrictMode
 import org.ar25.androidno.api.DaggerRetrofitModule
 import org.ar25.androidno.db.DaggerDbModule
 import org.ar25.androidno.db.LocalStorageImpl
@@ -10,7 +9,6 @@ import org.ar25.androidno.presenters.DetailPresenter
 import org.ar25.androidno.presenters.MainPresenter
 import org.ar25.androidno.ui.DetailActivity
 import org.ar25.androidno.ui.MainActivity
-import javax.inject.Singleton
 
 
 class NOApplication : Application() {
@@ -35,6 +33,17 @@ class NOApplication : Application() {
         if (BuildConfig.DEBUG && BuildConfig.FLAVOR == "dev") {
 
             Stetho.initializeWithDefaults(this)
+
+            StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder()
+                    .detectAll()
+                    .penaltyLog()
+                    .penaltyDialog()
+                    .build())
+
+            StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder()
+                    .detectAll()
+                    .penaltyLog()
+                    .build())
         }
 
         noAppComponent = DaggerNOApplication_NOAppComponent
