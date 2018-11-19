@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     lintOptions {
         quiet true
@@ -15,22 +15,27 @@ android {
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 25
-        versionCode 4
-        versionName "1.1.1"
+        targetSdkVersion 28
+        versionCode 5
+        versionName "1.1.2"
         resConfigs "en", "ru", "uk"
     }
+
+    flavorDimensions "default"
 
     productFlavors {
         dev {
             applicationId "org.ar25.androidnodev"
             minSdkVersion 21
+            dimension "default"
         }
 
         live {
             applicationId "org.ar25.androidno"
+            dimension "default"
         }
     }
+
     buildTypes {
         debug {
             minifyEnabled false
@@ -43,78 +48,76 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
 }
 
-kapt {
-    generateStubs = true
-}
-
-configurations.all {
-    resolutionStrategy {
-        force 'com.android.support:support-annotations:24.2.1'
-    }
-}
+//configurations.all {
+//    resolutionStrategy {
+//        force 'com.android.support:support-annotations:28.0.0'
+//    }
+//}
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'org.sufficientlysecure:html-textview:2.0'
+    implementation 'org.sufficientlysecure:html-textview:2.0'
 
-    devCompile 'com.facebook.stetho:stetho:1.4.2'
-    devCompile 'com.facebook.stetho:stetho-okhttp3:1.4.2'
+    devImplementation 'com.facebook.stetho:stetho:1.4.2'
+    devImplementation 'com.facebook.stetho:stetho-okhttp3:1.4.2'
 
     //Unit-testing
-    testCompile group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
+    testImplementation group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
 
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:1.10.19'
-    testCompile "org.powermock:powermock-module-junit4:1.6.4"
-    testCompile "org.powermock:powermock-module-junit4-rule:1.6.4"
-    testCompile "org.powermock:powermock-api-mockito:1.6.4"
-    testCompile "org.powermock:powermock-classloading-xstream:1.6.4"
-    testCompile 'org.robolectric:robolectric:3.0'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.8.9'
+    testImplementation "org.powermock:powermock-module-junit4:1.6.6"
+    testImplementation "org.powermock:powermock-module-junit4-rule:1.6.4"
+    testImplementation "org.powermock:powermock-api-mockito:1.6.6"
+    testImplementation "org.powermock:powermock-classloading-xstream:1.6.4"
+    testImplementation 'org.robolectric:robolectric:3.2.2'
 
-    testCompile 'org.assertj:assertj-core:1.7.1'
-    testCompile 'com.squareup.assertj:assertj-android:1.1.1'
-    testCompile 'com.squareup.assertj:assertj-android-appcompat-v7:1.1.1@aar'
-    testCompile 'com.squareup.assertj:assertj-android-design:1.1.1@aar'
-    testCompile 'com.squareup.assertj:assertj-android-cardview-v7:1.1.1@aar'
-    testCompile 'com.squareup.assertj:assertj-android-recyclerview-v7:1.1.1@aar'
+    testImplementation 'org.assertj:assertj-core:1.7.1'
+    testImplementation 'com.squareup.assertj:assertj-android:1.1.1'
+    testImplementation 'com.squareup.assertj:assertj-android-appcompat-v7:1.1.1@aar'
+    testImplementation 'com.squareup.assertj:assertj-android-design:1.1.1@aar'
+    testImplementation 'com.squareup.assertj:assertj-android-cardview-v7:1.1.1@aar'
+    testImplementation 'com.squareup.assertj:assertj-android-recyclerview-v7:1.1.1@aar'
 
     //Dagger 2
-    kapt 'com.google.dagger:dagger-compiler:2.5'
-    compile 'com.google.dagger:dagger:2.5'
-    provided 'javax.annotation:jsr250-api:1.0'
+    kapt 'com.google.dagger:dagger-compiler:2.17'
+    implementation 'com.google.dagger:dagger:2.17'
+    compileOnly 'javax.annotation:jsr250-api:1.0'
 
     //RxJava
-    compile 'io.reactivex:rxjava:1.1.4'
-    compile 'io.reactivex:rxandroid:1.1.0'
+    implementation 'io.reactivex:rxjava:1.1.4'
+    implementation 'io.reactivex:rxandroid:1.1.0'
 
     //Storio
-    compile 'com.pushtorefresh.storio:sqlite:1.10.0'
-    compile 'com.pushtorefresh.storio:sqlite-annotations:1.10.0'
+    implementation 'com.pushtorefresh.storio:sqlite:1.10.0'
+    implementation 'com.pushtorefresh.storio:sqlite-annotations:1.10.0'
     kapt 'com.pushtorefresh.storio:sqlite-annotations-processor:1.10.0'
 
     //Network
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'org.jsoup:jsoup:1.9.2'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'org.jsoup:jsoup:1.9.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
 
     //Android support
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.android.support:cardview-v7:25.1.0'
-    compile 'com.android.support:recyclerview-v7:25.1.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
 
-    compile 'net.opacapp:multiline-collapsingtoolbar:1.3.0'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'net.opacapp:multiline-collapsingtoolbar:1.3.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

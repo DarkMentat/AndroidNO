@@ -17,6 +17,9 @@ class HtmlResponsePostsListConverter : Converter<ResponseBody, List<Post>> {
             val elements = document.select("div .entity-extra-wrapper")
 
             for (element in elements) {
+                if(element.children().getOrNull(0)?.hasClass("node") != true)
+                    continue
+
                 val id = java.lang.Long.valueOf(element.attr("data-entity_id"))
                 val header = element.child(0).select("div .title")[0].child(0).text()
                 val publishDate = element.child(0).select("div .field-item")[0].text()

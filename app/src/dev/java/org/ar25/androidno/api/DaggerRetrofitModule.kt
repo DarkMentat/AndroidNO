@@ -1,5 +1,6 @@
 package org.ar25.androidno.api
 
+import android.net.TrafficStats
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import dagger.Module
 import dagger.Provides
@@ -27,7 +28,6 @@ class DaggerRetrofitModule {
                 .retryOnConnectionFailure(true)
 
         if (BuildConfig.DEBUG && BuildConfig.FLAVOR == "dev") {
-
             okHttpBuilder.addNetworkInterceptor(StethoInterceptor())
             okHttpBuilder.addInterceptor(HttpLoggingInterceptor().apply { level = BASIC })
         }

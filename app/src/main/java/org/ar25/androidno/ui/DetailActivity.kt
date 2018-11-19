@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View.GONE
@@ -31,6 +32,7 @@ import org.sufficientlysecure.htmltextview.ClickableLocalLinkMovementMethod
 import org.sufficientlysecure.htmltextview.HtmlTextView
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
+import android.view.WindowManager
 
 
 class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
@@ -52,6 +54,10 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
 
         setContentView(R.layout.activity_detail)
 
