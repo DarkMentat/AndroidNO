@@ -33,11 +33,14 @@ import javax.inject.Singleton
     var currentPost: Post? = null
 
     var postId: Long = -1L
-    var postSlug: String = ""
+    var postSlug: String? = null
+    var postUrl: String? = null
 
     override fun setIntent(intent: Intent) {
 
         postId = intent.extras?.getLong(DetailActivity.EXTRA_POST_ID, -1L) ?: -1L
+        postSlug = null
+        postUrl = intent.extras?.getString(DetailActivity.EXTRA_POST_URL)
 
         if (intent.action == ACTION_VIEW) {
             if (intent.data.pathSegments.size > 1) {
@@ -48,20 +51,23 @@ import javax.inject.Singleton
         }
 
         if(intent.data?.pathSegments?.size ?: -1 > 1)
-            postSlug = intent.data.pathSegments[1]
+            postSlug = intent.data?.pathSegments?.getOrNull(1)
+
+        if(postUrl == null){
+            postUrl = if(postId > 0) "http://ar25.org/node/$postId" else "http://ar25.org/article/$postSlug"
+        }else{
+            postSlug = postUrl?.split("/")?.last()
+        }
     }
 
     fun share() {
 
         val post = currentPost ?: return
 
-        val link = if(postId > 0) "http://ar25.org/node/$postId" else "http://ar25.org/article/$postSlug"
-
         screenRouterManager.openScreen(Intent(ACTION_SEND).apply {
-
             type = "text/plain"
             putExtra(Intent.EXTRA_SUBJECT, post.header)
-            putExtra(Intent.EXTRA_TEXT, link)
+            putExtra(Intent.EXTRA_TEXT, postUrl)
         })
     }
 
@@ -69,28 +75,22 @@ import javax.inject.Singleton
 
         val context = view as Activity
 
-        val link = if(postId > 0) "http://ar25.org/node/$postId" else "http://ar25.org/article/$postSlug"
-        val commonIntent = Intent(ACTION_VIEW, Uri.parse(link))
+        val commonIntent = Intent(ACTION_VIEW, Uri.parse(postUrl))
         val targetIntents = context.packageManager.queryIntentActivities(commonIntent, 0)
-
                 .filter { !it.activityInfo.packageName.contains("org.ar25.androidno") }
-                .map { Intent(ACTION_VIEW, Uri.parse(link)).apply { setPackage(it.activityInfo.packageName) } }
+                .map { Intent(ACTION_VIEW, Uri.parse(postUrl)).apply { setPackage(it.activityInfo.packageName) } }
 
 
         if(targetIntents.size > 1) {
-
             val chooserIntent = Intent.createChooser(targetIntents[0], context.getString(R.string.open_with))
             chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, targetIntents.subList(1, targetIntents.size).toTypedArray())
 
             screenRouterManager.openScreen(chooserIntent)
 
         } else if(targetIntents.size == 1) {
-
             screenRouterManager.openScreen(targetIntents[0])
 
-
         } else {
-
             screenRouterManager.openScreen(commonIntent)
         }
     }
@@ -106,11 +106,12 @@ import javax.inject.Singleton
 
     fun fetchPost() {
 
-        when {
+        val postSlug = postSlug ?: return
 
-            postId > 0 -> fetchPost(postId)
-
-            postSlug.isNotBlank() -> fetchPost(postSlug)
+        if(postId > 0){
+            fetchPost(postId, postSlug)
+        }else{
+            fetchPost(postSlug)
         }
     }
 
@@ -133,7 +134,7 @@ import javax.inject.Singleton
                 )
 
     }
-    private fun fetchPost(id: Long) {
+    private fun fetchPost(id: Long, slug: String) {
 
         val detailView : DetailView = view ?: return
 
@@ -145,7 +146,7 @@ import javax.inject.Singleton
         }
 
         noPostsApi
-                .getPost(id)
+                .getPost(slug)
                 .retry(3)
                 .subscribeOn(Schedulers.io())
                 .doOnNext { localStorage.savePost(it)}

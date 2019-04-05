@@ -13,6 +13,7 @@ import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_PUBLISH_DATE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_SECTION
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TABLE
 import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_TEASER
+import org.ar25.androidno.db.DbOpenHelper.Companion.DB_POSTS_URL
 import org.ar25.androidno.db.LocalStorage.Companion.POSTS_PER_PAGE
 import org.ar25.androidno.entities.Post
 import org.ar25.androidno.entities.PostStorIOSQLitePutResolver
@@ -137,7 +138,7 @@ class LocalStorageImpl @Inject constructor(
         try {
             db.beginTransaction()
 
-            val insertSql = "INSERT OR IGNORE INTO $DB_POSTS_TABLE ($DB_POSTS_ID, $DB_POSTS_HEADER, $DB_POSTS_IMAGE_URL, $DB_POSTS_PUBLISH_DATE, $DB_POSTS_TEASER, $DB_POSTS_SECTION) VALUES (?,?,?,?,?,?)"
+            val insertSql = "INSERT OR IGNORE INTO $DB_POSTS_TABLE ($DB_POSTS_ID, $DB_POSTS_URL, $DB_POSTS_HEADER, $DB_POSTS_IMAGE_URL, $DB_POSTS_PUBLISH_DATE, $DB_POSTS_TEASER, $DB_POSTS_SECTION) VALUES (?,?,?,?,?,?,?)"
             val updateSql = "UPDATE $DB_POSTS_TABLE SET $DB_POSTS_SECTION=? WHERE $DB_POSTS_ID=?"
             val insertStatement = db.compileStatement(insertSql)
             val updateStatement = db.compileStatement(updateSql)
@@ -145,16 +146,17 @@ class LocalStorageImpl @Inject constructor(
             for (post in posts) {
                 insertStatement.clearBindings()
                 insertStatement.bindLong(1, post.id)
-                insertStatement.bindString(2, post.header)
-                insertStatement.bindString(3, post.imageUrl)
-                insertStatement.bindString(4, post.publishDate)
-                insertStatement.bindString(5, post.teaser)
+                insertStatement.bindString(2, post.url)
+                insertStatement.bindString(3, post.header)
+                insertStatement.bindString(4, post.imageUrl)
+                insertStatement.bindString(5, post.publishDate)
+                insertStatement.bindString(6, post.teaser)
 
                 if(post.section != null) {
-                    insertStatement.bindString(6, post.section)
+                    insertStatement.bindString(7, post.section)
                     updateStatement.bindString(1, post.section)
                 } else {
-                    insertStatement.bindNull(6)
+                    insertStatement.bindNull(7)
                     updateStatement.bindNull(1)
                 }
 

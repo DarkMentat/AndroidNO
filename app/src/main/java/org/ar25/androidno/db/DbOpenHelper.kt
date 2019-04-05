@@ -20,6 +20,7 @@ class DbOpenHelper @Inject constructor(
         const val DB_POSTS_TABLE = "no_posts"
         const val DB_POSTS_ID = "id"
         const val DB_POSTS_IS_FAVORITE = "is_favorite"
+        const val DB_POSTS_URL = "url"
         const val DB_POSTS_HEADER = "header"
         const val DB_POSTS_PUBLISH_DATE = "publish_date"
         const val DB_POSTS_TEASER = "teaser"
@@ -31,13 +32,14 @@ class DbOpenHelper @Inject constructor(
         const val DB_POSTS_SOURCE_LINK = "source_link"
         const val DB_POSTS_SECTION = "navSection"
 
-        const val db_version = 2
+        const val db_version = 3
     }
 
     val createPostsTableQuery =
          "CREATE TABLE $DB_POSTS_TABLE (" +
              "$DB_POSTS_ID INTEGER NOT NULL PRIMARY KEY, " +
              "$DB_POSTS_IS_FAVORITE INTEGER DEFAULT 0, " +
+             "$DB_POSTS_URL TEXT NOT NULL, " +
              "$DB_POSTS_HEADER TEXT NOT NULL, " +
              "$DB_POSTS_PUBLISH_DATE TEXT NOT NULL, " +
              "$DB_POSTS_IMAGE_URL TEXT NOT NULL, " +
@@ -55,9 +57,7 @@ class DbOpenHelper @Inject constructor(
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-
         if(oldVersion != newVersion) {
-
             db.execSQL("DROP TABLE IF EXISTS $DB_POSTS_TABLE")
             db.execSQL(createPostsTableQuery)
         }

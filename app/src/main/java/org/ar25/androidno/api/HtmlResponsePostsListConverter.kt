@@ -14,26 +14,25 @@ class HtmlResponsePostsListConverter : Converter<ResponseBody, List<Post>> {
             val data = ArrayList<Post>()
 
             val document = Jsoup.parse(value.string())
-            val elements = document.select("div .entity-extra-wrapper")
+            val elements = document.select("div .views-view-grid .node-blog")
 
             for (element in elements) {
-                if(element.children().getOrNull(0)?.hasClass("node") != true)
-                    continue
 
-                val id = java.lang.Long.valueOf(element.attr("data-entity_id"))
-                val header = element.child(0).select("div .title")[0].child(0).text()
-                val publishDate = element.child(0).select("div .field-item")[0].text()
+                val url = "https://www.ar25.org" + element.select("div.field-name-title")[0].child(0).child(0).child(0).child(0).attr("href")
+                val id = Math.abs(url.hashCode().toLong())
+                val header = element.select("div.field-name-title").text()
+                val publishDate = element.select("div.field-name-post-date").text()
                 val imageUrl: String
 
-                if (element.child(0).select("div .field-item")[1].child(0).children().size > 0) {
-                    imageUrl = element.child(0).select("div .field-item")[1].child(0).child(0).absUrl("src").split("\\?".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()[0]
+                if (element.select("div.field-name-field-img-teaser")[0].child(0).children().size > 0) {
+                    imageUrl = element.select("div.field-name-field-img-teaser")[0].child(0).child(0).child(0).child(0).absUrl("src").split("\\?".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()[0]
                 } else {
                     imageUrl = "http://ar25.org/sites/all/storage/default_images/styles/teaser280/sonce.jpg"
                 }
 
-                val teaser = element.child(0).select("div .field-item")[3].text()
+                val teaser = element.select("div.field-type-text-with-summary").text()
 
-                data.add(Post(id, header, publishDate, imageUrl, teaser))
+                data.add(Post(id, url, header, publishDate, imageUrl, teaser))
             }
 
             return data

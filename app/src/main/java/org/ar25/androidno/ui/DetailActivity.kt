@@ -39,11 +39,13 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
 
     companion object {
         const val EXTRA_POST_ID = "EXTRA_POST_ID"
+        const val EXTRA_POST_URL = "EXTRA_POST_URL"
 
         @JvmStatic fun getDetailActivityBuilder(post: Post): ScreenRouterManager.ActivityBuilder {
 
             val activityBuilder = ScreenRouterManager.ActivityBuilder(DetailActivity::class.java)
             activityBuilder.putArg(EXTRA_POST_ID, post.id)
+            activityBuilder.putArg(EXTRA_POST_URL, post.url)
 
             return activityBuilder
         }
