@@ -114,7 +114,6 @@ class MainActivity : BaseActivity<MainPresenter, MainView>(), MainView {
                 R.id.sectionScience -> loadNavPage(getString(R.string.sectionScience), Section, Section.Science)
                 R.id.sectionEducation -> loadNavPage(getString(R.string.sectionEducation), Section, Section.Education)
                 R.id.sectionEconomicsAndBusiness -> loadNavPage(getString(R.string.sectionEconomicsAndBusiness), Section, Section.EconomicsAndBusiness)
-                R.id.sectionLifeAroundUs -> loadNavPage(getString(R.string.sectionLifeAroundUs), Section, Section.LifeAroundUs)
 
                 else -> false
             }

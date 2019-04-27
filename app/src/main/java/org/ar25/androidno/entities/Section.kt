@@ -15,6 +15,5 @@ enum class Section(val apiSlug: String) {
     Science("nauka"),
     Education("osvita"),
     EconomicsAndBusiness("biznes"),
-    LifeAroundUs("zhyttya-navkolo-nas"),
 
 }

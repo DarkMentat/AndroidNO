@@ -61,10 +61,6 @@
                     android:id="@+id/sectionEconomicsAndBusiness"
                     android:icon="@drawable/ic_sectioneconomicsandbusiness"
                     android:title="@string/sectionEconomicsAndBusiness" />
-                <item
-                    android:id="@+id/sectionLifeAroundUs"
-                    android:icon="@drawable/ic_sectionlifearoundus"
-                    android:title="@string/sectionLifeAroundUs" />
             </group></menu>
         </item>
     </group>
