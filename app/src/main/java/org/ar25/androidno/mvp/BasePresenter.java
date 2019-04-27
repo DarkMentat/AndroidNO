@@ -34,7 +34,7 @@ public abstract class BasePresenter<V extends MvpView> implements MvpPresenter<V
     private final BehaviorSubject<V> views          = BehaviorSubject.create();
     private final BehaviorSubject<MvpView> presenterViews = BehaviorSubject.create();
 
-    protected V  view;
+    public V  view;
 
     private PermissionManager permissionManager;
 

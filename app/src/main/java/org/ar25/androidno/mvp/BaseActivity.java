@@ -28,6 +28,9 @@ public abstract class BaseActivity<P extends BasePresenter<V>, V extends MvpView
         super.onStart();
         screenRouterManager.setRouter(this);
         presenter.setIntent(getIntent());
+        if(presenter.isAttached()){
+            presenter.detach();
+        }
         presenter.attach(getMvpView());
     }
 
@@ -39,8 +42,10 @@ public abstract class BaseActivity<P extends BasePresenter<V>, V extends MvpView
 
     @Override public void onStop() {
 
-        presenter.detach();
-        screenRouterManager.removeRouter(this);
+        if(presenter.view == getMvpView()) {
+            presenter.detach();
+            screenRouterManager.removeRouter(this);
+        }
         super.onStop();
     }
 

@@ -51,7 +51,7 @@ import javax.inject.Singleton
         }
 
         if(intent.data?.pathSegments?.size ?: -1 > 1)
-            postSlug = intent.data?.pathSegments?.getOrNull(1)
+            postSlug = intent.data?.pathSegments?.getOrNull(1)?.takeIf { it.toIntOrNull() == null }
 
         if(postUrl == null){
             postUrl = if(postId > 0) "http://ar25.org/node/$postId" else "http://ar25.org/article/$postSlug"
@@ -72,6 +72,9 @@ import javax.inject.Singleton
     }
 
     fun openInBrowser() {
+
+        if(view==null)
+            return
 
         val context = view as Activity
 
@@ -106,7 +109,11 @@ import javax.inject.Singleton
 
     fun fetchPost() {
 
-        val postSlug = postSlug ?: return
+        val postSlug = postSlug
+        if(postSlug == null){
+            fetchPost(postId)
+            return
+        }
 
         if(postId > 0){
             fetchPost(postId, postSlug)
@@ -159,5 +166,32 @@ import javax.inject.Singleton
                         { post -> detailView.onGetPost(post) },
                         { error -> detailView.onGetError(error) }
                 )
+    }
+    private fun fetchPost(id: Long) {
+
+        val detailView : DetailView = view ?: return
+
+        localStorage.getPost(id).let {
+            detailView.onGetPost(it)
+
+            if(it?.text == null)
+                detailView.setLoading()
+        }
+
+        noPostsApi
+            .getPost(id)
+            .retry(3)
+            .subscribeOn(Schedulers.io())
+            .doOnNext { it.id = id }
+            .doOnNext { localStorage.savePost(it)}
+            .flatMap { Observable.just(localStorage.getPost(id)) }
+            .map { post -> post?.htmlTokens = parseHtmlTextToTokens(post?.teaser + post?.text); post}
+            .doOnNext { currentPost = it }
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnNext { detailView.setLoaded() }
+            .subscribe(
+                { post -> detailView.onGetPost(post) },
+                { error -> detailView.onGetError(error) }
+            )
     }
 }

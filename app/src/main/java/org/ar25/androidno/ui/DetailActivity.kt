@@ -279,5 +279,21 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
                 }
             }
         }
+
+        val similar = post.similar
+        if(similar != null) {
+            val view = layoutInflater.inflate(R.layout.view_html_text_token, postMainContent, false) as HtmlTextView
+            view.setHtml("<br><b>В тему:</b> $similar")
+
+            if (postMainContent.childCount == 0) {
+                view.setTypeface(null, Typeface.BOLD)
+                view.setTextColor(ActivityCompat.getColor(context, R.color.text_color_black))
+                view.setPadding(0, 0, 0, 24)
+            }
+
+            view.movementMethod = linkMovementMethod //hack to allow customize behavior on link click
+
+            postMainContent.addView(view)
+        }
     }
 }
