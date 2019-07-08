@@ -32,8 +32,9 @@ class DbOpenHelper @Inject constructor(
         const val DB_POSTS_SOURCE_LINK = "source_link"
         const val DB_POSTS_SECTION = "navSection"
         const val DB_POSTS_SIMILAR = "similar"
+        const val DB_POSTS_COMMENTS = "comments"
 
-        const val db_version = 4
+        const val db_version = 5
     }
 
     val createPostsTableQuery =
@@ -51,7 +52,8 @@ class DbOpenHelper @Inject constructor(
              "$DB_POSTS_IMAGE_TITLE TEXT NULL, " +
              "$DB_POSTS_SOURCE TEXT NULL, " +
              "$DB_POSTS_SOURCE_LINK TEXT NULL, " +
-             "$DB_POSTS_SIMILAR TEXT NULL " +
+             "$DB_POSTS_SIMILAR TEXT NULL, " +
+             "$DB_POSTS_COMMENTS TEXT NULL " +
          ");"
 
     override fun onCreate(db: SQLiteDatabase) {

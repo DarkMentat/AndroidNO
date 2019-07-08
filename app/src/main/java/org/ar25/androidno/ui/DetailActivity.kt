@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.ImageView
@@ -209,7 +210,7 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
     }
     fun fillContent(post: Post){
 
-        val tokens = post.htmlTokens ?: parseHtmlTextToTokens(post.teaser + post.text)
+        val tokens = post.htmlTokens ?: parseHtmlTextToTokens(post.teaser + post.text + post.comments)
 
         postMainContent.removeAllViews()
 
@@ -276,6 +277,30 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
                     }
 
                     postMainContent.addView(view)
+                }
+
+                is PostToken.Comment -> {
+                    val view = layoutInflater.inflate(R.layout.view_comment_token, postMainContent, false)
+                    val authorDate = view.findViewById<TextView>(R.id.authorDate)
+                    val contentView = view.findViewById<HtmlTextView>(R.id.content)
+                    val avatarView = view.findViewById<ImageView>(R.id.avatar)
+                    val divider = view.findViewById<View>(R.id.divider)
+
+                    authorDate.setText(token.authorDate)
+                    contentView.setHtml(token.htmlContent)
+
+                    contentView.movementMethod = linkMovementMethod //hack to allow customize behavior on link click
+
+                    postMainContent.addView(view)
+
+                    divider.visibility = if(token.last) View.GONE else View.VISIBLE
+
+                    Picasso.with(this)
+                        .load(token.avatarUrl)
+                        .placeholder(R.drawable.transparent_placeholder)
+                        .error(R.drawable.transparent_imageerror)
+                        .fit()
+                        .into(avatarView)
                 }
             }
         }

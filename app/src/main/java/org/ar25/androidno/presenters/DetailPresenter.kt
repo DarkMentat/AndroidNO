@@ -158,7 +158,7 @@ import javax.inject.Singleton
                 .subscribeOn(Schedulers.io())
                 .doOnNext { localStorage.savePost(it)}
                 .flatMap { Observable.just(localStorage.getPost(id)) }
-                .map { post -> post?.htmlTokens = parseHtmlTextToTokens(post?.teaser + post?.text); post}
+                .map { post -> post?.htmlTokens = parseHtmlTextToTokens(post?.teaser + post?.text + post?.comments); post}
                 .doOnNext { currentPost = it }
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext { detailView.setLoaded() }
@@ -185,7 +185,7 @@ import javax.inject.Singleton
             .doOnNext { it.id = id }
             .doOnNext { localStorage.savePost(it)}
             .flatMap { Observable.just(localStorage.getPost(id)) }
-            .map { post -> post?.htmlTokens = parseHtmlTextToTokens(post?.teaser + post?.text); post}
+            .map { post -> post?.htmlTokens = parseHtmlTextToTokens(post?.teaser + post?.text + post?.comments); post}
             .doOnNext { currentPost = it }
             .observeOn(AndroidSchedulers.mainThread())
             .doOnNext { detailView.setLoaded() }
