@@ -213,6 +213,9 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
         val tokens = post.htmlTokens ?: parseHtmlTextToTokens(post.teaser + post.text + post.comments)
 
         postMainContent.removeAllViews()
+        commentsContent.removeAllViews()
+
+        var firstComment = true
 
         for (token in tokens){
             when (token) {
@@ -280,18 +283,21 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
                 }
 
                 is PostToken.Comment -> {
-                    val view = layoutInflater.inflate(R.layout.view_comment_token, postMainContent, false)
+                    val view = layoutInflater.inflate(R.layout.view_comment_token, commentsContent, false)
+                    val commentsTitle = view.findViewById<TextView>(R.id.commentsTitle)
                     val authorDate = view.findViewById<TextView>(R.id.authorDate)
                     val contentView = view.findViewById<HtmlTextView>(R.id.content)
                     val avatarView = view.findViewById<ImageView>(R.id.avatar)
                     val divider = view.findViewById<View>(R.id.divider)
+
+                    commentsTitle.visibility = if(firstComment) View.VISIBLE else View.GONE
 
                     authorDate.setText(token.authorDate)
                     contentView.setHtml(token.htmlContent)
 
                     contentView.movementMethod = linkMovementMethod //hack to allow customize behavior on link click
 
-                    postMainContent.addView(view)
+                    commentsContent.addView(view)
 
                     divider.visibility = if(token.last) View.GONE else View.VISIBLE
 
@@ -301,6 +307,8 @@ class DetailActivity : BaseActivity<DetailPresenter, DetailView>(), DetailView {
                         .error(R.drawable.transparent_imageerror)
                         .fit()
                         .into(avatarView)
+
+                    firstComment = false
                 }
             }
         }

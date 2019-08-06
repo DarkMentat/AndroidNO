@@ -83,10 +83,6 @@ fun parseHtmlTextToTokens(html: String): List<PostToken>{
         }
     }
 
-    if(comments.isNotEmpty()){
-        currentHtmlTextTokenBody += "<p><b>Коментарі:</b></p>"
-    }
-
     addTextToken()
 
     comments.lastOrNull()?.last = true
